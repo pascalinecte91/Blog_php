@@ -1,15 +1,4 @@
-<?php
-use App\Connection;
-use App\Table\PostTable;
-
-$title = 'Mon blog';
-$pdo = Connection::getPDO();
-
-$table = new PostTable($pdo);
-[$posts, $pagination] = $table->findPaginated();
-
-$link =  $router->url('blog');
-?>  
+ 
 
 <h1> Mon blog</h1>
 

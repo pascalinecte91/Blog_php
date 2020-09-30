@@ -34,15 +34,4 @@ if (!empty($_POST)) {
     }
 }
 $form = new Form($post, $errors);
-
-?>
-
-<?php if (!empty($errors)): ?>
-<div class="alert alert-danger">
-Le commentaire n'a pas pu être enregistré.
-</div>
-<?php endif ?>
-
-<h1>Ecrire un commentaire </h1>
-
-<?php require('_form.php') ?>
+require_once ('../views/admin/comments/new.php');

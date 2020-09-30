@@ -35,14 +35,4 @@ if (!empty($_POST)) {
 }
 $form = new Form($post, $errors);
 
-?>
 
-<?php if (!empty($errors)): ?>
-<div class="alert alert-danger">
-L'article n'a pas pu être enregistré, merci de corriger vos erreurs
-</div>
-<?php endif ?>
-
-<h1>creer un  article </h1>
-
-<?php require('_form.php') ?>
