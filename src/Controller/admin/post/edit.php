@@ -25,10 +25,8 @@ if (!empty($_POST)) {
     $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
     ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'created_at']);
     if ($v->validate()) {
-        $pdo->beginTransaction();
         $postTable->updatePost($post);
         $postTable->attachCategories($post->getID(),$_POST['categories_ids']);
-        $pdo->commit();
         $categoryTable->hydratePosts([$post]);
         $success = true;
     } else {
