@@ -55,7 +55,9 @@ class Router {
         $params = $match['params'];
         $router = $this;
         $isAdmin = strpos($view, 'admin/' ) !== false;
+        // si on est dans url admin: on dit qu'on prend le fichier dans layout defaut de admin
         $layout = $isAdmin ? 'admin/layouts/default' : 'layouts/default';
+        
         try {
             ob_start();
             require $this->viewPath  . DIRECTORY_SEPARATOR . $view . '.php';

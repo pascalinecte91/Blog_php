@@ -13,7 +13,8 @@ class Comment {
     private $name;
 
 
-    public function getComment ():?int {
+    public function getComment ():?int 
+    {
         return $this->comment;
     }
 

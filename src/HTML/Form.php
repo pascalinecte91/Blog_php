@@ -91,7 +91,7 @@ HTML;
             } else {
                 $errors = $this->errors([$key]);
             }
-            return '<div class="invalid-feedback">' .  $error .'</div>';
+            return '<div class="invalid-feedback">' .  $errors .'</div>';
         }
         return '';
         }

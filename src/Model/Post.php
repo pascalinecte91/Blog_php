@@ -19,7 +19,7 @@ class Post {
 
     private $categories = [];
 
-    private $comments =[];
+    private $comment =[];
 
    
     public function getName (): ?string
@@ -74,14 +74,14 @@ class Post {
         return $this;
     }
 
-    public function getComments (): ?self 
+    public function getComment (): ?self 
     {
         return $this->$comment;
     }
 
-    public function setComments (): self
+    public function setComment (): self
     {
-        $this->comments = $comments;
+        $this->comment = $comment;
 
         return $this;
     }

@@ -50,9 +50,10 @@ abstract class Table
         return (int)$query ->fetch(PDO::FETCH_NUM)[0]  > 0;
     }
 
-
+//fonction qui recupere tous les enregistrements dans un array
     public function all(): array
     {
+        //on selectionne tous les champs (*) en utilisant le nom des tables : $this et table  et aucune condition car tout
         $sql = "SELECT * FROM {$this->table}";
         return $this->pdo->query($sql, PDO::FETCH_CLASS, $this->class)->fetchAll();
     }
