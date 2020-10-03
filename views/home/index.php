@@ -1,67 +1,84 @@
-<div class="d-flex justify-content-center">
  
 
- </div>
- <h1>Un projet à développer ! Ne le faite pas seul , mais avec moi</h1>
- 
- 
- <div class="row">
- <div class="col-md-4 ">
- <a href="/Mon_cv_projet_4.pdf">mon cv</a> <br>
- </div>
- <img src="/photo.png" alt="photo"><strong>Pascaline CHRISTOPHE</strong>
-</div>
-
-
- <body>
- 
- <class div="container">
-
- <form action="contact_formulaire.php" method="POST">
-
-     <div class= "row ">
-         <div class="col-md-12"> 
-              <div class="form-group">
-                  <label for="inputname"><strong> Votre nom</strong</label>
-                  <input type ="text" name= "name" class="form-control" id="inputname">
-             </div>
-         </div>
-     </div>
-     <div class="row ">
-         <div class="col-md-12"> 
-              <div class="form-group">
-                  <label for="inputname"> Votre prénom</label>
-                  <input type ="text" name= "surname" class="form-control" id="inputname">
-             </div>
-         </div>
-     </div>
-     <div class= "row ">
-         <div class="col-md-12"> 
-              <div class="form-group">
-                  <label for="inputname">Votre Email</label>
-                  <input type ="text" name= "email" class="form-control" id="inputemail"> 
-             </div>
-         </div>
-     </div>
-     <div class="row"></div>
-         <div class= "clol-md-12">
-             <div class="form-group">
-             <label type="inputmessage">votre message</label>
-             <textarea id="inputmessage"name=" message" class="form-control"></textarea>
-         </div>
+   <div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+   
+        <div class="row text-center">
+            <div class="col-12">
+            <h1>Un projet à développer?   -  Ne le faite pas seul </h1>
+            </div>
+        </div>
+            
+            <div class="row justify-content-center pt-5 ">
+                <div class="col lg-10 text-center">    
+                    <h4>Elève chez OpenClassrooms <br>  Développeur Application PHP Synfony</h4><br>
+                    <h3><strong> Pascale CHRISTOPHE</strong></h3><br>
+                </div>
+            <div class="col lg-2 justify-content-center">
+            <img src="/photo.png" alt="photo" class="rounded-circle">
+            </div>
     </div>
+
+</div>
+ 
+<body>
+<div class="container">
+ <form action="contact_formulaire.php" method="POST">
+     <div class= "row ">
+         <div class="col-6"> 
+                <div class="form-group text-center">
+                  <label for="inputname"><strong> Votre nom</strong></label>
+                  <input type ="text" name= "name" class="form-control" id="inputname">
+                </div>
+            </div>
+         <div class="col-6"> 
+                <div class="form-group text-center">
+                  <label for="inputname"><strong> Votre prénom</strong></label>
+                  <input type ="text" name= "surname" class="form-control" id="inputname">
+                </div>
+         </div>
+     </div>
+
+
+     <div class= "row ">
+         <div class="col-6"> 
+                <div class="form-group text-center">
+                  <label for="inputname"><strong>Votre Email</strong></label>
+                  <input type ="text" name= "email" class="form-control" id="inputemail">
+                </div>
+            </div>
+
+         <div class="col-6"> 
+                <div class="form-group text-center">
+                  <label for="inputname"><strong>Votre numéro de téléphone</strong></label>
+                  <input type ="text" phone= "email" class="form-control" id="inputphone_number"> 
+                </div>
+            </div>
+    </div>
+
+
+     <div class="row">
+         <div class= "col-12 ">
+                <div class="form-group text-center">
+                <label type="inputmessage"><strong>votre message</strong></label>
+                <textarea id="inputmessage"name=" message" class="form-control"></textarea>
+                </div>
+        </div>
     <div>
-         <button type="submit" class="btn btn-secondary">Envoyer</button>
-     </form><br><br>
-     </body>
+    
+    <div class="row ">
+        <div class="col 12 ">
+         <button type="submit" class="btn btn-secondary" style="background-color:#3dc0ad">Envoyer</button>
+        </div>
+       
+    </div> 
+    </form><br><br>
+</div>
+</body>
      
 
-
- 
- 
-
  <footer>
-
+   
 
  </footer>
 

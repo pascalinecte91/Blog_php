@@ -27,7 +27,7 @@ if(isset($_POST['email'])) {
     $nom = $_POST['nom']; 
     $prenom = $_POST['prenom']; 
     $email = $_POST['email']; 
-    $telephone = $_POST['telephone']; 
+    $number = $_POST['telephone'];
     $message = $_POST['message']; 
     $error_message = "";
  
@@ -55,11 +55,11 @@ if(isset($_POST['email'])) {
       died($error_message);
     }
  
-    $email_message = "Détail.\n\n";
+    $email_message .= "Détail.\n\n";
     $email_message .= "Nom: ".$nom."\n";
     $email_message .= "Prenom: ".$prenom."\n";
     $email_message .= "Email: ".$email."\n";
-    $email_message .= "Telephone: ".$telephone."\n";
+    $email_message .= "telephone: ".$telephone."\n";
     $email_message .= "message: ".$message."\n";
  
 
@@ -68,8 +68,6 @@ if(isset($_POST['email'])) {
     'X-Mailer: PHP/' . phpversion();
     mail($email_to, $email_message, $headers);
     ?>
-     
-    
      
      Nous vous contacterons très bientôt.
      

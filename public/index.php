@@ -32,6 +32,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/login', 'auth/login', 'login')
     ->post('/logout', 'auth/logout', 'logout')
     
+    
     //ADMIN
     // GESTION DES ARTICLES
     ->get('/admin', 'admin/post/index', 'admin_posts')
