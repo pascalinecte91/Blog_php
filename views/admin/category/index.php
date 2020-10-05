@@ -5,7 +5,7 @@
 </div>
 <?php endif ?>
 
-<table class="table">
+<table class="table" class="table"style="background-color:#a5b5b8">
     <thead>
     <th>Numéro</th>
     <th>Titre  Catégorie</th>

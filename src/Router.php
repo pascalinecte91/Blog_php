@@ -8,7 +8,8 @@ class Router {
 /**
  * @var string
  */
-    private $viewPath;
+    private $controllerPath;
+    private $viewsPath;
     
     /**
      * @var Altorouter
@@ -16,9 +17,11 @@ class Router {
     private $router;
 
 
-    public function __construct(string $viewPath)
+    public function __construct()
     {
-        $this->viewPath = $viewPath;
+        $this->controllerPath = dirname (__DIR__) .'/src/Controller';
+        $this->viewsPath = dirname (__DIR__) .'/views';
+
         $this->router = new \AltoRouter();
     }
 
@@ -59,9 +62,9 @@ class Router {
         
         try {
             ob_start();
-            require $this->viewPath  . DIRECTORY_SEPARATOR . $view . '.php';
+            require $this->controllerPath  . DIRECTORY_SEPARATOR . $view . '.php';
             $content = ob_get_clean();
-            require $this->viewPath  . DIRECTORY_SEPARATOR . $layout  . '.php';
+            require $this->viewsPath  . DIRECTORY_SEPARATOR . $layout  . '.php';
         } catch (ForbiddenException $e) {
             header('Location: ' . $this->url('login') . '?forbidden=1');
             exit();

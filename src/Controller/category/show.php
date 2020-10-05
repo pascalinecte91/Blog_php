@@ -13,7 +13,7 @@ $category = (new CategoryTable($pdo))->find($id);
 
 if($category->getSlug() !== $slug) {
     $url = $router->url('category',['slug'=> $category->getSlug(), 'id' => $id]);
-    http_response_code(301); // redirection permanente   voir seb  301 pas noté dans url?  comment fait on pour savoir que c'est 301
+    http_response_code(301); 
     header('Location: ' . $url);
 }
 
@@ -23,4 +23,4 @@ $title = "Categorie {$category->getName()}";
 
 $link = $router->url('category', ['id' => $category->getID(), 'slug' => $category->getSlug()]);
 
-require_once '../views/category/show.php';
+require_once ('../views/category/show.php');

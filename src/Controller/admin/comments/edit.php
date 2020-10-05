@@ -30,7 +30,7 @@ if (!empty($_POST)) {
         $categoryTable->hydratePosts([$post]);
         $success = true;
     } else {
-       $errors = $v->errors();  
+       $errors = $v->errors();
     }
 }
 $form = new Form($post, $errors);

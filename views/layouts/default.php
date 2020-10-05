@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 ">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ">
         <a href="#" class="navbar-brand">Mon blog - Projet 5</a>
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -26,30 +26,24 @@
         <button type="submit" class="nav-link" style="background:transparent; border: none;"> Se déconnecter</button>
         </li>
     </div>
-    
     </form>
-
-        
     </ul>
 </nav>
 
-
-    <div class="container ">
+<div class="container ">
     <?= $content ?>
     </div>
 
     <footer class="bg-dark text-white py-4 footer mt-auto">
- 
-        <div class="d-flex justify-content-around">     
-            <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
+
+        <div class="d-flex justify-content-around">
+        <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
             <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
             <a href="/mon_cv_projet_4" style="color: white">Telecharger mon CV</a>
             <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
             <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
+
         </div>
     </footer>
 </body>
 </html>
-
-
-    
