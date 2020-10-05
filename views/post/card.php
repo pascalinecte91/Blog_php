@@ -1,7 +1,20 @@
+<?php
+$categories = [];
+foreach($post->getCategories() as $category) {
+$url = $router->url('category', ['id' => $category->getID(), 'slug' => $category->getSlug()]);
+$categories[] = <<<HTML
+    <a href="{$url}">{$category->getName()}</a>
+HTML; 
+} 
+
+?>
 
 <div class="card mb-3">
+    <div class="card-header">
+        
+    </div>
     <div class="card-body"> 
-        <h5 class="card-title"><?= htmlentities($post->getName()) ?></h5> 
+        <h5 class="card-title"><?= e($post->getName()) ?></h5> 
         <p class="text-muted">
             <?= $post->getCreatedAt()->format('d F Y H:m') ?>
             <?php if (!empty($post->getCategories())): ?>
@@ -15,6 +28,3 @@
     </p>
 </div>
 </div>
-
-
-

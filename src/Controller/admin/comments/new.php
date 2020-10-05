@@ -30,7 +30,7 @@ if (!empty($_POST)) {
         header('Location: ' . $router->url('admin_post',['id'=> $post->getID()]) . '?created=1');
         exit();
     } else {
-       $errors = $v->errors();  
+       $errors = $v->errors();
     }
 }
 $form = new Form($post, $errors);

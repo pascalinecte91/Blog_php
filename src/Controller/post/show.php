@@ -21,4 +21,4 @@ if($post->getSlug() !== $slug) {
     http_response_code(301); 
     header('Location: ' . $url);
 }
-require_once('../views/post/show.php');
+require_once ('../views/post/show.php');
