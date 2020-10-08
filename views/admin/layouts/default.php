@@ -23,7 +23,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="<?=$router->url('home')?>">Mon blog Projet 5</a>
+      <a class="navbar-brand">Mon blog Projet 5</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -73,7 +73,7 @@
         <div class="d-flex justify-content-around">
             <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
             <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
-            <a href="/mon_cv_projet_4" style="color: white">Telecharger mon CV</a>
+            <a href="/public/cv_projet4.pdf" style="color: white">Telecharger mon CV</a>
             <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
             <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
             
