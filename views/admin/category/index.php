@@ -5,42 +5,44 @@
 </div>
 <?php endif ?>
 
-<table class="table" class="table"style="background-color:#a5b5b8">
-    <thead>
-    <th>Numéro</th>
-    <th>Titre  Catégorie</th>
-    <th>Thème categorie</th>
-    
-    <th>
+    <table class="table" class="table"style="background-color:#a5b5b8">
+        <thead>
+        <th>Numéro</th>
+        <th>Titre  Catégorie</th>
+        <th>Thème categorie</th>
+        
+        
+        </thead>
+            <tbody>
+            <?php foreach($items as $item): ?>
+            <tr>
+                <td>#<?= $item->getID() ?></td>
+                <td>
+                    <a href="<?= $router->url('admin_category', ['id'=> $item->getID()])?>">
+                    <?= e($item->getName()) ?>
+                    </a>
+                </td>
+                <td><?= $item->getSlug() ?></td>
+                <td>
+
+                    <a href="<?= $router->url('admin_category', ['id'=> $item->getID()])?>" class="btn btn-primary">
+                    Editer
+                </td>
+                <td>
+                    <form action="<?= $router->url('admin_category_delete', ['id'=> $item->getID()])?>" method ="POST"
+                    onsubmit="return confirm('Voulez vous confirmer la suppression ?')" style="display:inline">
+                    <button type ="submit" class="btn btn-danger">Supprimer</button>
+                </form>
+                </td>
+
+            </a>
+            </tr>
+        <?php endforeach  ?>
+    </tbody>
+    </table>
+<th>
         <a href ="<?= $router->url('admin_category_new')  ?>" class="btn btn-primary">New category</a>
     </th>
-    </thead>
-    <tbody>
-        <?php foreach($items as $item): ?>
-        <tr>
-            <td>#<?= $item->getID() ?></td>
-            <td>
-                <a href="<?= $router->url('admin_category', ['id'=> $item->getID()])?>">
-                <?= e($item->getName()) ?>
-                </a>
-            </td>
-            <td><?= $item->getSlug() ?></td>
-            <td>
 
-                <a href="<?= $router->url('admin_category', ['id'=> $item->getID()])?>" class="btn btn-primary">
-                Editer
-            </td>
-            <td>
-                <form action="<?= $router->url('admin_category_delete', ['id'=> $item->getID()])?>" method ="POST"
-                onsubmit="return confirm('Voulez vous confirmer la suppression ?')" style="display:inline">
-                <button type ="submit" class="btn btn-danger">Supprimer</button>
-            </form>
-            </td>
-
-        </a>
-    </tr>
-    <?php endforeach  ?>
-</tbody>
-</table>
 
 

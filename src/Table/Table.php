@@ -1,7 +1,11 @@
 <?php
 namespace App\Table;
 
+
+use \ App\Table\Exception\NotFoundException;
+
 use \PDO;
+
 
 abstract class Table
 {
@@ -27,11 +31,13 @@ abstract class Table
         $query->execute(['id' => $id]);
         $query ->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
+        
         if ($result === false) {
             throw new NotFoundException($this->table, $id);
         }
         return $result;
-    }
+       
+        }
     
     /** verifie valeur si existe bdd
      * @params string $field champs à chercher
@@ -44,6 +50,7 @@ abstract class Table
         if ($except !== null) {
             $sql .= "AND id != ?";
             $params[] = $except;
+     
         }
         $query = $this->pdo->prepare($sql);
         $query->execute($params);
@@ -71,6 +78,7 @@ abstract class Table
     {
         $sqlFields = [];
         foreach ($data as $key => $value) {
+            
             $sqlFields[] ="$key = :$key";
         }
         $query = $this->pdo->prepare("INSERT INTO {$this->table} SET " . implode(', ', $sqlFields));

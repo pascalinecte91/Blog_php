@@ -1,14 +1,14 @@
 <?php
 use App\Connection;
-use App\Table\PostTable;
+use App\Table\CommentTable;
 
 $title = 'Mon blog';
 $pdo = Connection::getPDO();
 
-$table = new PostTable($pdo);
+$table = new CommentTable($pdo);
 [$posts, $pagination] = $table->findPaginated();
 $chapo = [];
 $comments = (string)
 
-$link =  $router->url('blog');
-require_once ('../views/post/index.php');
+$link =  $router->url('comment');
+require_once ('../views/comment/index.php');

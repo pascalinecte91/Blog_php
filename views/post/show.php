@@ -9,4 +9,6 @@
         $category_url = $router->url('category', ['id' => $category->getID(), 'slug' => $category->getSlug()]);
         ?><a href="<?= $category_url ?>"><?= e($category->getName()) ?></a><?php
     endforeach ?>
-<p><?= $post->getFormattedContent() ?></P>
+<p><?= $post->getFormattedContent() ?></p>
+
+

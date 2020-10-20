@@ -13,39 +13,38 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    
+    <link rel="stylesheet" href="/clean-blog.css">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/clean-blog.min.css">
-</head>
-
-<body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand">Mon blog Projet 5</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      
-      <div class="collapse navbar-collapse " id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-          <a class="nav-link" href="<?=$router->url('home')?>">ACCUEIL</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="<?=$router->url('admin_posts')?>">ARTICLE</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="<?=$router->url('admin_categories')?>">Catégories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?=$router->url('login')?>"method="post" style="display:inline">CONNECTION</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    
+  </head>
   
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="">Mon blog Projet 5</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse " id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="<?=$router->url('home')?>">ACCUEIL</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?=$router->url('blog')?>">BLOG</a>
+            </li>
+            <li class="nav-item">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="<?=$router->url('login')?>"method="post">CONNEXION</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('/contact-bg.jpg')">
     <div class="overlay"></div>
@@ -59,35 +58,34 @@
             <br>
            
             <h3> Pascale CHRISTOPHE <h3>
-            
-            <span class=<h3>Un projet ? Faisons le ENSEMBLE</h3</span>
-            
+              
+              <span class=<h3>Un projet ? Faisons le ENSEMBLE</h3</span>
+             
           </div>
           
         </div>
       </div>
     </div>
   </header>
-
-<div class="container ">
+  <div class="container ">
     <?= $content ?>
     </div>
 
     <footer class="bg-dark text-white py-4 footer mt-auto">
+      <div class="d-flex justify-content-around">
+      <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
+          <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
+          <a href="/cv_projet4.pdf" style="color: white">Telecharger mon CV</a>
+          <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
+          <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
 
-        <div class="d-flex justify-content-around">
-        <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
-            <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
-            <a href="/public/cv_projet4.pdf" style="color: white">Telecharger mon CV</a>
-            <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
-            <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
-
-        </div>
-        <div class="col-12 text-center">
-        <a href="/login" style="color: white">Connect to Admin</a>
-        <p class="copyright text-muted">Copyright &copy; Pascaline  2020</p>
+      </div>
+      <div class="col-12 text-center">
+      <a href="/login" style="color: white">Connect to Admin</a>
+      <p class="copyright text-muted">Copyright &copy; Pascaline  2020</p>
+    </div>
       
-        </div>
+      
     </footer>
 
     <!-- Bootstrap core JavaScript -->

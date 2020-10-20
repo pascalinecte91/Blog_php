@@ -7,7 +7,14 @@ body  {
     background-color: #59725b;
 
 }
+.table {
+    max-width: 1500px;
+    
+}
+.table th {
+ text-align: center;   
 
+}
 
 
 

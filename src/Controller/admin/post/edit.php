@@ -20,17 +20,22 @@ $categoryTable->hydratePosts([$post]);
 $success = false;
 
 $errors = [];
+$chapo =[];
+
+
+
 
 if (!empty($_POST)) {
     $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'created_at']);
+    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'author', 'chapo', 'created_at']);
     if ($v->validate()) {
         $postTable->updatePost($post);
         $postTable->attachCategories($post->getID(),$_POST['categories_ids']);
         $categoryTable->hydratePosts([$post]);
         $success = true;
     } else {
-       $errors = $v->errors();  
+       $errors = $v->errors(); 
+        
     }
 }
 $form = new Form($post, $errors);

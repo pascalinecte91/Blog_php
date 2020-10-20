@@ -1,19 +1,16 @@
 <?php
-use App\Connection;
-use App\model\{Post, Category};
-use App\Table\PostTable;
-use App\Table\CategoryTable;
-use App\Table\CommentTable;
 
+use App\Connection;
+use App\Table\PostTable;
+
+$slug =$params['slug'];
 
 $id =(int)$params['id'];
-$slug = $params['slug'];
-
 
 
 $pdo = Connection::getPDO();
 $post = (new PostTable($pdo))->find($id);
-(new CategoryTable($pdo))->hydratePosts([$post]);
+
 
 
 if($post->getSlug() !== $slug) {

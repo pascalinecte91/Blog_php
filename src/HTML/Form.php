@@ -87,12 +87,13 @@ HTML;
     {
         if (isset($this->errors[$key])) {
             if (is_array ($this->errors[$key])) {
-                $errors = implode(' <br>', $this ->errors[$key]);
+                $error = implode(' <br>', $this ->errors[$key]);
             } else {
-                $errors = $this->errors([$key]);
+                $error = $this->errors[$key];
             }
-            return '<div class="invalid-feedback">' .  $errors .'</div>';
+            return '<div class="invalid-feedback">' .  $error .'</div>';
         }
         return '';
+        
         }
     }

@@ -11,7 +11,7 @@
     <th>Titre  Commentaire</th>
     
     <th>
-        <a href ="<?= $router->url('admin_comment_new')  ?>" class="btn btn-primary">New comment</a>
+        <a href ="<?= $router->url('admin_comment_new')  ?>" class="btn btn-secondary">New comment</a>
     </th>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
             <td><?= $item->getSlug() ?></td>
             <td>
 
-                <a href="<?= $router->url('admin_comment', ['id'=> $item->getID()])?>" class="btn btn-primary">
+                <a href="<?= $router->url('admin_comment', ['id'=> $item->getID()])?>" class="btn btn-secondary">
                 Editer
             </td>
             <td>

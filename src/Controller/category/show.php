@@ -1,12 +1,14 @@
 <?php
 use \App\Connection;
-use \App\Model\{Category, Post};
-use \App\PaginatedQuery;
+
+
 use \App\Table\CategoryTable;
 use \App\Table\PostTable;
 
 $id =(int)$params['id'];
 $slug = $params['slug'];
+
+
 
 $pdo = Connection::getPDO();
 $category = (new CategoryTable($pdo))->find($id);

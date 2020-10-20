@@ -5,6 +5,6 @@ Le commentaire a ete correctement crée
 </div>
 <?php endif ?>
 
-<h1>Editer le commentaire <?= e($post->getName()) ?></h1>
+<h1>Editer le commentaire <?= e($comment->getName()) ?></h1>
 
 <?php require('_form.php') ?>

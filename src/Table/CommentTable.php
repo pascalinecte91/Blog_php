@@ -1,29 +1,37 @@
 <?php
+
 namespace App\Table;
 
 
 use App\Model\Comment;
+use \PDO;
 
-final class CommentTable extends Table {
+final class CommentTable extends Table
+{
 
-    protected $table = "comment";
-    protected $class = Comment::class;
+  protected $table = "comment";
+  protected $class = Comment::class;
+
 
   
-    
+  public function createComment(Comment $comment): void
+  {
+    $id = $this->create([
+      'name' => $comment->getName(),
+      'chapo' => $comment->getChapo(),
+      'content' => $comment->getContent(),
+      'created_at' => $comment->getCreatedAt()->format('Y-m-d H:i:s'),
+      'author' => $comment->getAuthor(),
+    ]);
+    $comment->setID($id);
+  }
 
-    public function createComment (Comment $comment): void 
-    {
-        $id = $this->create([
-          'name'=> $comment->getComment(),
-          'created_at'=> $comment->getCreatedAt()->format('Y-m-d H:i:s')
-        ]);
-        $query = $this->pdo->prepare('INSERT INTO comment SET comment_id= ?, = ?');
-        foreach($comments as $comment) {
-            $query->execute([$comment]);
-       }
-        $comments->setComment();
+  public function hydrateComments(array $comments): void
+  {
+    $postsByID = [];
+    foreach ($comments as $comment) {
+      $comment->setComments([]);
+      $commentsByID[$comment->getID()] = $comment;
     }
-    
-    }
-
+  }
+}

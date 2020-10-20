@@ -6,7 +6,7 @@ use App\Router;
 define('DEBUG_TIME', microtime(true));
 
 $whoops = new \Whoops\Run ;
-$whoops -> pushHandler(new \ Whoops\Handler\PrettyPageHandler);
+$whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops -> register();
 
 
@@ -27,6 +27,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     $router
     ->get('/', 'home/index', 'home')
     ->get('/blog', 'post/index', 'blog')
+    ->get('/blog',  'comment/index','comment')
     ->get('/blog/category/[*:slug]-[i:id]', 'category/show', 'category')
     ->get('/blog/[*:slug]-[i:id]', 'post/show', 'post')
     ->match('/login', 'auth/login', 'login')

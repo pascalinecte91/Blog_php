@@ -17,12 +17,13 @@ $categoryTable = new CategoryTable($pdo);
 $categories = $categoryTable->list();
 $post->setCreatedAt(date('Y-m-d H:i:s'));
 // l'article creee  date du jour
+$chapo = ($post);
 
 if (!empty($_POST)) {
     $postTable = new PostTable($pdo);
 
     $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'created_at']);
+    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'chapo', 'author', 'created_at']);
     if ($v->validate()) {
         $postTable->createPost($post);
         $postTable->attachCategories($post->getID(), $_POST['categories_ids']);

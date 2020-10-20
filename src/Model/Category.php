@@ -19,7 +19,7 @@ class Category {
         return $this->id;
     }
 
-    public function setID (int $ID): self
+    public function setID (int $id): self
     {
         $this->id = $id;
 
@@ -54,6 +54,10 @@ class Category {
         return $this ->post_id;
     }
 
+    public function getPost ( ) {
+        
+        return $this ->post;
+    }
     public function setPost (Post $post ) {
         $this->post = $post;
         return $this;

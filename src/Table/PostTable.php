@@ -13,7 +13,7 @@ final class PostTable extends Table {
     {
        $this->update([
           'name'=> $post->getName(),
-          'slug'=> $post->getSlug(),
+          'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s'),
        ], $post->getID());
@@ -24,7 +24,7 @@ final class PostTable extends Table {
     {
         $id = $this->create([
           'name'=> $post->getName(),
-          'slug'=> $post->getSlug(),
+          'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s')
         ]);
@@ -42,7 +42,7 @@ final class PostTable extends Table {
     public function findPaginated() {
         $paginatedQuery = new PaginatedQuery(
             "SELECT * FROM {$this->table} ORDER BY created_at DESC",
-            "SELECT COUNT(id) FROM {$this->table}",
+            "SELECT COUNT(id) FROM {$this->table}",/* recupere tous les articles*/
             $this->pdo
         );
         $posts = $paginatedQuery->getItems(Post::class);
@@ -65,4 +65,5 @@ final class PostTable extends Table {
         (new CategoryTable($this->pdo))->hydratePosts($posts);
         return [$posts, $paginatedQuery];
     }
-}
+    
+    }

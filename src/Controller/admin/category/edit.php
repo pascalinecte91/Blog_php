@@ -14,7 +14,7 @@ $table = new CategoryTable($pdo);
 $item = $table->find($params['id']);
 $success = false;
 $errors = [];
-$fields = ['name', 'slug',];
+$fields = ['name', 'slug', 'chapo'];
 
 if (!empty($_POST)) {
     $v = new CategoryValidator($_POST, $table, $item->getID());

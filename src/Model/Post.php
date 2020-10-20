@@ -19,7 +19,11 @@ class Post {
 
     private $categories = [];
 
-    private $comment =[];
+    private $comment=[];
+
+    private $author;
+
+    private $chapo;
 
    
     public function getName (): ?string
@@ -27,7 +31,7 @@ class Post {
         return $this->name;
     }
 
-    public function setname (string $name) : self
+    public function setName (string $name) : self
     {
         $this->name = $name;
 
@@ -74,12 +78,12 @@ class Post {
         return $this;
     }
 
-    public function getComment (): ?self 
+    public function getComment (): array 
     {
-        return $this->$comment;
+        return $this->comment;
     }
 
-    public function setComment (): self
+    public function setComment (string $comment): self
     {
         $this->comment = $comment;
 
@@ -138,5 +142,35 @@ class Post {
     {
         $this->categories[] = $Category;
     }
+
+        public function getAuthor () :  ?string
     
- }
+    {
+        return $this->author;
+    }
+
+
+    public function setAuthor (string $author) : self
+
+    {
+        $this->content = $author;
+        
+        return $this;
+    }
+    public function getChapo () :  ?string
+    
+    {
+        return $this->chapo;
+    }
+
+
+    public function setChapo (string $chapo) : self
+
+    {
+        $this->content = $chapo;
+        
+        return $this;
+    }
+   
+    }
+ 
