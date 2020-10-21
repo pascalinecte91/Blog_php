@@ -1,9 +1,8 @@
-
-    <div class="text-center">
-<h1> Mon blog </h1>
+<div class="text-center p-2 mb-2" style="background-color:#e0d9f8">
+    <h2> blog Posts </h2><br>
 </div>
-<div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
+<div class="row align-self-center">
+    <div class="col-lg-12 col-md-10 mx-auto">
         <?php $firstLine = true; ?>
         <?php foreach ($posts as $post) : ?>
             <?php if (!$firstLine) : ?>
@@ -17,36 +16,37 @@
                         <?= e($post->getName()) ?>
                     </a>
                 </h2>
-                <p class="post-subtitle">
-                    Chapo
+                <p class="post-subtitle">  
+                        <?= e($post->getChapo()) ?></a>
                 </p>
 
                 <p class="post-meta">
-
-                    Posté par : auteur <br>
-                    Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
+                        Posté par : auteur <br>
+                        <?= e($post->getAuthor()) ?></a><br>
+                         Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
                 </p>
 
             </div>
             <?php $firstLine = false; ?>
         <?php endforeach ?>
-
-
     </div>
-</div>
-    </div>
-
-
-<?php 
-/*
-foreach($comments as $comment): ?>
-    <div class="col-lg-12"> 
-    <?php require 'card.php' ?>     
-    </div>
-    <?php endforeach ?>
 </div>
 
 <div class="d-flex justify-content-between my-4">
     <?= $pagination->previousLink($link) ?>
     <?= $pagination->nextLink($link) ?>
-    </div>*/
+</div>
+
+<?php
+
+/* pour chapo  supprimé  lien a href : <p class="post-subtitle">
+                    <a href="<?= $router->url('post', ['chapo' => $post->getChapo(), 'chapo' => $post->getChapo()]) ?>">
+                        <?= e($post->getChapo()) ?></a>
+                </p>*/
+/* pour author: <p class="post-meta">
+                    <a href="<?= $router->url('post', ['author' => $post->getAuthor(), 'author' => $post->getAuthor()]) ?>">
+                        Posté par : auteur <br>
+                        <?= e($post->getAuthor()) ?></a><br>
+
+                    Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
+                </p>*/

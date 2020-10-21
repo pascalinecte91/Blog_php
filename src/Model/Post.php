@@ -19,7 +19,7 @@ class Post {
 
     private $categories = [];
 
-    private $comment=[];
+    private $comment;
 
     private $author;
 
@@ -78,7 +78,7 @@ class Post {
         return $this;
     }
 
-    public function getComment (): array 
+    public function getComment () : ?string
     {
         return $this->comment;
     }

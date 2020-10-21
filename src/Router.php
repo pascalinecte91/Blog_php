@@ -49,6 +49,7 @@ class Router {
 
     public function url(string $name, array $params = []) {
         return $this->router->generate($name, $params);
+    
     }
 
     public function run(): self
@@ -58,7 +59,7 @@ class Router {
         $params = $match['params'];
         $router = $this;
         $isAdmin = strpos($view, 'admin/' ) !== false;
-        $layout = $isAdmin ? 'admin/layouts/default' : 'layouts/default';
+        $layout = $isAdmin ? 'admin/layouts/default' : 'layouts/default' ; 'layouts/default_page_blog';
         
         try {
             ob_start();

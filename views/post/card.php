@@ -14,6 +14,7 @@ HTML;
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
             <a href="index.php">
+            
         <h2 class="post-title"><?= e($post->getName()) ?></h2> 
         <p class="post-meta">Posted by</a>
         <a href="#"> auteur de l'article</a>
