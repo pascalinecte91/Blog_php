@@ -27,7 +27,7 @@ final class PostTable extends Table {
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s')
-        ]);
+           ]);
         $post->setID($id);
     }
 

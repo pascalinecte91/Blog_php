@@ -7,8 +7,8 @@ $pdo = Connection::getPDO();
 
 $table = new PostTable($pdo);
 [$posts, $pagination] = $table->findPaginated();
-$chapo = [];
-$comments = (string)
+
+
 
 $link =  $router->url('blog');
 require_once ('../views/post/index.php');

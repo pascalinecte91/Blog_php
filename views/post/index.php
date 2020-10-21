@@ -1,4 +1,4 @@
-<div class="text-center p-2 mb-2" style="background-color:#e0d9f8">
+<div class="text-center p-2 mb-2">
     <h2> blog Posts </h2><br>
 </div>
 <div class="row align-self-center">
@@ -21,9 +21,11 @@
                 </p>
 
                 <p class="post-meta">
-                        Posté par : auteur <br>
-                        <?= e($post->getAuthor()) ?></a><br>
-                         Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
+                    <p class="border .border-secondary mt-2 ">
+                        Auteur(e): <br>
+                        <?= e($post->getAuthor()) ?></a>
+                         -   Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
+                    </p>
                 </p>
 
             </div>

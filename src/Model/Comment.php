@@ -19,6 +19,8 @@ class Comment
     private $author;
 
     private $name;
+
+    private $image_url;
     
 
     public function getID (): ?int
@@ -111,5 +113,10 @@ class Comment
         $this->content = $author;
 
         return $this;
+    }
+    public function getimageUrl(): ?string
+
+    {
+        return $this->image_url;
     }
 }

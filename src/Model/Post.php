@@ -25,6 +25,8 @@ class Post {
 
     private $chapo;
 
+    private $image_url;
+
    
     public function getName (): ?string
     {
@@ -138,9 +140,9 @@ class Post {
     }
 
 
-    public function addCategory (Category $Category): void
+    public function addCategory (Category $category): void
     {
-        $this->categories[] = $Category;
+        $this->categories[] = $category;
     }
 
         public function getAuthor () :  ?string
@@ -171,6 +173,12 @@ class Post {
         
         return $this;
     }
-   
+    public function getImageUrl ()
+    {
+        return $this->image_url;
+    }
+
+
+
     }
  

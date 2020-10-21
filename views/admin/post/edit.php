@@ -17,6 +17,6 @@ L'article n'a pas pu être modifié
 </div>
 <?php endif ?>
 
-<h1>Editer l'article <?= e($post->getName()) ?></h1>
+<h2><?= e($post->getName()) ?></h2>
 
 <?php require('_form.php') ?>

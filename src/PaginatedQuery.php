@@ -16,7 +16,7 @@ class PaginatedQuery {
         string $query,
         string $queryCount,
         ?\PDO $pdo = null,
-        int $perPage = 6
+        int $perPage = 7
     )
     {
         $this->query = $query;

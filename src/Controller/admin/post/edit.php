@@ -1,7 +1,6 @@
 <?php
 use App \Connection;
 use App \Table\PostTable;
-use App\Validator;
 use App\HTML\Form;
 use App\Validators\PostValidator;
 use App\ObjectHelper;
@@ -27,7 +26,7 @@ $chapo =[];
 
 if (!empty($_POST)) {
     $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'author', 'chapo', 'created_at']);
+    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'author', 'chapo', 'image_url', 'created_at']);
     if ($v->validate()) {
         $postTable->updatePost($post);
         

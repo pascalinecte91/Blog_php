@@ -15,9 +15,13 @@ body  {
  text-align: center;   
 
 }
+.blockquote {
+    text-align: justify;
+}
 
-
-
+.border {
+    background-color: rgb(234, 243, 250);
+}
 
 
 
