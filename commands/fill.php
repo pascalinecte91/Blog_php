@@ -26,7 +26,7 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 for ($i = 0; $i < 50; $i++) {
-    $pdo->exec("INSERT INTO post SET name='{$faker->sentence()}', slug='{$faker->slug}', image_url='{$faker->imageUrl()}', author='{$faker->name}', chapo='{$faker->sentence(17)}', created_at='{$faker->date} {$faker->time}', content='{$faker->paragraphs(rand(3, 10), true)}'");
+    $pdo->exec("INSERT INTO post SET name='{$faker->sentence()}', slug='{$faker->slug}', author='{$faker->name}', chapo='{$faker->sentence(17)}', created_at='{$faker->date} {$faker->time}', content='{$faker->paragraphs(rand(3, 10), true)}'");
     $post = $pdo->lastInsertId();
 
 
@@ -35,7 +35,7 @@ for ($i = 0; $i < 50; $i++) {
         $pdo->exec("INSERT INTO post_category SET post_id=$post, category_id=$category");
     }
 
-    for ($j = 0; $j < 5; $j++) {
+    for ($j = 0; $j < 3; $j++) {
         $pdo->exec("INSERT INTO comment SET created_at='{$faker->date} {$faker->time}', author='{$faker->name}', content='{$faker->paragraphs(rand(3, 7), true)}', post_id='{$post}'");
         $comments[] = $pdo->lastInsertId();
     }

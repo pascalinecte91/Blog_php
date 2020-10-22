@@ -13,10 +13,14 @@ final class PostTable extends Table {
     {
        $this->update([
           'name'=> $post->getName(),
+          'slug' => $post->getSlug(),
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s'),
+          'image'=> $post->getImage()
        ], $post->getID());
+
+    
     }
     
 
@@ -24,11 +28,14 @@ final class PostTable extends Table {
     {
         $id = $this->create([
           'name'=> $post->getName(),
+          'slug' => $post->getSlug(),
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
+          'image'=> $post->getImage(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s')
            ]);
         $post->setID($id);
+        
     }
 
     public function attachCategories (int $id, array $categories) {

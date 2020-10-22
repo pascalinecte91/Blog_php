@@ -1,4 +1,5 @@
 <?php
+use\App\Attachment\PostAttachment;
 use App \Connection;
 use App \Table\PostTable;
 use App \Table\CategoryTable;
@@ -21,10 +22,11 @@ $chapo = ($post);
 
 if (!empty($_POST)) {
     $postTable = new PostTable($pdo);
-
-    $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'chapo', 'author', 'created_at']);
+    $data = array_merge($_POST, $_FILES);
+    $v = new PostValidator($data, $postTable, $post->getID(), $categories);
+    ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'chapo', 'author', 'created_at', 'image']);
     if ($v->validate()) {
+        PostAttachment::upload($post);
         $postTable->createPost($post);
         $postTable->attachCategories($post->getID(), $_POST['categories_ids']);
        

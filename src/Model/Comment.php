@@ -20,7 +20,10 @@ class Comment
 
     private $name;
 
-    private $image_url;
+   
+    
+
+    
     
 
     public function getID (): ?int
@@ -114,9 +117,5 @@ class Comment
 
         return $this;
     }
-    public function getimageUrl(): ?string
-
-    {
-        return $this->image_url;
-    }
+    
 }

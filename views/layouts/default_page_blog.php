@@ -46,7 +46,7 @@
     </nav>
     
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/contact-bg.jpg')">
+    <header class="masthead" style="background-image: url('/web.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">

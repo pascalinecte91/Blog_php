@@ -9,6 +9,8 @@ $whoops = new \Whoops\Run ;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops -> register();
 
+/* pour mieux definir le path des upload*/
+define('UPLOAD_PATH', __DIR__ . DIRECTORY_SEPARATOR . 'uploads');
 
 if (isset($_GET['page']) && $_GET['page'] ==='1') {
     $uri = explode('?', $_SERVER['REQUEST_URI'])[0];

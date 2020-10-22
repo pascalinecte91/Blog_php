@@ -4,7 +4,6 @@ CREATE TABLE post (
     slug VARCHAR(255) NOT NULL UNIQUE,
     chapo TEXT(65000) NOT NULL,
     content TEXT(65000) NOT NULL,
-    image_url VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
     created_at DATETIME NOT NULL,
     PRIMARY KEY (id)

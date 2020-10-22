@@ -7,10 +7,10 @@ $slug =$params['slug'];
 
 $id =(int)$params['id'];
 
-
 $pdo = Connection::getPDO();
+$table = new PostTable($pdo);
 $post = (new PostTable($pdo))->find($id);
-
+[$posts, $pagination] = $table->findPaginated();
 
 
 if($post->getSlug() !== $slug) {
