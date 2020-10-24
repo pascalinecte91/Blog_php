@@ -32,4 +32,15 @@ final class CommentTable extends Table
       $commentsByID[$comment->getID()] = $comment;
     }
   }
+  public function findPaginated() {
+    $paginatedQuery = new PaginatedQuery(
+        "SELECT * FROM {$this->table} ORDER BY created_at DESC",
+        "SELECT COUNT(id) FROM {$this->table}",/* recupere tous les articles*/
+        $this->pdo
+    );
+    $posts = $paginatedQuery->getItems(Post::class);
+    (new CategoryTable($this->pdo))->hydratePosts($posts);
+    return [$posts, $paginatedQuery];
+}
+
 }

@@ -3,7 +3,7 @@
 
 namespace App\Model;
 
-use App\Helpers\Text;
+
 use \DateTime;
 
 class Comment
@@ -46,30 +46,8 @@ class Comment
         return $this;
     }
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
+  
 
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getFormattedContent(): ?string
-    {
-        return nl2br(e($this->content));
-    }
-
-    public function getExcerpt(): ?string
-    {
-        if ($this->content === null) {
-            return null;
-        }
-        return nl2br(e(Text::excerpt($this->content, 60)));
-    }
 
     public function getCreatedAt(): DateTime
     {

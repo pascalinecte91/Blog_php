@@ -1,5 +1,6 @@
 body  {
     background-color:#e6edf0;
+   
 
 }
 
@@ -15,10 +16,9 @@ body  {
     text-align: justify;
     color:blue ;
 }
-/*  test pour page show   non
-.show {
-    height: 1300px;
+.post-subtitle {
+    font-size: 20px;
 }
-*/
+
 
 

@@ -24,8 +24,8 @@ $success = false;
 $errors = [];
 
 if (!empty($_POST)) {
-    $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'created_at']);
+    $v = new PostValidator($_POST, $commentTable, $post->getID(),);
+    ObjectHelper::hydrate($comment, $_POST, [ 'content', 'author', 'created_at']);
     if ($v->validate()) {
         $pdo->beginTransaction();
         $pdo->commit();

@@ -1,5 +1,5 @@
 
- <div class="h-100">
+ 
 
 <h2><?= e($post->getName()) ?></h2>
 <p class="text-muted">Le <?= $post->getCreatedAt()->format('d F Y H:i') ?></p>
@@ -27,7 +27,7 @@
 Auteur(e) :<?= e($post->getAuthor()) ?><br>
 Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
 <hr>
- </div>
+ 
 <?php
 
 /*<h4 class="post-subtitle">Chapo:<br>
