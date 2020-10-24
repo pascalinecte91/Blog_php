@@ -1,11 +1,12 @@
 
-        
+ <div class="h-100">
 
 <h2><?= e($post->getName()) ?></h2>
 <p class="text-muted">Le <?= $post->getCreatedAt()->format('d F Y H:i') ?></p>
-<h5 class="post-subtitle">Chapo:<br>
 
+<h5 class="post-subtitle">Chapo:<br>
     <?= e($post->getChapo()) ?><hr></h5>
+    
     <?php if ($post->getImage()): ?>
       
 <p>
@@ -14,7 +15,7 @@
     </div>
 </p>
 <?php endif ?>
-<p class="post-subtitle"> Contenu du post:<br></p>
+<p class="post-subtitle"> Sujet:<br></p>
 
 
   <blockquote class="blockquote">
@@ -26,7 +27,7 @@
 Auteur(e) :<?= e($post->getAuthor()) ?><br>
 Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
 <hr>
-
+ </div>
 <?php
 
 /*<h4 class="post-subtitle">Chapo:<br>

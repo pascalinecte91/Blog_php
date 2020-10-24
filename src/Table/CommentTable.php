@@ -17,7 +17,6 @@ final class CommentTable extends Table
   public function createComment(Comment $comment): void
   {
     $id = $this->create([
-      'chapo' => $comment->getChapo(),
       'content' => $comment->getContent(),
       'created_at' => $comment->getCreatedAt()->format('Y-m-d H:i:s'),
       'author' => $comment->getAuthor(),
@@ -25,7 +24,7 @@ final class CommentTable extends Table
     $comment->setID($id);
   }
 
-  public function hydrateComments(array $comments): void
+  public function hydratePosts(array $posts): void
   {
     $commentsByID = [];
     foreach ($comments as $comment) {

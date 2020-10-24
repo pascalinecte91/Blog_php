@@ -163,7 +163,7 @@ class Post
     public function setAuthor(string $author): self
 
     {
-        $this->content = $author;
+        $this->author = $author;
 
         return $this;
     }
@@ -177,7 +177,7 @@ class Post
     public function setChapo(string $chapo): self
 
     {
-        $this->content = $chapo;
+        $this->chapo = $chapo;
 
         return $this;
     }

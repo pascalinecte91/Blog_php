@@ -19,12 +19,10 @@
 
 </head>
 
-
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="<?= $router->url('home') ?>">Mon blog Projet 5</a>
+      <a class="navbar-brand" href="">Mon blog Projet 5</a>
 
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -40,7 +38,6 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('login') ?>" method="post">CONNEXION</a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -66,7 +63,6 @@
   </div>
 
   <footer class="bg-dark text-white py-4 footer mt-auto">
-
     <div class="d-flex justify-content-around">
       <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
       <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
@@ -91,7 +87,7 @@
   <script src="js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+  <script src="js/clean-blog.js"></script>
 </body>
 
 </html>

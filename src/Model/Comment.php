@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Model;
@@ -12,18 +13,10 @@ class Comment
 
     private $content;
 
-    private $chapo;
-
     private $created_at;
 
     private $author;
 
-    private $name;
-
-   
-    
-
-    
     
 
     public function getID (): ?int
@@ -89,20 +82,7 @@ class Comment
 
         return $this;
     }
-    public function getChapo(): ?string
-
-    {
-        return $this->chapo;
-    }
-
-
-    public function setChapo(string $chapo): self
-
-    {
-        $this->content = $chapo;
-
-        return $this;
-    }
+   
     public function getAuthor(): ?string
 
     {

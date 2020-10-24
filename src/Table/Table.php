@@ -2,8 +2,7 @@
 namespace App\Table;
 
 
-use \ App\Table\Exception\NotFoundException;
-
+use  App\Table\Exception\NotFoundException;
 use \PDO;
 
 
@@ -15,6 +14,7 @@ abstract class Table
 
 
     public function __construct(PDO $pdo)
+    
     {
         if ($this->table === null) {
             throw new \Exception("La class " . get_class($this) . "n'a pas de propriété \$table");
@@ -23,6 +23,7 @@ abstract class Table
             throw new \Exception("La class " . get_class($this) . "n'a pas de propriété \$class");
         }
         $this->pdo = $pdo;
+    
     }
 
     public function find(int $id)
@@ -58,7 +59,7 @@ abstract class Table
     }
 
 //fonction qui recupere tous les enregistrements dans un array
-    public function all(): array
+    public function all(): array 
     {
         //on selectionne tous les champs (*) en utilisant le nom des tables : $this et table  et aucune condition car tout
         $sql = "SELECT * FROM {$this->table}";
@@ -77,18 +78,20 @@ abstract class Table
     public function create(array $data): int
     {
         $sqlFields = [];
+    
+        
         foreach ($data as $key => $value) {
-            
+          
             $sqlFields[] ="$key = :$key";
         }
         $query = $this->pdo->prepare("INSERT INTO {$this->table} SET " . implode(', ', $sqlFields));
         $ok = $query->execute($data);
+        
         if ($ok === false) {
             throw new \Exception("Impossible de CREER l'enregistrement  dans la table {$this->table}");
         }
         return (int)$this->pdo->lastInsertId();
     }
-
 
 
     public function update(array $data, int $id)

@@ -16,8 +16,10 @@ final class PostTable extends Table {
           'slug' => $post->getSlug(),
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
+          'image'=> $post->getImage(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s'),
-          'image'=> $post->getImage()
+          'author'=> $post->getAuthor()
+          
        ], $post->getID());
 
     
@@ -32,10 +34,11 @@ final class PostTable extends Table {
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'image'=> $post->getImage(),
+          'author'=> $post->getAuthor(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s')
            ]);
         $post->setID($id);
-        
+         
     }
 
     public function attachCategories (int $id, array $categories) {

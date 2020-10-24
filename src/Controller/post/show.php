@@ -19,4 +19,5 @@ if($post->getSlug() !== $slug) {
     header('Location: ' . $url);   
 
 }
+$link =  $router->url('post');
 require_once ('../views/post/show.php');

@@ -3,7 +3,7 @@
 namespace App\Table;
 
 use App\Model\Category;
-use App\Model\Comment;
+
 use \PDO;
 
 final class CategoryTable extends Table

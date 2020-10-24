@@ -12,11 +12,13 @@ use App\Table\CategoryTable;
 Auth::check();
 
 $pdo = Connection:: getPDO();
-$postTable = new PostTable($pdo);
-$categoryTable = new CategoryTable($pdo);
-$categories = $categoryTable->list();
-$post = $postTable ->find($params['id']);
-$categoryTable->hydratePosts([$post]);
+$commentTable = new CommentTable($pdo);
+$commentTable = new CommentTable($pdo);
+
+$comment = $commentTable ->find($params['id']);
+$commentTable->hydrateComments
+
+([$post]);
 $success = false;
 
 $errors = [];

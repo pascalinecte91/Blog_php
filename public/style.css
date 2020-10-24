@@ -3,10 +3,6 @@ body  {
 
 }
 
-.card-header {
-    background-color: #59725b;
-
-}
 .table {
     max-width: 1500px;
     
@@ -17,11 +13,12 @@ body  {
 }
 .blockquote {
     text-align: justify;
+    color:blue ;
 }
-
-.border {
-    background-color: rgb(234, 243, 250);
+/*  test pour page show   non
+.show {
+    height: 1300px;
 }
-
+*/
 
 
