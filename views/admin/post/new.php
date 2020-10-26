@@ -4,6 +4,6 @@ L'article n'a pas pu être enregistré, merci de corriger vos erreurs
 </div>
 <?php endif ?>
 
-<h1>creer un  article </h1>
+<h2>NOUVEAU POST </h2>
 
 <?php require('_form.php') ?>

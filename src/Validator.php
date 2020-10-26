@@ -12,14 +12,16 @@ class Validator extends ValitronValidator {
     {
         parent::__construct($data, $fields, $lang, $langDir);
         self::addRule('image', function($field, $value, array $params, array $fields) {
-         
+          
             if ($value['size'] === 0) {
                 return true;
+
+                /* la clé size c'est ce qui est sorti du dd de value */
             }
             $mimes = ['image/jpeg', 'image/png', 'image/jpg'];
             $finfo = new finfo();
             $info = $finfo->file($value['tmp_name'], FILEINFO_MIME_TYPE);
-        
+       
             return in_array($info, $mimes);
         }, 'Le fichier n\'est pas une image valide');
     }
@@ -28,5 +30,5 @@ class Validator extends ValitronValidator {
         return str_replace('{field}', '', $message);
         return $message;
     }
-
+/* field= nom du champ : image*   value  =  valeur du champ  fields = tous les champs*/
 }

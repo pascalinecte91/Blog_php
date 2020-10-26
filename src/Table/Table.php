@@ -100,6 +100,7 @@ abstract class Table
         $sqlFields = [];
         foreach ($data as $key => $value) {
             $sqlFields[] ="$key = :$key";
+   
         }
         $query = $this->pdo->prepare("UPDATE {$this->table} SET " . implode(', ', $sqlFields) . " WHERE id = :id");
         $ok = $query->execute(array_merge ($data, ['id'=> $id]));

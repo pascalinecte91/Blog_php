@@ -38,6 +38,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('login') ?>" method="post">CONNEXION</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= $router->url('login') ?>" method="post">INSCRIPTION</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -49,7 +52,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
-            <h3>Vous êtes connectés</h3>
+            <h3><marquee scrollamount="4">Vous êtes connectés</marquee scrollamount="4"></h3>
 
             <span class="subheading"></span>
           </div>
@@ -81,7 +84,7 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  
   <!-- Contact Form JavaScript -->
   <script src="js/jqBootstrapValidation.js"></script>
   <script src="js/contact_me.js"></script>

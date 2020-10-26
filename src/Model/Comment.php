@@ -1,10 +1,8 @@
-
 <?php
-
 namespace App\Model;
 
-
 use \DateTime;
+
 
 class Comment
 {
@@ -16,6 +14,7 @@ class Comment
     private $created_at;
 
     private $author;
+    private $comment;
 
     
 
@@ -45,7 +44,20 @@ class Comment
         
         return $this;
     }
+    public function getComment () :  ?string
+    
+    {
+        return $this->comment;
+    }
 
+
+    public function setComment (string $comment) : self
+
+    {
+        $this->comment= $comment;
+        
+        return $this;
+    }
   
 
 

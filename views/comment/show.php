@@ -1,18 +1,13 @@
 
-<h1><?= e($title) ?></h1>
 
-<?php foreach($comments as $comment): ?>
-    <div class="col-md-3">
-    <?php require dirname(__DIR__) . '/comment/card.php'?>
-    </div>
-    <?php endforeach ?>
+<h2><?= e($comment->getComment()) ?></h2>
 
 
-<div class="d-flex justify-content-between my-4 ">
-    <?= $paginatedQuery->previousLink($link) ?>
-    <?= $paginatedQuery->nextLink($link) ?>
-</div>
+<h5 class="post-subtitle">
+<?=$comment->getAuthor()?></h5>
 
+Le: <?= $comment->getCreatedAt()->format('d F Y H:m') ?>
+<hr>
 
 
 

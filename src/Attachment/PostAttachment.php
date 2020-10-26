@@ -30,7 +30,7 @@ class PostAttachment {
         $manager = new ImageManager(['driver' => 'gd']);
         $manager
             ->make($image)
-            ->fit(350, 200)
+            ->fit(275, 183)
             ->save($directory . DIRECTORY_SEPARATOR . $filename . '_small.jpg');
         $manager
             ->make($image)

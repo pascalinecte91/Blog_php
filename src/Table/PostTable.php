@@ -18,7 +18,8 @@ final class PostTable extends Table {
           'content'=> $post->getContent(),
           'image'=> $post->getImage(),
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s'),
-          'author'=> $post->getAuthor()
+          'author'=> $post->getAuthor(),
+          
           
        ], $post->getID());
 
@@ -34,7 +35,7 @@ final class PostTable extends Table {
           'chapo'=> $post->getChapo(),
           'content'=> $post->getContent(),
           'image'=> $post->getImage(),
-          'author'=> $post->getAuthor(),
+          'author'=> $post->getAuthor(), 
           'created_at'=> $post->getCreatedAt()->format('Y-m-d H:i:s')
            ]);
         $post->setID($id);
@@ -48,6 +49,7 @@ final class PostTable extends Table {
             $query->execute([$id, $category]);
        }
     }
+  
 
     public function findPaginated() {
         $paginatedQuery = new PaginatedQuery(

@@ -16,6 +16,6 @@ $title = "Commentaire {$comment->getContent()}";
 
 [$comments, $paginatedQuery] = (new CommentTable($pdo))->findPaginated($comment->getAuthor());
 
-$link = $router->url('comment', ['id' => $comment->getID(), 'chapo' => $comment->getChapo(), 'author' =>$comment->getComment()]);
+$link = $router->url('comment', ['id' => $comment->getID(), 'author' =>$comment->getComment()]);
 
 require_once ('../views/comment/show.php');

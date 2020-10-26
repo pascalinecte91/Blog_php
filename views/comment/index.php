@@ -6,7 +6,7 @@
 <div class="row">
 <?php foreach($comments as $comment): ?>
     <div class="col-lg-12"> 
-    <?php require 'card.php' ?>     
+    <?php require 'comment.php' ?>     
     </div>
     <?php endforeach ?>
 </div>

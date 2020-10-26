@@ -9,7 +9,7 @@
     <thead>
         <th>Id</th>
         <th>Titre</th>
-        <th> Actions</th>
+        <th>Action</th>
     </thead>
     <tbody>
         <?php foreach ($posts as $post) : ?>

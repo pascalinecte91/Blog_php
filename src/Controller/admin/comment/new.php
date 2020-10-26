@@ -23,15 +23,15 @@ if (!empty($_POST)) {
     $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
     ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'created_at', 'comment',]);
     if ($v->validate()) {
-        $pdo->beginTansaction();
-        $postTable->createPost($post);
-        $postTable->attachCategories($post->getID(), $_POST['categories_ids']);
-        $pdo->commit();
-        header('Location: ' . $router->url('admin_post',['id'=> $post->getID()]) . '?created=1');
+       
+        $commentTable->createComment($comment);
+        
+       
+        header('Location: ' . $router->url('admin_comment',['id'=> $post->getID()]) . '?created=1');
         exit();
     } else {
        $errors = $v->errors();
     }
 }
 $form = new Form($post, $errors);
-require_once ('../views/admin/comments/new.php');
+require_once ('../views/admin/comment/new.php');

@@ -36,7 +36,7 @@ for ($i = 0; $i < 50; $i++) {
     }
 
     for ($j = 0; $j < 3; $j++) {
-        $pdo->exec("INSERT INTO comment SET created_at='{$faker->date} {$faker->time}', author='{$faker->name}', content='{$faker->paragraphs(rand(3, 7), true)}', post_id='{$post}'");
+        $pdo->exec("INSERT INTO comment SET created_at='{$faker->date} {$faker->time}', author='{$faker->lastName}', content='{$faker->paragraph(rand(2, 7), true)}', post_id='{$post}'");
         $comments[] = $pdo->lastInsertId();
     }
 }

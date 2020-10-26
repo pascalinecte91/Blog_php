@@ -17,12 +17,14 @@ class PaginatedQuery {
         string $queryCount,
         ?\PDO $pdo = null,
         int $perPage = 7
+        
     )
     {
         $this->query = $query;
         $this->queryCount = $queryCount;
         $this->pdo = $pdo ?: Connection::getPDO();
         $this->perPage = $perPage;
+        
     }
 
     public function getItems(string $classMapping): array
@@ -62,9 +64,10 @@ HTML;
         return <<<HTML
             <a href="{$link}" class="btn btn-secondary ml auto">Page suivante &raquo;</a>
 HTML;
-    }
 
-    private function getCurrentPage(): int
+    }
+    
+    private function getCurrentPage(): int 
     {
         return URL::getPositiveInt('page', 1);
     }
@@ -76,6 +79,6 @@ HTML;
                 ->query($this->queryCount)
                 ->fetch(PDO::FETCH_NUM)[0];  
             return ceil($this->count / $this->perPage);
-        
+        /* ceil = arrondi au nbre superieur*/
     }
 }

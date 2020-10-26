@@ -5,7 +5,7 @@ body  {
 }
 
 .table {
-    max-width: 1500px;
+    max-width: 1700px;
     
 }
 .table th {
@@ -19,6 +19,40 @@ body  {
 .post-subtitle {
     font-size: 20px;
 }
+.card {
+    
+    text-align: justify;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    
+}
+#form_comment {
+    background-color: rgb(207, 221, 240);
+    text-transform: uppercase;
+    
+}
+.card-body {
+    
+    padding-right: 15px;
+  
+}
+label {
+    display: inline-block;
+    width:  300px;
+    text-align: right;
+}
+input, textarea {
+    font: 1em sans-serif;
+    width: 600px;
+    box-sizing: border-box;
+    border-color: #000;  
+}
+textarea {
+    vertical-align: top;
+    height: 10em;
+}
+
 
 
 

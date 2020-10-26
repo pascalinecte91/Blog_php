@@ -21,6 +21,7 @@ HTML;
 
             <?= $post->getAuthor() ?>
             <?= $post->getChapo() ?>
+            <?= $post->getContent()?>
             <?= $post->getCreatedAt()->format('d F Y H:m') ?>
             <?php if (!empty($post->getChapo())): ?>
     

@@ -21,7 +21,7 @@ $success = false;
 
 $errors = [];
 $chapo =[];
-
+$comment =[];
 
 
 
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
     $v = new PostValidator($data, $postTable, $post->getID(), $categories);
     ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'author', 'chapo', 'created_at', 'image']);
     if ($v->validate()) {
-       
+      
         PostAttachment::upload($post);
         $postTable->updatePost($post);
       

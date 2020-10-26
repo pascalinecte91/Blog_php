@@ -12,8 +12,8 @@ use App\Table\CategoryTable;
 Auth::check();
 
 $pdo = Connection:: getPDO();
-$commentTable = new CommentTable($pdo);
-$commentTable = new CommentTable($pdo);
+
+
 
 $comment = $commentTable ->find($params['id']);
 $commentTable->hydrateComments
@@ -25,7 +25,7 @@ $errors = [];
 
 if (!empty($_POST)) {
     $v = new PostValidator($_POST, $commentTable, $post->getID(),);
-    ObjectHelper::hydrate($comment, $_POST, [ 'content', 'author', 'created_at']);
+    ObjectHelper::hydrate($_POST, $comment, ['author', 'comment', 'created_at']);
     if ($v->validate()) {
         $pdo->beginTransaction();
         $pdo->commit();
@@ -36,4 +36,4 @@ if (!empty($_POST)) {
     }
 }
 $form = new Form($post, $errors);
-require_once ('../views/admin/comments/edit.php');
+require_once ('../views/admin/comment/edit.php');

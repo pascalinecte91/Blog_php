@@ -4,7 +4,8 @@ namespace App\Table;
 
 
 use App\Model\Comment;
-use \PDO;
+use\App\PaginatedQuery;
+
 
 final class CommentTable extends Table
 {
@@ -17,14 +18,14 @@ final class CommentTable extends Table
   public function createComment(Comment $comment): void
   {
     $id = $this->create([
-      'content' => $comment->getContent(),
+      'comment' => $comment->getContent(),
       'created_at' => $comment->getCreatedAt()->format('Y-m-d H:i:s'),
       'author' => $comment->getAuthor(),
     ]);
     $comment->setID($id);
   }
 
-  public function hydratePosts(array $posts): void
+  public function hydrateComments(array $comments): void
   {
     $commentsByID = [];
     foreach ($comments as $comment) {
@@ -39,7 +40,7 @@ final class CommentTable extends Table
         $this->pdo
     );
     $posts = $paginatedQuery->getItems(Post::class);
-    (new CategoryTable($this->pdo))->hydratePosts($posts);
+    (new CommentTable($this->pdo))->hydrateComments($posts);
     return [$posts, $paginatedQuery];
 }
 
