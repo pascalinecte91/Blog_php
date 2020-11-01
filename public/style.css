@@ -40,7 +40,7 @@ body  {
 label {
     display: inline-block;
     width:  300px;
-    text-align: right;
+  
 }
 input, textarea {
     font: 1em sans-serif;

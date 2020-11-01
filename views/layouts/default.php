@@ -33,14 +33,7 @@
                 <li class="nav-item">
                   <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
                 </li>
-                <li class="nav-item">
-
-                <li class="nav-item">
-                  <a class="nav-link" href="<?= $router->url('login') ?>" method="post">CONNEXION</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="<?= $router->url('login') ?>" method="post">INSCRIPTION</a>
-                </li>
+           
               </ul>
             </div>
           </div>
@@ -54,7 +47,7 @@
                 <div class="page-heading">
                   <h1>Contactez-moi</h1>
 
-                  <img src="photo.png " alt="photo">
+                  <img src="/photo.png " alt="photo">
                   <br>
 
                   <h3> Pascale CHRISTOPHE <h3>
@@ -81,7 +74,7 @@
 
           </div>
           <div class="col-12 text-center">
-            <a href="/login" style="color: white">Connect to Admin</a>
+            <a href="/login" style="color: white">CONNEXION ADMINISTRATION</a>
             <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
 
           </div>
