@@ -36,12 +36,23 @@
             <div class="card-body">
 
               <blockquote class="blockquote_post">
-                <?= e($comment->getcontent()) ?>
-                <?= $comment->getcomment(); ?><br><br>
-
+               
+                <?= $comment->getContent(); ?><br><br>
+         
                 Ecrit par : <?= e($comment->getAuthor()) ?><br>
 
                 Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
+                
+              
+                <?php 
+                $comments = array($post_id);
+               
+                foreach ($comments as $comment) {
+                   $comment->getContent();
+                }
+                 ?>
+                
+                ?>
             </div>
           </div>
 

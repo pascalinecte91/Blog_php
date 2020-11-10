@@ -3,7 +3,7 @@ namespace App\Table;
 
 use App\PaginatedQuery;
 use App\Model\Post;
-
+use \PDO;
 final class PostTable extends Table {
 
     protected $table = "post";
@@ -22,10 +22,8 @@ final class PostTable extends Table {
           
           
        ], $post->getID());
-
     
     }
-    
 
     public function createPost (Post $post): void 
     {
@@ -62,7 +60,7 @@ final class PostTable extends Table {
         return [$posts, $paginatedQuery];
     }
 
-
+/*
     public function findPaginatedForCategory(int $categoryID)
     {
         $paginatedQuery = new PaginatedQuery(
@@ -77,5 +75,19 @@ final class PostTable extends Table {
         (new CategoryTable($this->pdo))->hydratePosts($posts);
         return [$posts, $paginatedQuery];
     }
+*/
+
+
+    public function findByPostID($post_id)
+    {
+      $query = $this->pdo->prepare('SELECT * FROM ' . $this->table  .  ' WHERE post_id= :post_id');
+      $query->execute(['post_id'=> $post_id]);
+
+      
+      $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
+      $result = $query->fetch();
+
     
+      return $result;
     }
+}

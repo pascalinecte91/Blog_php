@@ -1,6 +1,6 @@
 
 
-<h2><?= e($comment->getComment()) ?></h2>
+<h2><?= e($comment->getContent()) ?></h2>
 
 
 <h5 class="post-subtitle">

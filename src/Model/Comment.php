@@ -14,8 +14,9 @@ class Comment
     private $created_at;
 
     private $author;
-    private $comment;
 
+
+    private $post_id;
     
 
     public function getID (): ?int
@@ -23,7 +24,7 @@ class Comment
         return $this->id;
     }
 
-    public function setID (int $id): self
+    public function setID ($id): self
     {
         $this->id = $id;
 
@@ -88,4 +89,8 @@ class Comment
         return $this;
     }
     
+    public function findByPostID(): int {
+
+        return $this->post_id;
+    }
 }

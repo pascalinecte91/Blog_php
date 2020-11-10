@@ -8,14 +8,7 @@ $id =(int)$params['id'];
 $author = $params['author'];
 
 $pdo = Connection::getPDO();
-$comment = (new CommentTable($pdo))->find($id, $author);
+$comment = (new CommentTable($pdo))->findByPostID($id);
 
-
-
-$title = "Commentaire {$comment->getContent()}";
-
-[$comments, $paginatedQuery] = (new CommentTable($pdo))->findPaginated($comment->getAuthor());
-
-$link = $router->url('comment', ['id' => $comment->getID(), 'author' =>$comment->getComment()]);
 
 require_once ('../views/comment/show.php');
