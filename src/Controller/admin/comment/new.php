@@ -1,7 +1,6 @@
 <?php
 use App \Connection;
 use App \Table\PostTable;
-use App \Table\CategoryTable;
 use App\HTML\Form;
 use App\Validators\PostValidator;
 use App\ObjectHelper;
@@ -13,14 +12,14 @@ Auth::check();
 $errors = [];
 $post = new Post();
 $pdo = Connection:: getPDO();
-$categoryTable = new CategoryTable($pdo);
-$categories = $categoryTable->list();
+
+
 $post->setCreatedAt(date('Y-m-d H:i:s'));
 
 if (!empty($_POST)) {
     $postTable = new PostTable($pdo);
 
-    $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
+    $v = new PostValidator($_POST, $postTable, $post->getID());
     ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'created_at', 'comment',]);
     if ($v->validate()) {
        

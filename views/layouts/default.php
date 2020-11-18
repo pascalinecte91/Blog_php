@@ -2,6 +2,8 @@
       <html lang="fr" class="h-100">
 
       <head>
+        <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,0 shrink-to-fit=no">
         <meta name="description" content="">
@@ -90,6 +92,7 @@
 
         <!-- Custom scripts for this template -->
         <script src="js/clean-blog.js"></script>
+        <script src="/tinymce.js"></script>
 
       </body>
 

@@ -30,8 +30,9 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->get('/', 'home/index', 'home')
     ->get('/blog', 'post/index', 'blog')
     ->get('/blog',  'comment/index','comment')
-    ->get('/blog/category/[*:slug]-[i:id]', 'category/show', 'category')
+   
     ->get('/blog/[*:slug]-[i:id]', 'post/show', 'post')
+    ->post('/blog/[*:slug]-[i:id]/comments', 'post/show', 'comment_new')
     ->match('/login', 'auth/login', 'login')
     ->post('/logout', 'auth/logout', 'logout')
    
@@ -45,11 +46,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/admin/post/new', 'admin/post/new', 'admin_post_new')
 
 
-    //GESTION CATEGORIES
-    ->get('/admin/categories', 'admin/category/index', 'admin_categories')
-    ->match('/admin/category/[i:id]', 'admin/category/edit', 'admin_category')
-    ->post('/admin/category/[i:id]/delete', 'admin/category/delete', 'admin_category_delete')
-    ->match('/admin/category/new', 'admin/category/new', 'admin_category_new')
+ 
 
     //GESTION COMMENTAIRES
     ->match('/admin/comment/new', 'admin/comment/new', 'admin_comment_new')

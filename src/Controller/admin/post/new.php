@@ -2,7 +2,7 @@
 use\App\Attachment\PostAttachment;
 use App \Connection;
 use App \Table\PostTable;
-use App \Table\CategoryTable;
+
 use App\HTML\Form;
 use App\Validators\PostValidator;
 use App\ObjectHelper;
@@ -14,8 +14,8 @@ Auth::check();
 
 $post = new Post();
 $pdo = Connection:: getPDO();
-$categoryTable = new CategoryTable($pdo);
-$categories = $categoryTable->list();
+
+
 $post->setCreatedAt(date('Y-m-d H:i:s'));
 // l'article creee  date du jour
 $chapo=[];
@@ -24,7 +24,7 @@ $errors = [];
 if (!empty($_POST)) {
     $postTable = new PostTable($pdo);
     $data = array_merge($_POST, $_FILES);
-    $v = new PostValidator($data, $postTable, $post->getID(), $categories);
+    $v = new PostValidator($data, $postTable, $post->getID(),);
     ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'chapo', 'author', 'created_at', 'image']);
 
     if ($v->validate()) {

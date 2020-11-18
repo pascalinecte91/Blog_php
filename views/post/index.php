@@ -4,6 +4,7 @@
 <div class="row align-self-center">
     <div class="col-lg-12 col-md-10 mx-auto">
         <?php $firstLine = true; ?>
+
         <?php foreach ($posts as $post) : ?>
             <?php if (!$firstLine) : ?>
                 <hr>
@@ -51,14 +52,3 @@
 
     <?php
 
-/* pour chapo  supprimé  lien a href : <p class="post-subtitle">
-                    <a href="<?= $router->url('post', ['chapo' => $post->getChapo(), 'chapo' => $post->getChapo()]) ?>">
-                        <?= e($post->getChapo()) ?></a>
-                </p>*/
-/* pour author: <p class="post-meta">
-                    <a href="<?= $router->url('post', ['author' => $post->getAuthor(), 'author' => $post->getAuthor()]) ?>">
-                        Posté par : auteur <br>
-                        <?= e($post->getAuthor()) ?></a><br>
-
-                    Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
-                </p>*/

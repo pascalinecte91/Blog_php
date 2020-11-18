@@ -50,13 +50,11 @@ final class CommentTable extends Table
     (new CommentTable($this->pdo))->hydrateComments($posts);
     return [$posts, $paginatedQuery];
 }
-public function findByPostID($post_id)
 
+public function findByPostID($post_id)
 {
   $query = $this->pdo->prepare('SELECT * FROM ' . $this->table  .  ' WHERE post_id = :post_id');
   $query->execute(['post_id'=> $post_id]);
-
-  
   $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
   $result = $query->fetchAll();
   

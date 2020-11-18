@@ -25,29 +25,7 @@ CREATE TABLE comment (
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 
-CREATE TABLE category (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    slug VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
-
-CREATE TABLE post_category (
-    post_id INT UNSIGNED NOT NULL,
-    category_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY (post_id, category_id),
-    CONSTRAINT fk_post_post_category
-        FOREIGN KEY (post_id)
-        REFERENCES post (id)
-        ON DELETE CASCADE
-        ON UPDATE RESTRICT,
-    CONSTRAINT fk_category_post_category
-        FOREIGN KEY (category_id)
-        REFERENCES category (id)
-        ON DELETE CASCADE
-        ON UPDATE RESTRICT
-)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 
 CREATE TABLE user (

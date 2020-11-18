@@ -19,7 +19,7 @@ class Post
 
     private $created_at;
 
-    private $categories = [];
+   
 
     private $comment;
 
@@ -71,10 +71,10 @@ class Post
     }
 
 
-    public function setComment(string $comment): self
+    public function setPost($post): self
 
     {
-        $this->comment = $comment;
+        $this->post = $post;
 
         return $this;
     }
@@ -132,34 +132,9 @@ class Post
         return $this;
     }
 
-    public function getCategories(): array
-    {
-        return $this->categories;
-    }
+    
 
-
-    public function getCategoriesIds(): array
-    {
-        $ids = [];
-        foreach ($this->categories as $category) {
-            $ids[] = $category->getID();
-        }
-        return $ids;
-    }
-
-    public function setCategories(array $categories): self
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-
-    public function addCategory(Category $category): void
-    {
-        $this->categories[] = $category;
-    }
-
+   
     public function getAuthor(): ?string
 
     {
@@ -180,6 +155,13 @@ class Post
         return $this->chapo;
     }
 
+    public function setComment (string $comment) : self
+
+    {
+        $this->comment= $comment;
+        
+        return $this;
+    }
 
     public function setChapo(string $chapo): self
 

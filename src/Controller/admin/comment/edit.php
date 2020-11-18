@@ -6,7 +6,7 @@ use App\HTML\Form;
 use App\Validators\PostValidator;
 use App\ObjectHelper;
 use App\Auth;
-use App\Table\CategoryTable;
+
 
 
 Auth::check();
@@ -29,7 +29,7 @@ if (!empty($_POST)) {
     if ($v->validate()) {
         $pdo->beginTransaction();
         $pdo->commit();
-        $categoryTable->hydratePosts([$post]);
+    
         $success = true;
     } else {
        $errors = $v->errors();

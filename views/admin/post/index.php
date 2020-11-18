@@ -12,7 +12,7 @@
         <th>Action</th>
     </thead>
     <tbody>
-        <?php foreach ($posts as $post) : ?>
+         <?php foreach ($posts as $post) : ?>
 
             <td><?= $post->getID() ?></td>
             <td>
