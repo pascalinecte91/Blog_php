@@ -3,7 +3,8 @@
 
       <head>
         <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>        
+       
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,0 shrink-to-fit=no">
         <meta name="description" content="">
@@ -18,6 +19,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/clean-blog.css">
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/defilment.js">
 
       </head>
 
@@ -28,7 +30,7 @@
 
 
             <div class="collapse navbar-collapse " id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto justify-content-between ">
                 <li class="nav-item">
                   <a class="nav-link" href="<?= $router->url('home') ?>">ACCUEIL</a>
                 </li>
@@ -82,18 +84,19 @@
           </div>
         </footer>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Contact Form JavaScript -->
-        <script src="js/jqBootstrapValidation.js"></script>
-        <script src="js/contact_me.js"></script>
+     <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
 
-        <!-- Custom scripts for this template -->
-        <script src="js/clean-blog.js"></script>
-        <script src="/tinymce.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.js"></script>
+  <script src="/tinymce.js"></script>
+  <script src="/defilment.js"></script>
+  <script type="text/javascript" src="/js/scrollnav.js"></script>
+</body>
 
-      </body>
-
-      </html>
+</html>

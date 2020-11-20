@@ -15,6 +15,7 @@ body  {
 .blockquote {
     text-align: justify;
     color:blue ;
+    font-size: 18px;;
 }
 .post-subtitle {
     font-size: 20px;
@@ -55,4 +56,6 @@ textarea {
 
 
 
-
+  .box {
+    padding: 10px;
+  }

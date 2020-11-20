@@ -16,7 +16,7 @@
           <?php endif ?>
           <p class="post-subtitle"> Sujet:<br></p>
 
-
+          
           <blockquote class="blockquote">
             <?= $post->getFormattedContent() ?>
 
@@ -26,54 +26,57 @@
           Auteur(e) du post : <?= e($post->getAuthor()) ?><br>
           Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
           <hr>
-       
-          <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary">
-          nbre commentaires <span class="badge badge-secondary"><?php echo count($comments); ?></span>
-          </button>
-          </div>
-          <div class="card">
-     
-            <div class="card-body">
+
+
+
+
+          <div class="box">
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-secondary text-white"><?php echo count($comments); ?> commentaires à consulter  <span class="badge badge-secondary"></span></button>
+            </div> <br>
+            <hr>
+              <div class="bg-secondary">       
+                <div class="card">
+                  <div class="card-body">
       
-              <blockquote class="blockquote_post">
-      
-               <?php foreach ($comments as $comment) {?> 
-               <br><hr>
-
-                <?= $comment->getContent(); 
-
-                ?><br>
-                
-         
-                Ecrit par : <?= e($comment->getAuthor()) ?><br>
-
-                Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
-                
-               <?php } ?>
-              
-            </div>
+                    <blockquote class="blockquote_post">
+                    <?php foreach ($comments as $comment) {?> 
+                    <br><hr>
+                    <?= $comment->getContent(); 
+                    ?><br>
+                    Ecrit par : <?= e($comment->getAuthor()) ?><br>
+                    Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
+                    <?php } ?>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
           </div>
  
 
+
+
+
+       
+               
+
           <div class="card" id=form_comment>
-           
-           <h5>Laisser un commentaire : </h5><br>
-            <form action="/blog/<?php echo $post->getSlug(); ?>-<?php echo $post->getId(); ?>/comments" method="post">
+            <h4 align="center">  Ecrire un commentaire : </h4><br>
+            <form action="/blog/<?php echo e($post->getSlug()); ?>-<?php echo e($post->getId()); ?>/comments" method="post">
               <div>
                 <label for="name">Nom:</label>
                 <input type="text" id="name" name="user_name">
               </div>
               <div>
-                <label for="mail">votre Email :</label>
-                <input type="email" id="mail" name="user_mail">
+                <label for="surname">Prénom:</label>
+                <input type="text" id="surname" surname="user_surname">
               </div>
               <div>
                 <label for="msg"> Votre message : </label>
                 <textarea id="msg" name="user_message"></textarea>
               </div>
               <div class="d-flex justify-content-center">
-              <div class="button" class="btn btn-secondary"><br>
+              
                 <button type="submit"> Envoyer LE MESSAGE</button><br>
               </div>
               </div>
@@ -82,4 +85,5 @@
           </div>
       
           </form>
+      </div>
           <?php

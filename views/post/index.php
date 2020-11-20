@@ -1,7 +1,7 @@
 <div class="text-center p-2 mb-2">
     <h2> blog Posts </h2><br>
 </div>
-<div class="row align-self-center">
+    <div class="row align-self-center">
     <div class="col-lg-12 col-md-10 mx-auto">
         <?php $firstLine = true; ?>
 
@@ -38,17 +38,18 @@
                     </div>
                 </p>
                 
-
+                </div>
             </div>
             <?php $firstLine = false; ?>
         <?php endforeach ?>
+    
+        </div>
     </div>
-
-
+  
     <div class="d-flex justify-content-between my-4">
         <?= $pagination->previousLink($link) ?>
         <?= $pagination->nextLink($link) ?>
     </div>
 
-    <?php
+    
 

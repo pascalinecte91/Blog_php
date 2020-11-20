@@ -3,6 +3,8 @@
 
 <head>
   <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>        
+
   <script>
     tinymce.init({
       selector: 'textarea',
@@ -25,6 +27,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/clean-blog.css">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/defilment.js">
 
 </head>
 
@@ -34,8 +37,8 @@
       <a class="navbar-brand" href="">Mon blog Projet 5</a>
 
 
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+      <div class="collapse navbar-collapse" id="navbarResponsive">    
+        <ul class="navbar-nav ml-auto justify-content-between ">
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('home') ?>">ACCUEIL</a>
           </li>
@@ -94,6 +97,8 @@
   <!-- Custom scripts for this template -->
   <script src="js/clean-blog.js"></script>
   <script src="/tinymce.js"></script>
+  <script src="/defilment.js"></script>
+  <script type="text/javascript" src="/js/scrollnav.js"></script>
 </body>
 
 </html>

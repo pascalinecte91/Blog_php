@@ -3,7 +3,7 @@
    <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-10 mx-auto text-center">
-        <h4> laissez-moi un message <br>   Je vous répondrai dès que possible</h4>
+        <h4> laissez-moi un message <br><br>   Je vous répondrai dès que possible</h4>
         <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
         <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
         <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
@@ -37,7 +37,7 @@
               <p class="help-block text-danger"></p>
             </div>
           </div>
-</div>
+        </div>
           <br>
          
           <div id="success"></div>
