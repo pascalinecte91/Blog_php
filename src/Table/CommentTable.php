@@ -4,7 +4,7 @@ namespace App\Table;
 
 
 use App\Model\Comment;
-use\App\PaginatedQuery;
+use App\PaginatedQuery;
 use \PDO;
 
 final class CommentTable extends Table
@@ -17,20 +17,44 @@ final class CommentTable extends Table
   
   public function createComment(Comment $comment): void
   {
+  
     $id = $this->create([
       'content' => $comment->getContent(),
       'created_at' => $comment->getCreatedAt()->format('Y-m-d H:i:s'),
       'author' => $comment->getAuthor(),
+      'post_id'=> $comment->getPostId()
     ]);
     $comment->setID($id);
   }
+ 
+    public function addComment(int $id, array $comments) {
 
-  public function hydrateComments(array $comments)
-  {
+      $query = $this->pdo->prepare("INSERT INTO comment SET 'author', 'content', 'post_id' VALUES");
+      $query->execute(['author','content','post_id']);
+      
+      $result = $query->fetchAll();
+  
+
+    if ($result === true) {
+      echo 'Vos données ont bien eté enregistrees';
+    }
+        else {
+          echo 'merci de recommencer';
+        } 
+  
+  return $result;
+  
+
+}
+
+
+  public function hydrateComments(array $comments){
     
     foreach ($comments as $comment) {
-      $comment->setComment([]);
+      $comment->setContent([]);
+     
       $commentsByID[$comment->getID()] = $comment;  
+     
     }
     $comments = $this->pdo
             ->query('SELECT content, post_id 

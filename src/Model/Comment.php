@@ -15,10 +15,11 @@ class Comment
 
     private $author;
 
-
     private $post_id;
     
 
+
+    
     public function getID (): ?int
     {
         return $this->id;
@@ -84,13 +85,35 @@ class Comment
     public function setAuthor(string $author): self
 
     {
-        $this->content = $author;
+        $this->author = $author;
 
         return $this;
     }
     
+    public function setPostId(int $post_id): self
+
+    {
+        $this->post_id = $post_id;
+
+        return $this;
+    }
     public function findByPostID(): int {
 
+        return $this->post_id;
+    }
+
+    public function addComment(comment $comment): void
+    {
+        $this->comment[] = $comment;
+       
+    }
+
+    public function setPost(Post $post) {
+        $this->post = $post;
+    }
+    public function getPostId ()
+    
+    {
         return $this->post_id;
     }
 }

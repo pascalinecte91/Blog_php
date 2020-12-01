@@ -7,7 +7,7 @@ use App\Table\PostTable;
 $slug =$params['slug'];
 
 $id =(int)$params['id'];
-
+$comment =[];
 
 $pdo = Connection::getPDO();
 $table = new PostTable($pdo);

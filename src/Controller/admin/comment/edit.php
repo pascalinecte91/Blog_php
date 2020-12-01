@@ -1,9 +1,9 @@
 <?php
 use App \Connection;
-use App \Table\PostTable;
+use App \Table\CommentTable;
 use App\Validator;
 use App\HTML\Form;
-use App\Validators\PostValidator;
+use App\Validators\CommentValidator;
 use App\ObjectHelper;
 use App\Auth;
 
@@ -18,22 +18,20 @@ $pdo = Connection:: getPDO();
 $comment = $commentTable ->find($params['id']);
 $commentTable->hydrateComments
 
-([$post]);
+([$comment]);
 $success = false;
 
 $errors = [];
 
 if (!empty($_POST)) {
-    $v = new PostValidator($_POST, $commentTable, $post->getID(),);
+    $v = new CommentValidator($_POST, $commentTable, $comment->getID(),);
     ObjectHelper::hydrate($_POST, $comment, ['author', 'comment', 'created_at']);
     if ($v->validate()) {
-        $pdo->beginTransaction();
-        $pdo->commit();
-    
         $success = true;
     } else {
        $errors = $v->errors();
     }
 }
-$form = new Form($post, $errors);
+$form = new Form($comment, $errors);
+
 require_once ('../views/admin/comment/edit.php');

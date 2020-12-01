@@ -20,7 +20,7 @@ $post->setCreatedAt(date('Y-m-d H:i:s'));
 // l'article creee  date du jour
 $chapo=[];
 $errors = [];
-dd('salut');
+
 if (!empty($_POST)) {
     $postTable = new PostTable($pdo);
     $data = array_merge($_POST, $_FILES);

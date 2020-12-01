@@ -43,6 +43,7 @@
                     <?php foreach ($comments as $comment) {?> 
                     <br><hr>
                     <?= $comment->getContent(); 
+                
                     ?><br>
                     Ecrit par : <?= e($comment->getAuthor()) ?><br>
                     Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
@@ -62,18 +63,15 @@
 
           <div class="card" id=form_comment>
             <h4 align="center">  Ecrire un commentaire : </h4><br>
-            <form action="/blog/<?php echo e($post->getSlug()); ?>-<?php echo e($post->getId()); ?>/comments" method="post">
+            <form action="/blog/<?php echo e($post->getSlug()); ?>-<?php echo e($post->getId()); ?>/comments" method="POST">
               <div>
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="user_name">
+                <label for="name">Auteur:</label>
+                <input type="text" id="name" name="author">
               </div>
-              <div>
-                <label for="surname">Prénom:</label>
-                <input type="text" id="surname" surname="user_surname">
-              </div>
+              
               <div>
                 <label for="msg"> Votre message : </label>
-                <textarea id="msg" name="user_message"></textarea>
+                <textarea id="msg" name="content"></textarea>
               </div>
               <div class="d-flex justify-content-center">
               
