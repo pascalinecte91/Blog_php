@@ -20,20 +20,22 @@ $post->setCreatedAt(date('Y-m-d H:i:s'));
 // l'article creee  date du jour
 $chapo=[];
 $errors = [];
-dd('salut');
-if (!empty($_POST)) {
+
+if (!empty($_POST))
+ {
     $postTable = new PostTable($pdo);
     $data = array_merge($_POST, $_FILES);
     $v = new PostValidator($data, $postTable, $post->getID(),);
     ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'chapo', 'author', 'created_at', 'image']);
 
     if ($v->validate()) {
-        $pdo->beginTransaction();
+     
         PostAttachment::upload($post);
         $postTable->createPost($post);
-       
-        $pdo->commit();
+     
+      
         header('Location: ' . $router->url('admin_post',['id'=> $post->getID()]) . '?created=1');
+      
         exit();
     } else {
        $errors = $v->errors();  

@@ -29,12 +29,12 @@ if (!empty($_POST)) {
      
        /* $commentTable->addComment($comment);*/
        
-        header('Location: ' . $router->url('admin_post',['id'=> $comment->getID()]) . '?created=1');
+        header('Location: ' . $router->url('blog',['id'=> $comment->getID()]) . '?created=1');
         exit();
     /*} else {
        $errors = $v->errors();
     }*/
 
 }
-$form = new Form($post, $errors);
-require_once ('../views/admin/comment/new.php');
+$form = new Form($comment, $errors);
+require_once ('../views/comment/new.php');

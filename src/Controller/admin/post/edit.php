@@ -25,7 +25,8 @@ $comment =[];
 
 
 
-if (!empty($_POST)) {
+if (!empty($_POST))
+ {
     $data = array_merge($_POST, $_FILES);
     $v = new PostValidator($data, $postTable, $post->getID());
     ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'author', 'chapo', 'created_at', 'image']);

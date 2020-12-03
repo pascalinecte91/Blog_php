@@ -1,4 +1,4 @@
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="" method ="POST" enctype="multipart/form-data">
     <?= $form->input('name', 'Titre'); ?>
     <?= $form->input('slug', 'URL'); ?>
     <?= $form->input('chapo', 'Chapo'); ?>
@@ -22,11 +22,9 @@
         <button class="btn btn-secondary">
 
             <?php if ($post->getID() !== null) : ?>
-                
                 Modifier
 
             <?php else : ?>
-
                 CréeR
             <?php endif ?>
         </button>
