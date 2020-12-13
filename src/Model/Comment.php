@@ -111,6 +111,7 @@ class Comment
     public function setPost(Post $post) {
         $this->post = $post;
     }
+    
     public function getPostId ()
     
     {

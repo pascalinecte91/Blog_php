@@ -7,7 +7,7 @@
 
 <table class="table" style="background-color:#CCCCFF">
     <thead>
-        <th>Id</th>
+        <th>ID</th>
         <th>Titre</th>
         <th>Action</th>
     </thead>
@@ -33,7 +33,7 @@
                 </form>
             </td>
 
-            </a>
+        
             </tr>
         </div>
         <?php endforeach  ?>

@@ -19,7 +19,7 @@
     
     <h5>Cliquez sur le bouton pour l'action</h5>
     <div class="d-flex justify-content-center">
-        <button class="btn btn-secondary">
+        <input class="btn btn-secondary" type="submit" value= "
 
             <?php if ($post->getID() !== null) : ?>
                 Modifier
@@ -27,8 +27,9 @@
             <?php else : ?>
                 CréeR
             <?php endif ?>
-        </button>
+            ">
     </div>
 
 </form>
+
 <br>

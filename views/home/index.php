@@ -4,12 +4,12 @@
     <div class="row">
       <div class="col-lg-12 col-md-10 mx-auto text-center">
         <h4> laissez-moi un message <br><br>   Je vous répondrai dès que possible</h4>
-        <!-- adresse mail mise à la ligne 19 du fichier contact-me.php! -->
+        <!-- adresse mail mise à la ligne 19 du fichier contact_me.php! -->
        <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
         <!-- To use the contact for   m, your site must be on a live web host with PHP! The form will not work locally! -->
         <div style="padding-left: 15px; margin-top:30px; border: 4px solid #A0A0A0; text-align:left;">
-        
-         <form name="sentMessage" id="contactForm" novalidate>
+        <form action="contact_me.php" method="POST">
+         <!--<form name="sentMessage" id="contactForm" novalidate>! -->
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>NOM</label>
@@ -44,6 +44,7 @@
           <div id="success"></div>
           <button type="submit" class="btn btn-secondary" id="sendMessageButton">Envoyer</button>
         </form>
+</form>
       </div>
     </div>
   </div>

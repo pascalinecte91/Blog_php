@@ -22,5 +22,6 @@ if($post->getSlug() !== $slug) {
 
 }
 $link =  $router->url('post');
+
 require_once ('../views/post/show.php');
 

@@ -1,6 +1,22 @@
 <h2><?= e($post->getName()) ?></h2>
           <p class="text-muted">Le <?= $post->getCreatedAt()->format('d F Y H:i') ?></p>
+          <?php
+          if (isset($errors)) {
+?>
+<div class= "alert alert-danger">
+  <ul> 
+  <?php 
 
+
+foreach ($errors as $field=> $error) {
+  echo "<li> le champ: "   .  $field . " est obligatoire.</li>";
+  
+} 
+
+?> </ul> 
+</div>
+<?php
+} ?>
           <h5 class="post-subtitle">Chapo:<br>
             <?= e($post->getChapo()) ?>
             <hr>
@@ -53,13 +69,7 @@
                 </div>
               </div>
           </div>
- 
-
-
-
-
-       
-               
+     
 
           <div class="card" id=form_comment>
             <h4 align="center">  Ecrire un commentaire : </h4><br>
@@ -71,7 +81,7 @@
               
               <div>
                 <label for="msg"> Votre message : </label>
-                <textarea id="msg" name="content"></textarea>
+                <textarea id="msg" name="content" required></textarea>
               </div>
               <div class="d-flex justify-content-center">
               

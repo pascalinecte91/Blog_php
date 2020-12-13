@@ -25,7 +25,7 @@ $errors = [];
 
 if (!empty($_POST)) {
     $v = new CommentValidator($_POST, $commentTable, $comment->getID(),);
-    ObjectHelper::hydrate($_POST, $comment, ['author', 'comment', 'created_at']);
+    ObjectHelper::hydrate($_POST, $comment, ['author', 'content', 'created_at']);
     if ($v->validate()) {
         $success = true;
     } else {
@@ -34,4 +34,4 @@ if (!empty($_POST)) {
 }
 $form = new Form($comment, $errors);
 
-require_once ('../views/admin/comment/edit.php');
+require_once ('../views/admin/content/edit.php');
