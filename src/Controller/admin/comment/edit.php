@@ -12,16 +12,15 @@ use App\Auth;
 Auth::check();
 
 $pdo = Connection:: getPDO();
-
+$commentTable = new CommentTable($pdo);
 
 
 $comment = $commentTable ->find($params['id']);
-$commentTable->hydrateComments
 
-([$comment]);
+
 $success = false;
-
 $errors = [];
+$comments =[];
 
 if (!empty($_POST)) {
     $v = new CommentValidator($_POST, $commentTable, $comment->getID(),);
@@ -34,4 +33,4 @@ if (!empty($_POST)) {
 }
 $form = new Form($comment, $errors);
 
-require_once ('../views/admin/content/edit.php');
+require_once ('../views/admin/comment/index.php');

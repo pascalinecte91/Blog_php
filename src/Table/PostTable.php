@@ -74,7 +74,7 @@ final class PostTable extends Table {
       
       foreach ($posts as $post) {
         $post->setPost([]);
-        $postsByID[$post->getID()] = $post;  
+      /*  $postsByID[$post->getID()] = $post;  */
       }
       $posts = $this->pdo
               ->query('SELECT *

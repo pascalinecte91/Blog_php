@@ -47,6 +47,8 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
 
 
     //GESTION COMMENTAIRES
-    ->match('/admin/comment/edit', 'admin/comment/edit', 'admin_comment_edit')
+    ->get('/admin', 'admin/comment/index', 'admin_comments')
+    ->match('/admin/[i:id]/comment', 'admin/comment/liste', 'admin_comment_list')
     ->post('/admin/comment/[i:id]/delete', 'admin/comment/delete', 'admin_comment_delete')
+    ->match('/admin/comment/new', 'admin/comment/new', 'admin_comment_new')
     ->run();

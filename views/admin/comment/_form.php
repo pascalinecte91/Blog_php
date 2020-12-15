@@ -10,3 +10,12 @@
         <?php endif ?>
     </button>
 </form>
+
+<?php foreach ($comments as $comment) {?> 
+                    <br><hr>
+                    <?= $comment->getContent(); 
+                
+                    ?><br>
+                    Ecrit par : <?= e($comment->getAuthor()) ?><br>
+                    Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
+                    <?php } ?>

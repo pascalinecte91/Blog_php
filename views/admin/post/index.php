@@ -29,10 +29,19 @@
 
             <td>
                 <form action="<?= $router->url('admin_post_delete', ['id' => $post->getID()]) ?>" method="POST" onsubmit="return confirm('Voulez vous confirmer la suppression ?')" style="display:inline">
-                    <button type="submit" class="btn btn-secondary">Supprimer</button>
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
             </td>
-
+            <td>
+                 
+    
+            <a href="<?= $router->url('admin_comment_list', ['id'=> $post->getID()]) ?>" class="btn btn-dark">
+          
+                    Voir commentaires
+                </a>
+                   
+                
+            </td>
         
             </tr>
         </div>

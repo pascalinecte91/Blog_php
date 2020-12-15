@@ -16,6 +16,7 @@ CREATE TABLE comment (
     content TEXT(65000) NOT NULL,
     created_at DATETIME NOT NULL,
     post_id INT UNSIGNED NOT NULL,
+    is_valid TINY INT NOT NULL,
     PRIMARY KEY (id),
     CONSTRAINT fk_post_comment
         FOREIGN KEY (post_id)

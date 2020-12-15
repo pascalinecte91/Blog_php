@@ -51,15 +51,15 @@ final class CommentTable extends Table
   public function hydrateComments(array $comments){
     
     foreach ($comments as $comment) {
-      $comment->setContent([]);
-     
-      $commentsByID[$comment->getID()] = $comment;  
+      $comment->setComment([]);
+    
+     /* $commentsByID[$comment->getID()] = $comment;  */
      
     }
     $comments = $this->pdo
             ->query('SELECT content, post_id 
                 FROM comment 
-                WHERE post_id IN (' . implode(array_keys($comments)) . ')')
+                WHERE post_id = ' . $comment->getPostId()  )
             ->fetchAll(PDO::FETCH_CLASS, $this->class);
    
 
@@ -70,9 +70,10 @@ final class CommentTable extends Table
         "SELECT COUNT(id) FROM {$this->table}",/* recupere tous les articles*/
         $this->pdo
     );
-    $posts = $paginatedQuery->getItems(Post::class);
-    (new CommentTable($this->pdo))->hydrateComments($posts);
-    return [$posts, $paginatedQuery];
+    $comments = $paginatedQuery->getItems(Comment::class);
+    
+    (new CommentTable($this->pdo))->hydrateComments($comments);
+    return [$comments, $paginatedQuery];
 }
 
 public function findByPostID($post_id)

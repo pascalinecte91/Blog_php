@@ -39,7 +39,7 @@ class Comment
     }
 
 
-    public function setContent (string $content) : self
+    public function setContent  ($content) : self
 
     {
         $this->content = $content;
@@ -53,7 +53,7 @@ class Comment
     }
 
 
-    public function setComment (string $comment) : self
+    public function setComment ( $comment) : self
 
     {
         $this->comment= $comment;
