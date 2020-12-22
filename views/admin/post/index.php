@@ -1,5 +1,5 @@
 <?php if (isset($_GET['delete'])) : ?>
-    <div class="container-fluid">
+     <div class="container-fluid">
         
         <div class=" alerte alert-succes">L'enregistrement a bien été supprimé!
         </div>
@@ -7,6 +7,7 @@
 
 <table class="table" style="background-color:#CCCCFF">
     <thead>
+        <tr>
         <th>ID</th>
         <th>Titre</th>
         <th>Action</th>
@@ -33,7 +34,6 @@
                 </form>
             </td>
             <td>
-                 
     
             <a href="<?= $router->url('admin_comment_list', ['id'=> $post->getID()]) ?>" class="btn btn-dark">
           

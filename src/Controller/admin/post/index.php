@@ -13,7 +13,7 @@ $link = $router->url('admin_posts');
 
 [$posts, $pagination] = (new PostTable($pdo))->findPaginated();
 
-[$comments, $pagination] = (new CommentTable($pdo))->findPaginated();
+
 
 
 

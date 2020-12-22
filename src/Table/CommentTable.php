@@ -86,5 +86,25 @@ public function findByPostID($post_id)
   return $result;
  
 }
+public function approve (Comment $comment): void 
+{
+   $this->update([
+      'is_valid'=> 1
+     
+      
+      
+   ], $comment->getID());
+
+}
+public function findByID($comment_id)
+{
+  $query = $this->pdo->prepare('SELECT * FROM ' . $this->table  .  ' WHERE id= :id');
+  $query->execute(['id'=> $comment_id]);
+  $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
+  $result = $query->fetch();
+
+
+  return $result;
+}
 }
 

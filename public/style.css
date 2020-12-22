@@ -8,14 +8,16 @@ body  {
     max-width: 1700px;
     
 }
-.table th {
- text-align: center;   
 
-}
+
 .blockquote {
     text-align: justify;
     color:blue ;
-    font-size: 18px;;
+    font-size: 18px;
+}
+.blockquote_comments {
+    font-size: 18px;
+    color: black;
 }
 .post-subtitle {
     font-size: 20px;
@@ -45,16 +47,23 @@ label {
 }
 input, textarea {
     font: 1em sans-serif;
-    width: 600px;
+    width: 200px;
     box-sizing: border-box;
     border-color: #000;  
+}
+#isValid {
+    width: 20px;
 }
 textarea {
     vertical-align: top;
     height: 10em;
 }
-
-
+#msg  {
+    width:  600px;
+}
+#author  {
+    width:  600px;
+}
 
   .box {
     padding: 10px;
