@@ -29,18 +29,21 @@
 
                     <td class="col-2"> <?= $comment->getCreatedAt()->format('d M Y ') ?></td>
                    
-                    <td class="col-2 text-center"><?php if ($comment->getIsValid()){
-                                                   echo "";} 
-                    ?>
+                    <td class="col-2 text-center">
+                    
+                  
                     
                     <div class="row">
-                    <a href="<?= $router->url('admin_comment_approve', ['id' => $comment->getID()]) ?>" class="btn btn-success pr-2 ml-2 ">OK</a>
-                    <br>
-                    
-                    <a href="<?= $router->url('admin_comment_delete', ['id' => $comment->getID()]) ?>" class="btn btn-danger pr-2">KO</a>
+                    <?php
+                    if ($comment->getIsValid()){
+                       $ok; 
+                    }
+                    ?>
+                    <a href="<?= $router->url('admin_comment_approve', ['id' => $comment->getID()]) ?>" class="btn btn-success mr-2 mb-2 ">OK</a><br> 
+                    <a href="<?= $router->url('admin_comment_delete',  ['id' => $comment->getID()]) ?>" class="btn btn-danger mb-2 ">KO</a>
+                    <a href="<?= $router->url('admin_comment_delete',  ['id' => $comment->getID()]) ?>" class="btn btn-primary mb-2 ">validé</a>
                     </div></td>
-
-                        
+                  
                     </tr>     
                     <?php endforeach  ?> <br>     
         </tbody>

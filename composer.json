@@ -15,5 +15,7 @@
         "vlucas/valitron": "1.4.5",
         "twig/twig": "3.0",
         "intervention/image": "^2.5"
+        
     }
+     
 }

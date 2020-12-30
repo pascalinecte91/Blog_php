@@ -1,5 +1,11 @@
 <?php
 
+$to = 'nom';
+$adressMail = 'email';
+$phoneNumber = 'phone';
+$message = 'message';
+
+
 
 $title= 'Accueil';
     $link = $router->url('home'); 

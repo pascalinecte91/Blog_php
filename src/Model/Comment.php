@@ -17,7 +17,7 @@ class Comment
 
     private $post_id;
     
-
+    private $is_valid;
 
     
     public function getID (): ?int
@@ -116,5 +116,11 @@ class Comment
     
     {
         return $this->post_id;
+    }
+
+    public function getIsValid ()
+    
+    {
+        return $this->is_valid;
     }
 }

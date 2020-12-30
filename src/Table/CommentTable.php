@@ -86,12 +86,30 @@ public function findByPostID($post_id)
   return $result;
  
 }
+/*
+public function findPostIdValid($post_id, $is_valid= true)
+{
+  $query = $this->pdo->prepare('SELECT * FROM ' . $this->table  .  ' WHERE post_id = :post_id and is_valid= :is_valid');
+  $query->execute(['post_id'=> $post_id, 'is_valid'=> $is_valid]);
+  $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
+  $result = $query->fetchAll();
+  
+  return $result;
+
+  if ($is_valid = true) {
+echo ' votre commentaire va être publié';
+  }
+ elseif {
+   echo ' nous ne pouvons pas publier votre commentaire';
+ }
+
+
+}
+*/
 public function approve (Comment $comment): void 
 {
    $this->update([
-      'is_valid'=> 1
-     
-      
+      'is_valid'=> 1  
       
    ], $comment->getID());
 

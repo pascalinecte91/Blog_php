@@ -55,9 +55,8 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
           <?php foreach ($comments as $comment) { ?>
             <br>
             <hr>
-            <?= $comment->getContent();
-
-            ?><br>
+            <?= $comment->getContent();?><br>
+            
             Ecrit par : <?= e($comment->getAuthor()) ?>
             Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
           <?php } ?>
@@ -80,7 +79,8 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
       <label for="msg"> Votre message : </label>
       <textarea id="msg" name="content" required></textarea>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-2 ">
+      
 
       <button type="submit"> Envoyer LE MESSAGE</button><br>
     </div>

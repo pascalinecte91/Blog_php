@@ -17,7 +17,7 @@ $pdo = Connection:: getPDO();
 
 
 $post->setCreatedAt(date('Y-m-d H:i:s'));
-// l'article creee  date du jour
+
 $chapo=[];
 $errors = [];
 
@@ -32,8 +32,7 @@ if (!empty($_POST))
      
         PostAttachment::upload($post);
         $postTable->createPost($post);
-     
-      
+ 
         header('Location: ' . $router->url('admin_post',['id'=> $post->getID()]) . '?created=1');
       
         exit();

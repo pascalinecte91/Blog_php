@@ -197,7 +197,7 @@
     color: white;
   }
 
-  }
+  
   @media only screen and (min-width: 768px) {
     header.masthead .page-heading,
     header.masthead .post-heading,
@@ -394,6 +394,7 @@
     text-transform: uppercase;
     border-radius: 0;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
   }
   
   .btn-primary {

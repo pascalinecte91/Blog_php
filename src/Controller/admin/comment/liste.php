@@ -16,10 +16,16 @@ $link = $router->url('admin_comment_list');
 [$comments, $pagination] = (new CommentTable($pdo))->findPaginated();*/
 
 $case = "1";
+
 $postTable = new PostTable($pdo);
 $commentTable =new CommentTable($pdo);
 $comments = $commentTable ->findByPostID($params['id']);
 
+
+$ko= 'red';
+$isValid = 'primary';
 $post = $postTable ->find($params['id']);
+
+
 
 require_once('../views/admin/comment/liste.php');
