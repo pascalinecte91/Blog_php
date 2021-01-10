@@ -19,12 +19,12 @@ $comments = [];
 
 
 
-for ($i = 0; $i < 50; $i++) {
+for ($i = 0; $i < 55; $i++) {
     $pdo->exec("INSERT INTO post SET name='{$faker->sentence()}', slug='{$faker->slug}', author='{$faker->name}', chapo='{$faker->sentence(17)}', created_at='{$faker->date} {$faker->time}', content='{$faker->paragraphs(rand(3, 10), true)}'");
     $post = $pdo->lastInsertId();
 
 
- 
+
 
     for ($j = 0; $j < 3; $j++) {
         $pdo->exec("INSERT INTO comment SET created_at='{$faker->date} {$faker->time}', author='{$faker->lastName}', content='{$faker->paragraph(rand(2, 7), true)}', post_id='{$post}'");
@@ -37,3 +37,6 @@ foreach ($posts as $post) {
 
 $password = password_hash('admin', PASSWORD_BCRYPT);
 $pdo->exec("INSERT INTO user SET username='admin', password='$password'");
+
+$password = password_hash('', PASSWORD_BCRYPT);
+$pdo->exec("INSERT INTO user SET username_membre= '', password='$password'");

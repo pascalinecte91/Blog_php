@@ -4,11 +4,12 @@ namespace App\Attachment;
 use App\Model\Post;
 use Intervention\Image\ImageManager;
 
-class PostAttachment {
-
+class PostAttachment
+{
     const DIRECTORY = UPLOAD_PATH . DIRECTORY_SEPARATOR . 'posts';
 
-    public static function upload (Post $post) {
+    public static function upload(Post $post)
+    {
         $image = $post->getImage();
         if (empty($image) || $post->shouldUpload() === false) {
             return;
@@ -19,7 +20,7 @@ class PostAttachment {
         }
         if (!empty($post->getOldImage())) {
             $formats = ['small', 'large'];
-            foreach($formats as $format) {
+            foreach ($formats as $format) {
                 $oldFile = $directory . DIRECTORY_SEPARATOR . $post->getOldImage() . '_' . $format . '.jpg';
                 if (file_exists($oldFile)) {
                     unlink($oldFile);
@@ -40,10 +41,11 @@ class PostAttachment {
             ->save($directory . DIRECTORY_SEPARATOR . $filename . '_large.jpg');
         $post->setImage($filename);
     }
-    public static function detach (Post $post) {
+    public static function detach(Post $post)
+    {
         if (!empty($post->getImage())) {
             $formats = ['small', 'large'];
-            foreach($formats as $format) {
+            foreach ($formats as $format) {
                 $file = self::DIRECTORY . DIRECTORY_SEPARATOR . $post->getImage() . '_' . $format . '.jpg';
                 if (file_exists($file)) {
                     unlink($file);

@@ -1,4 +1,5 @@
 <?php
+
 use App\Connection;
 use App\Table\PostTable;
 
@@ -7,8 +8,8 @@ $pdo = Connection::getPDO();
 
 $table = new PostTable($pdo);
 [$posts, $pagination] = $table->findPaginated();
-$post=[];
+$post = [];
 
 
 $link =  $router->url('blog');
-require_once ('../views/post/index.php');
+require_once('../views/post/index.php');

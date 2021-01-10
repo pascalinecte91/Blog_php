@@ -1,9 +1,13 @@
 body  {
-    background-color:#e6edf0;
+    background-color: #f6f9fa;
   
 
 }
+body#admin  {
+    background-color: #f6f9fa;
+  
 
+}
 
 .blockquote {
     text-align: justify;
@@ -24,6 +28,10 @@ body  {
     margin-bottom: 10px;
     margin-top: 5px;
     
+}
+
+#table_admin {
+    width: 1400px;
 }
 #form_comment {
     background-color: rgb(207, 221, 240);

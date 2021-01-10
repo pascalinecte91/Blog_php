@@ -1,10 +1,9 @@
 <?php
-namespace App\Table;
 
+namespace App\Table;
 
 use  App\Table\Exception\NotFoundException;
 use \PDO;
-
 
 abstract class Table
 {
@@ -14,7 +13,6 @@ abstract class Table
 
 
     public function __construct(PDO $pdo)
-    
     {
         if ($this->table === null) {
             throw new \Exception("La class " . get_class($this) . "n'a pas de propriété \$table");
@@ -23,45 +21,40 @@ abstract class Table
             throw new \Exception("La class " . get_class($this) . "n'a pas de propriété \$class");
         }
         $this->pdo = $pdo;
-    
     }
 
     public function find(int $id)
     {
         $query = $this->pdo->prepare('SELECT * FROM ' . $this->table . ' WHERE id = :id');
         $query->execute(['id' => $id]);
-        $query ->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
-        
+
         if ($result === false) {
             throw new NotFoundException($this->table, $id);
         }
         return $result;
-       
-        }
-    
+    }
+
     /** verifie valeur si existe bdd
      * @params string $field champs à chercher
      */
 
     public function exists(string $field, $value, ?int $except = null): bool
     {
-        $sql ="SELECT COUNT(id) FROM {$this->table} WHERE $field = ?";
+        $sql = "SELECT COUNT(id) FROM {$this->table} WHERE $field = ?";
         $params = [$value];
         if ($except !== null) {
             $sql .= "AND id != ?";
             $params[] = $except;
-     
         }
         $query = $this->pdo->prepare($sql);
         $query->execute($params);
-        return (int)$query ->fetch(PDO::FETCH_NUM)[0]  > 0;
+        return (int)$query->fetch(PDO::FETCH_NUM)[0]  > 0;
     }
 
-//fonction qui recupere tous les enregistrements dans un array
-    public function all(): array 
+    public function all(): array
     {
-        //on selectionne tous les champs (*) en utilisant le nom des tables : $this et table  et aucune condition car tout
         $sql = "SELECT * FROM {$this->table}";
         return $this->pdo->query($sql, PDO::FETCH_CLASS, $this->class)->fetchAll();
     }
@@ -78,42 +71,33 @@ abstract class Table
     public function create(array $data): int
     {
         $sqlFields = [];
-    
-        
         foreach ($data as $key => $value) {
-          
-            $sqlFields[] ="$key = :$key";
+            $sqlFields[] = "$key = :$key";
         }
         $query = $this->pdo->prepare("INSERT INTO {$this->table} SET " . implode(', ', $sqlFields));
         $ok = $query->execute($data);
-        
+
         if ($ok === false) {
             throw new \Exception("Impossible de CREER l'enregistrement  dans la table {$this->table}");
         }
         return (int)$this->pdo->lastInsertId();
     }
 
-
     public function update(array $data, int $id)
-    
     {
         $sqlFields = [];
         foreach ($data as $key => $value) {
-            $sqlFields[] ="$key = :$key";
-   
+            $sqlFields[] = "$key = :$key";
         }
         $query = $this->pdo->prepare("UPDATE {$this->table} SET " . implode(', ', $sqlFields) . " WHERE id = :id");
-        $ok = $query->execute(array_merge ($data, ['id'=> $id]));
+        $ok = $query->execute(array_merge($data, ['id' => $id]));
         if ($ok === false) {
             throw new \Exception("Impossible de modifier l'enregistrement  dans la table {$this->table}");
         }
     }
 
-    public function queryAndFetchAll (string $sql) : array
-     {
-
-    return $this->pdo->query($sql, PDO::FETCH_CLASS, $this->class)->fetchAll();
-
+    public function queryAndFetchAll(string $sql): array
+    {
+        return $this->pdo->query($sql, PDO::FETCH_CLASS, $this->class)->fetchAll();
     }
 }
-

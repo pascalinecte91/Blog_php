@@ -1,5 +1,6 @@
 <?php
 
+
 require '../vendor/autoload.php';
 use App\Router;
 
@@ -28,16 +29,18 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     $router = new App\Router() ;
     $router
     ->get('/', 'home/index', 'home')
+    ->get('/', 'register/index', 'register')
     ->get('/blog', 'post/index', 'blog')
-    ->get('/blog',  'comment/index','comment')
+    ->get('/blog', 'comment/index', 'comment')
     ->get('/blog/[*:slug]-[i:id]', 'post/show', 'post')
     ->post('/blog/[*:slug]-[i:id]/comments', 'comment/new', 'comment_new')
     ->match('/login', 'auth/login', 'login')
+    ->match('/login_register', 'auth/login_register', 'login_register')
     ->post('/logout', 'auth/logout', 'logout')
    
 
     //FORMULAIRE
-    ->post('/contact','home/contact','send_mail')
+    ->post('/contact', 'home/contact', 'send_mail')
 
 
     //ADMIN
@@ -51,7 +54,10 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     //GESTION COMMENTAIRES
     ->get('/admin', 'admin/comment/index', 'admin_comments')
     ->match('/admin/[i:id]/comment', 'admin/comment/liste', 'admin_comment_list')
+    ->match('/admin/[i:id]/comment', 'admin/comment/liste_delete', 'admin_comment_list_delete')
+    ->match('/admin/[i:id]/comment', 'admin/comment/liste_approve', 'admin_comment_list_approve')
     ->get('/admin/comment/[i:id]/delete', 'admin/comment/delete', 'admin_comment_delete')
     ->get('/admin/comment/[i:id]/approve', 'admin/comment/approve', 'admin_comment_approve')
+    ->match('/admin/comment/[i:id]', 'admin/comment/edit', 'admin_comment')
     ->match('/admin/comment/new', 'admin/comment/new', 'admin_comment_new')
     ->run();

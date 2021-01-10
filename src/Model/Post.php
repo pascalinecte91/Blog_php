@@ -5,10 +5,8 @@ namespace App\Model;
 use App\Helpers\Text;
 use \DateTime;
 
-
 class Post
 {
-
     private $id;
 
     private $slug;
@@ -19,7 +17,7 @@ class Post
 
     private $created_at;
 
-   
+
 
     private $comment;
 
@@ -32,7 +30,7 @@ class Post
     private $oldImage;
 
     private $pendingUpload = false;
-    /* rajoute une prorpiete qui dit : j'attends un upload  pending= en attente*/
+  
 
 
 
@@ -49,14 +47,12 @@ class Post
     }
 
     public function getContent(): ?string
-
     {
         return $this->content;
     }
 
 
     public function setContent(string $content): self
-
     {
         $this->content = $content;
 
@@ -65,14 +61,12 @@ class Post
 
 
     public function getComment(): ?string
-
     {
         return $this->comment;
     }
 
 
     public function setPost($post): self
-
     {
         $this->post = $post;
 
@@ -132,46 +126,41 @@ class Post
         return $this;
     }
 
-    
 
-   
+
+
     public function getAuthor(): ?string
-
     {
         return $this->author;
     }
 
 
     public function setAuthor(string $author): self
-
     {
         $this->author = $author;
 
         return $this;
     }
     public function getChapo(): ?string
-
     {
         return $this->chapo;
     }
 
-    public function setComment (string $comment) : self
-
+    public function setComment(string $comment): self
     {
-        $this->comment= $comment;
-        
+        $this->comment = $comment;
+
         return $this;
     }
 
     public function setChapo(string $chapo): self
-
     {
         $this->chapo = $chapo;
 
         return $this;
     }
 
-    /* return renvoit le chemin de l'image*/
+    
 
     public function getImage(): ?string
     {
@@ -209,7 +198,6 @@ class Post
     }
 
     public function shouldUpload(): bool
-    /* should  == devrait avoir un upload*/
     {
         return $this->pendingUpload;
     }

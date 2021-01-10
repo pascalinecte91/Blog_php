@@ -1,22 +1,24 @@
-<h2><?= e($post->getName()) ?></h2>
+
+<div class="text-center">
+<h2><?php echo e(mb_strtoupper($post->getName())); ?></h2>
 <p class="text-muted">Le <?= $post->getCreatedAt()->format('d F Y H:i') ?></p>
 <?php
 if (isset($errors)) {
-?>
+    ?>
   <div class="alert alert-danger">
     <ul>
       <?php
 
 
       foreach ($errors as $field => $error) {
-        echo "<li> le champ: "   .  $field . " est obligatoire.</li>";
+          echo "<li> le champ: "   .  $field . " est obligatoire.</li>";
       } ?> </ul>
   </div><?php
-      } ?>
+} ?>
 <h5 class="post-subtitle">Chapo:<br>
   <?= e($post->getChapo()) ?>
   <hr>
-</h5>
+</h5></div>
 
 <?php if ($post->getImage()) : ?>
 
@@ -55,8 +57,8 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
           <?php foreach ($comments as $comment) { ?>
             <br>
             <hr>
-            <?= $comment->getContent();?><br>
-            
+            <?= $comment->getContent(); ?><br>
+
             Ecrit par : <?= e($comment->getAuthor()) ?>
             Le : <?= $comment->getCreatedAt()->format('d M Y H:m') ?>
           <?php } ?>
@@ -67,9 +69,13 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
 </div>
 
 
-<div class="card" id=form_comment>
-  <h4 align="center"> Ecrire un commentaire : </h4><br>
-  <form action="/blog/<?php echo e($post->getSlug()); ?>-<?php echo e($post->getId()); ?>/comments" method="POST">
+
+
+
+<div class="card " id=form_comment>
+<div class="text-center">
+  <h4>Ecrire un commentaire:</h4><br></div>
+  <form action= "/blog/<?php echo e($post->getSlug()); ?>-<?php echo e($post->getId()); ?>/comments" onsubmit="alert('Merci pour votre commentaire, il va être validé')" method="POST">
     <div>
       <label for="name">Auteur:</label>
       <input type="text" id="author" name="author">
@@ -80,15 +86,9 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
       <textarea id="msg" name="content" required></textarea>
     </div>
     <div class="d-flex justify-content-center mt-2 ">
-      
-
+ 
+     
       <button type="submit"> Envoyer LE MESSAGE</button><br>
-    </div>
-</div>
-</div>
-</div>
-</div>
+      </form>
 
-</form>
 </div>
-<?php

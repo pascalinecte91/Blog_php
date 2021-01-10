@@ -1,16 +1,18 @@
 <?php
+
 namespace App;
 
 use App\security\ForbiddenException;
 
-class Router {
+class Router
+{
 
-/**
- * @var string
- */
+    /**
+     * @var string
+     */
     private $controllerPath;
     private $viewsPath;
-    
+
     /**
      * @var Altorouter
      */
@@ -19,8 +21,8 @@ class Router {
 
     public function __construct()
     {
-        $this->controllerPath = dirname (__DIR__) .'/src/Controller';
-        $this->viewsPath = dirname (__DIR__) .'/views';
+        $this->controllerPath = dirname(__DIR__) . '/src/Controller';
+        $this->viewsPath = dirname(__DIR__) . '/views';
 
         $this->router = new \AltoRouter();
     }
@@ -47,20 +49,20 @@ class Router {
     }
 
 
-    public function url(string $name, array $params = []) {
+    public function url(string $name, array $params = [])
+    {
         return $this->router->generate($name, $params);
-    
     }
 
     public function run(): self
     {
-        $match = $this->router->match();  
-        $view = $match['target'] ?: 'e404' ;
+        $match = $this->router->match();
+        $view = $match['target'] ?: 'e404';
         $params = $match['params'];
         $router = $this;
-        $isAdmin = strpos($view, 'admin/' ) !== false;
+        $isAdmin = strpos($view, 'admin/') !== false;
         $layout = $isAdmin ? 'admin/layouts/default' : 'layouts/default';
-        
+
         try {
             ob_start();
             require $this->controllerPath  . DIRECTORY_SEPARATOR . $view . '.php';
@@ -71,6 +73,5 @@ class Router {
             exit();
         }
         return $this;
-
     }
 }
