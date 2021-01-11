@@ -1,10 +1,11 @@
 <?php
+
 namespace App;
 
 use \PDO;
 
-class PaginatedQuery {
-
+class PaginatedQuery
+{
     private $query;
     private $queryCount;
     private $pdo;
@@ -16,9 +17,8 @@ class PaginatedQuery {
         string $query,
         string $queryCount,
         ?\PDO $pdo = null,
-        int $perPage = 6
-    )
-    {
+        int $perPage = 7
+    ) {
         $this->query = $query;
         $this->queryCount = $queryCount;
         $this->pdo = $pdo ?: Connection::getPDO();
@@ -28,27 +28,32 @@ class PaginatedQuery {
     public function getItems(string $classMapping): array
     {
         if ($this->items === null) {
-        $currentPage = $this->getCurrentPage();
-        $pages = $this->getPages();
-        if ($currentPage > $pages) {
-            throw new \Exception('cette page  existe pas');
+            $currentPage = $this->getCurrentPage();
+            $pages = $this->getPages();
+            if ($currentPage > $pages) {
+                throw new \Exception('cette page  existe pas');
+            }
+            $offset = $this->perPage * ($currentPage - 1);
+            $this->items = $this->pdo->query(
+                $this->query .
+                    " LIMIT {$this->perPage} OFFSET $offset"
+            )
+                ->fetchAll(PDO::FETCH_CLASS, $classMapping);
         }
-        $offset = $this->perPage * ($currentPage - 1);
-        $this->items = $this->pdo->query(
-            $this->query .
-            " LIMIT {$this->perPage} OFFSET $offset")
-            ->fetchAll(PDO::FETCH_CLASS, $classMapping);
-        } 
         return $this->items;
     }
 
     public function previousLink(string $link): ?string
     {
         $currentPage = $this->getCurrentPage();
-        if ($currentPage <= 1)  return null;
-        if ($currentPage >= 2) $link .= "?page" . ($currentPage - 1);
+        if ($currentPage <= 1) {
+            return null;
+        }
+        if ($currentPage >= 2) {
+            $link .= "?page=" . ($currentPage - 1);
+        }
         return <<<HTML
-            <a href="{$link}"class="btn btn-primary">&laquo;Page précédente</a>
+            <a href="{$link}"class="btn btn-secondary">&laquo;Page précédente</a>
     
 HTML;
     }
@@ -57,10 +62,12 @@ HTML;
     {
         $currentPage = $this->getCurrentPage();
         $pages = $this->getPages();
-        if ($currentPage >= $pages) return null;
-        $link .= "?page" . ($currentPage + 1);
+        if ($currentPage >= $pages) {
+            return null;
+        }
+        $link .= "?page=" . ($currentPage + 1);
         return <<<HTML
-            <a href="{$link}" class="btn btn-primary ml auto">Page suivante &raquo;</a>
+            <a href="{$link}" class="btn btn-secondary ml auto">Page suivante &raquo;</a>
 HTML;
     }
 
@@ -71,11 +78,12 @@ HTML;
 
     private function getPages(): int
     {
-        if ($this->count === null) 
+        if ($this->count === null) {
             $this->count = (int)$this->pdo
                 ->query($this->queryCount)
-                ->fetch(PDO::FETCH_NUM)[0];  
-            return ceil($this->count / $this->perPage);
-        
+                ->fetch(PDO::FETCH_NUM)[0];
+        }
+        return ceil($this->count / $this->perPage);
+        /* ceil = arrondi au nbre superieur*/
     }
 }

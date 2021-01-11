@@ -1,37 +1,41 @@
 <?php
-use App \Connection;
-use App \Table\PostTable;
-use App\Validator;
+
+use App\Attachment\PostAttachment;
+use App\Connection;
+use App\Table\PostTable;
 use App\HTML\Form;
 use App\Validators\PostValidator;
 use App\ObjectHelper;
 use App\Auth;
-use App\Table\CategoryTable;
-
 
 Auth::check();
 
-$pdo = Connection:: getPDO();
+$pdo = Connection::getPDO();
 $postTable = new PostTable($pdo);
-$categoryTable = new CategoryTable($pdo);
-$categories = $categoryTable->list();
-$post = $postTable ->find($params['id']);
-$categoryTable->hydratePosts([$post]);
-$success = false;
 
+
+$post = $postTable->find($params['id']);
+
+$success = false;
 $errors = [];
+$chapo = [];
+$comment = [];
+
 
 if (!empty($_POST)) {
-    $v = new PostValidator($_POST, $postTable, $post->getID(), $categories);
-    ObjectHelper::hydrate($post, $_POST, ['name', 'content', 'slug', 'created_at']);
+    $data = array_merge($_POST, $_FILES);
+    $v = new PostValidator($data, $postTable, $post->getID());
+    ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'author', 'chapo', 'created_at', 'image']);
     if ($v->validate()) {
+        PostAttachment::upload($post);
         $postTable->updatePost($post);
-        $postTable->attachCategories($post->getID(),$_POST['categories_ids']);
-        $categoryTable->hydratePosts([$post]);
+        
+
         $success = true;
     } else {
-       $errors = $v->errors();  
+        $errors = $v->errors();
     }
 }
 $form = new Form($post, $errors);
-require_once ('../views/admin/post/edit.php');
+
+require_once('../views/admin/post/edit.php');

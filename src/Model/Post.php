@@ -1,12 +1,12 @@
 <?php
+
 namespace App\Model;
 
 use App\Helpers\Text;
 use \DateTime;
 
-
-class Post {
-   
+class Post
+{
     private $id;
 
     private $slug;
@@ -17,44 +17,69 @@ class Post {
 
     private $created_at;
 
-    private $categories = [];
 
-    private $comment =[];
 
-   
-    public function getName (): ?string
+    private $comment;
+
+    private $author;
+
+    private $chapo;
+
+    private $image;
+
+    private $oldImage;
+
+    private $pendingUpload = false;
+  
+
+
+
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setname (string $name) : self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getContent () :  ?string
-    
+    public function getContent(): ?string
     {
         return $this->content;
     }
 
 
-    public function setContent (string $content) : self
-
+    public function setContent(string $content): self
     {
         $this->content = $content;
-        
+
         return $this;
     }
 
-    public function getFormattedContent (): ?string 
+
+    public function getComment(): ?string
+    {
+        return $this->comment;
+    }
+
+
+    public function setPost($post): self
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+
+    public function getFormattedContent(): ?string
     {
         return nl2br(e($this->content));
     }
 
-    public function getExcerpt (): ?string 
+    public function getExcerpt(): ?string
     {
         if ($this->content === null) {
             return null;
@@ -62,81 +87,118 @@ class Post {
         return nl2br(e(Text::excerpt($this->content, 60)));
     }
 
-    public function getCreatedAt (): DateTime  
+    public function getCreatedAt(): DateTime
     {
         return new DateTime($this->created_at);
     }
 
-    public function setCreatedAt (string $date): self
+    public function setCreatedAt(string $date): self
     {
         $this->created_at = $date;
 
         return $this;
     }
 
-    public function getComment (): ?self 
-    {
-        return $this->$comment;
-    }
-
-    public function setComment (): self
-    {
-        $this->comment = $comment;
-
-        return $this;
-    }
 
 
-    public function getSlug (): ?string
+
+    public function getSlug(): ?string
     {
         return $this->slug;
     }
 
-    public function setSlug (string $slug): self
+    public function setSlug(string $slug): self
     {
         $this->slug = $slug;
 
         return $this;
-
     }
 
-    public function getID (): ?int
+    public function getID(): ?int
     {
         return $this->id;
     }
 
-    public function setID (int $id): self
+    public function setID(int $id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    public function getCategories (): array
-    {
-        return $this->categories;
-    }
- 
 
-    public function getCategoriesIds(): array {
-        $ids = [];
-        foreach($this->categories as $category) {
-            $ids[] = $category->getID();
-        }
-        return $ids;
+
+
+    public function getAuthor(): ?string
+    {
+        return $this->author;
     }
 
-    public function setCategories (array $categories): self
+
+    public function setAuthor(string $author): self
     {
-        $this->categories = $categories;
+        $this->author = $author;
+
+        return $this;
+    }
+    public function getChapo(): ?string
+    {
+        return $this->chapo;
+    }
+
+    public function setComment(string $comment): self
+    {
+        $this->comment = $comment;
 
         return $this;
     }
 
-
-    public function addCategory (Category $Category): void
+    public function setChapo(string $chapo): self
     {
-        $this->categories[] = $Category;
+        $this->chapo = $chapo;
+
+        return $this;
     }
+
     
- }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function getImageURL(string $format): ?string
+    {
+        if (empty($this->image)) {
+            return null;
+        }
+        return '/uploads/posts/' . $this->image . '_' . $format . '.jpg';
+    }
+
+    public function setImage($image): self
+    {
+        if (is_array($image) && !empty($image['tmp_name'])) {
+            if (!empty($this->image)) {
+                $this->oldImage = $this->image;
+                /* si il y a deja une image elle sera sauvegardé dans la propriete oldimage*/
+            }
+            $this->pendingUpload = true;
+            $this->image = $image['tmp_name'];
+        }
+        if (is_string($image) && !empty($image)) {
+            $this->image = $image;
+        }
+
+        return $this;
+    }
+
+    public function getOldImage(): ?string
+    {
+        return $this->oldImage;
+    }
+
+    public function shouldUpload(): bool
+    {
+        return $this->pendingUpload;
+    }
+}

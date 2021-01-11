@@ -1,24 +1,23 @@
 <?php
+
 use App\Connection;
-use App\model\{Post, Category};
-use App\Table\PostTable;
-use App\Table\CategoryTable;
 use App\Table\CommentTable;
+use App\Table\PostTable;
 
-
-$id =(int)$params['id'];
 $slug = $params['slug'];
-
-
-
+$id = (int)$params['id'];
+$comment = [];
 $pdo = Connection::getPDO();
+$table = new PostTable($pdo);
 $post = (new PostTable($pdo))->find($id);
-(new CategoryTable($pdo))->hydratePosts([$post]);
-
-
-if($post->getSlug() !== $slug) {
-    $url = $router->url('post', ['slug'=> $post->getSlug(), 'id' => $id]);
-    http_response_code(301); 
+[$posts, $pagination] = $table->findPaginated();
+$comments = (new CommentTable($pdo))->findByPostID($id);
+$is_valid = true;
+if ($post->getSlug() !== $slug) {
+    $url = $router->url('post', ['slug' => $post->getSlug(), 'id' => $id]);
+    http_response_code(301);
     header('Location: ' . $url);
 }
-require_once ('../views/post/show.php');
+$link =  $router->url('post');
+
+require_once('../views/post/show.php');

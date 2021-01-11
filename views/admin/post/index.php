@@ -1,51 +1,66 @@
+<?php if (isset($_GET['delete'])) : ?>
+    <div class="container-fluid">
 
-<?php if (isset($_GET ['delete'])): ?>
+        <div class=" alerte alert-succes">L'enregistrement a bien été supprimé!!
+        </div>
+    <?php endif ?>
+    <div class= "text-center">
+    <h3> Liste des POSTS </h3>
+    </div>
 
-<div class="alerte alert-succes">
-    L'enregistrement a bien été supprimé!
-</div>
-<?php endif ?>
 
-<table class="table" style="background-color:#a5b5b8">
-<thead>
-    <th>Numéro Post</th>
- 
-    <th>Titre</th>
-    <th>
-        <a href ="<?= $router->url('admin_post_new')  ?>" class="btn btn-danger"style="background-color:#3dc0ad">New post</a></th>
-    </thead>
-    <tbody>
-        <?php foreach($posts as $post): ?>
-        <tr>
-            <td>#<?= $post->getID() ?></td>
-            <td>
-                <a href="<?= $router->url('admin_post', ['id'=> $post->getID()])?>">
-                <?= e($post->getName()) ?></td>
-            <td>
-                <a href="<?= $router->url('admin_post', ['id'=> $post->getID()])?>" class="btn btn-primary" style="background-color:#3dc0ad">
-                Editer
-            </td>
-          
-            <td>
-                <a href="<?= $router->url('admin_post', ['id'=> $post->getID()])?>" class="btn btn-info">
-                Commentaires
-            </td>
-        <td>
-                <form action="<?= $router->url('admin_post_delete', ['id'=> $post->getID()])?>" method ="POST"
-                onsubmit="return confirm('Voulez vous confirmer la suppression ?')" style="display:inline">
-                <button type ="submit" class="btn btn-danger" >Supprimer</button>
-            </form>
-            </td>
+    <table class="table" style="background-color:#cbb9cc">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titre du Post</th>
+                <th></th>
+        </thead>
+        <tbody>
+            <?php foreach ($posts as $post) : ?>
 
-        </a>
-    </tr>
-    <?php endforeach  ?>
+                <td><?= $post->getID() ?></td>
+                <td>
+                    <a href="<?= $router->url('admin_post', ['id' => $post->getID()]) ?>">
+                        <?= e($post->getName()) ?>
+                    </a>
+                </td>
+                <td>
+                    <a href="<?= $router->url('admin_post', ['id' => $post->getID()]) ?>" class="btn btn-secondary">
+                        MODIFIER
+                    </a>
+                </td>
+
+
+                <td>
+                    <form action="<?= $router->url('admin_post_delete', ['id' => $post->getID()]) ?>" method="POST" onsubmit="return confirm('Voulez vous confirmer la suppression ?')" style="display:inline">
+                        <button type="submit" class="btn btn-danger ">Supprimer</button>
+                    </form>
+                </td>
+                <td>
+
+                    <a href="<?= $router->url('admin_comment_list', ['id' => $post->getID()]) ?>" class="btn btn-primary">
+
+                        Action commentaires
+                    </a> <br>
+                    
+
+
+                </td>
+
+                </tr>
+    </div>
+<?php endforeach  ?>
 </tbody>
+</div>
 </table>
 
+<div class="d-flex justify-content-center">
+    <a href="<?= $router->url('admin_post_new')  ?>" class="btn btn-secondary">Creer un post</a></th>
+</div>
 
 
-<div class="d-flex justify-content-end my-4">
+<div class="d-flex justify-content-between my-4">
     <?= $pagination->previousLink($link); ?>
     <?= $pagination->nextLink($link); ?>
 </div>

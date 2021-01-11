@@ -1,46 +1,41 @@
 CREATE TABLE post (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    slug VARCHAR(255) NOT NULL,
+    slug VARCHAR(255) NOT NULL UNIQUE,
+    chapo TEXT(65000) NOT NULL,
     content TEXT(65000) NOT NULL,
+    image VARCHAR(27)  NULL,
+    author VARCHAR(255) NOT NULL,
     created_at DATETIME NOT NULL,
     PRIMARY KEY (id)
-)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 CREATE TABLE comment (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name VARCHAR (255) NOT NULL,
-    comment TEXT (3000) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    content TEXT(65000) NOT NULL,
     created_at DATETIME NOT NULL,
-    PRIMARY KEY (id)
-)
-
-CREATE TABLE category (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    slug VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
-)
-
-CREATE TABLE post_category (
     post_id INT UNSIGNED NOT NULL,
-    category_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY (post_id, category_id),
-    CONSTRAINT fk_post
+    is_valid TINY INT NOT NULL,
+    PRIMARY KEY (id),
+    CONSTRAINT fk_post_comment
         FOREIGN KEY (post_id)
         REFERENCES post (id)
         ON DELETE CASCADE
-        ON UPDATE RESTRICT,
-    CONSTRAINT fk_category
-        FOREIGN KEY (category_id)
-        REFERENCES category (id)
-        ON DELETE CASCADE
         ON UPDATE RESTRICT
-)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 
 CREATE TABLE user (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
-)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
+CREATE TABLE user_membre (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    user_membre VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
+
