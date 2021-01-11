@@ -40,7 +40,18 @@ final class PostTable extends Table
         $post->setID($id);
     }
 
-
+    public function hydratePosts(array $posts)
+    {
+        foreach ($posts as $post) {
+            $post->setPost([]);
+            /*  $postsByID[$post->getID()] = $post;  */
+        }
+        $posts = $this->pdo
+      ->query('SELECT *
+                  FROM post
+                  WHERE id IN (' . implode(array_keys($posts)) . ')')
+      ->fetchAll(PDO::FETCH_CLASS, $this->class);
+    }
 
 
 
@@ -70,16 +81,6 @@ final class PostTable extends Table
 
         return $result;
     }
-    public function hydratePosts(array $posts)
-    {
-        foreach ($posts as $post) {
-            $post->setPost([]);
-            /*  $postsByID[$post->getID()] = $post;  */
-        }
-        $posts = $this->pdo
-      ->query('SELECT *
-                  FROM post
-                  WHERE id IN (' . implode(array_keys($posts)) . ')')
-      ->fetchAll(PDO::FETCH_CLASS, $this->class);
-    }
+
+ 
 }

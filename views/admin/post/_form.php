@@ -1,4 +1,4 @@
-<form action="" method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
     <?= $form->input('name', 'Titre'); ?>
     <?= $form->input('slug', 'URL'); ?>
     <?= $form->input('chapo', 'Chapo'); ?>
@@ -19,13 +19,14 @@
 
     <h5>Cliquez sur le bouton pour l'action</h5>
     <div class="d-flex justify-content-center">
-        <button class="btn btn-secondary">
+        <input class="btn btn-secondary" type="submit">
             <?php if ($post->getID() !== null) : ?>
                 Modifier
             <?php else : ?>
                 Créer
             <?php endif ?>
+            </button>
     </div>
     <br>
-    </button>
+    
 </form>

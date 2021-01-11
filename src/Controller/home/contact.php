@@ -15,8 +15,8 @@ if (
 
 $server = 'smtp.sendgrid.net';
 $port = '587';
-$username = 'ocp5';
-$password = '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';
+$username = 'blog';
+$password = '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';
 
 
 

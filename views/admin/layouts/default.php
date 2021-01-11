@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-100">
 
 <head>
   <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -14,13 +14,12 @@
   </script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,0 shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="  bonjour ceci est mon blog  158 carac">
   <title><?= isset($title) ? e($title) : 'mon Blog' ?></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 
 
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -46,7 +45,7 @@
             <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
           </li>
           <li class="nav-item">
-          <a href="/login_register" style="color: white">INSCRIPTION</a>
+          <a class="nav-link" href="/login_register" style="color: white">INSCRIPTION</a>
           </li>
 
         </ul>
@@ -85,7 +84,7 @@
 
     </div>
     <div class="col-12 text-center">
-      <a href="/login" style="color: white">CONNEXION ADMIN</a>
+      <a href="/login" style="color: white">CONNEXION ADMINISTRATION</a>
       <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
 
     </div>
@@ -96,7 +95,7 @@
   <!-- Custom scripts for this template -->
 
   <script src="/js/tinymce.js"></script>
-  <script type="text/javascript" src="/scrollnav.js"></script>
+ 
 </body>
 
 </html>

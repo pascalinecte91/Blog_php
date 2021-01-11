@@ -36,6 +36,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->post('/blog/[*:slug]-[i:id]/comments', 'comment/new', 'comment_new')
     ->match('/login', 'auth/login', 'login')
     ->match('/login_register', 'auth/login_register', 'login_register')
+    ->match('/login_user_membre', 'auth/index', 'login_membre')
     ->post('/logout', 'auth/logout', 'logout')
    
 

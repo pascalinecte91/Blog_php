@@ -26,6 +26,7 @@ if (!empty($_POST)) {
     if ($v->validate()) {
         PostAttachment::upload($post);
         $postTable->createPost($post);
+      echo ' votre post a bien ete enregistré';
 
         header('Location: ' . $router->url('admin_post', ['id' => $post->getID()]) . '?created=1');
 

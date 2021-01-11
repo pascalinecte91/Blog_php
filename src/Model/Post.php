@@ -17,8 +17,6 @@ class Post
 
     private $created_at;
 
-
-
     private $comment;
 
     private $author;
@@ -76,7 +74,7 @@ class Post
 
     public function getFormattedContent(): ?string
     {
-        return nl2br(e($this->content));
+        return $this->content;
     }
 
     public function getExcerpt(): ?string
@@ -125,7 +123,6 @@ class Post
 
         return $this;
     }
-
 
 
 

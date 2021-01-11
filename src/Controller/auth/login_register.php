@@ -16,7 +16,7 @@ if (!empty($_POST['user_membre']) && !empty($_POST['password'])) {
     $table = new UserTableMembre(Connection::getPDO());
 
     try {
-        $um = $table->findByUsernameMembre($_POST['user_member']);
+        $um = $table->findByUserMembre($_POST['user_member']);
         if (password_verify($_POST['password'], $um->getPassword()) === true) {
             session_start();
             $_SESSION['auth'] = $um->getId();
@@ -26,6 +26,7 @@ if (!empty($_POST['user_membre']) && !empty($_POST['password'])) {
     } catch (NotFoundException $e) {
     }
 }
+
 
 
 $form = new Form($userMembre, $errors);
