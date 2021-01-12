@@ -1,6 +1,6 @@
 <form method="POST" enctype="multipart/form-data">
     <?= $form->input('name', 'Titre'); ?>
-    <?= $form->input('slug', 'URL'); ?>
+    <?= $form->input('slug', 'Slug'); ?>
     <?= $form->input('chapo', 'Chapo'); ?>
     <div class="row">
         <div class="col-md-9">
@@ -19,7 +19,7 @@
 
     <h5>Cliquez sur le bouton pour l'action</h5>
     <div class="d-flex justify-content-center">
-        <input class="btn btn-secondary" type="submit">
+        <button class="btn btn-secondary" type="submit">
             <?php if ($post->getID() !== null) : ?>
                 Modifier
             <?php else : ?>

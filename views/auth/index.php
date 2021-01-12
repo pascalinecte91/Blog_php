@@ -8,7 +8,7 @@
 
     <?php endif ?>
 
-    <form action="<?= $router->url('login') ?>" method="POST">
+    <form action="<?= $router->url('login_membre') ?>" method="POST">
         <?= $form->input('user_membre', 'Nom d\'utilisateur'); ?>
         <?= $form->input('password', 'Mot de passe'); ?>
 

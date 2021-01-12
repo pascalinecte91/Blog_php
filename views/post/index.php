@@ -10,7 +10,7 @@
                 <hr>
 
             <?php endif; ?>-->
-            <div class="post-preview border border-primary bg-light mb-3">
+            <div class= "post-preview border border-secondary  mb-3">
 
                 
 

@@ -13,10 +13,7 @@ if (
 }
 
 
-$server = 'smtp.sendgrid.net';
-$port = '587';
-$username = 'blog';
-$password = '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';
+
 
 
 

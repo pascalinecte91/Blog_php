@@ -16,6 +16,7 @@ final class UserTable extends Table
         $query->execute(['username' => $username]);
         $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
+        
         if ($result === false) {
             throw new NotFoundException($this->table, $username);
         }

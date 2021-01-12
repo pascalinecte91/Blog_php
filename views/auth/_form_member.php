@@ -1,6 +1,6 @@
 <div id="container">
             
-            <form action="login_register.php" method="POST">
+            <form action="" method="POST">
                 <h1>Connexion</h1>
                 
                 <label><b>Nom d'utilisateur</b></label>

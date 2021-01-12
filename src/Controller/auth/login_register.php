@@ -6,20 +6,22 @@ use App\Model\UserMembre;
 use App\Table\Exception\NotFoundException;
 use App\Table\UserTableMembre;
 
-$userMembre = new UserMembre();
+$user_membre = new UserMembre();
 $errors = [];
 if (!empty($_POST)) {
-    $userMembre->setUserMembre($_POST['user_member']);
+  
+    $user_membre->setUserMembre($_POST['user_membre']);
     $errors['password'] = 'identifiant ou mot de passe incorrect';
 }
 if (!empty($_POST['user_membre']) && !empty($_POST['password'])) {
     $table = new UserTableMembre(Connection::getPDO());
 
     try {
-        $um = $table->findByUserMembre($_POST['user_member']);
+        $um = $table->findByUserMembre($_POST['user_membre']);
         if (password_verify($_POST['password'], $um->getPassword()) === true) {
             session_start();
             $_SESSION['auth'] = $um->getId();
+          
             header('Location: ' . $router->url('home'));
             exit();
         }
@@ -29,5 +31,5 @@ if (!empty($_POST['user_membre']) && !empty($_POST['password'])) {
 
 
 
-$form = new Form($userMembre, $errors);
+$form = new Form($user_membre, $errors);
 require_once('../views/auth/login_register.php');

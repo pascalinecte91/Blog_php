@@ -13,7 +13,7 @@
         <?= $form->input('password', 'Mot de passe'); ?>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-secondary">Se connecter</button>
+            <button type="submit" class="btn btn-secondary"> Se connecter</button>
         </div>
 </div>
 </form>
