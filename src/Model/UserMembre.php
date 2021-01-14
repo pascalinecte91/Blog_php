@@ -6,7 +6,7 @@ class UserMembre
 {
     private $id;
 
-    private $user_membre;
+    private $username_member;
 
 
     private $password;
@@ -15,13 +15,13 @@ class UserMembre
 
     public function getUserMembre(): ?string
     {
-        return $this->user_membre;
+        return $this->username_member;
     }
 
 
-    public function setUserMembre(string $user_membre): self
+    public function setUserMembre(string $username_member): self
     {
-        $this->user_membre = $user_membre;
+        $this->username_member = $username_member;
 
         return $this;
     }

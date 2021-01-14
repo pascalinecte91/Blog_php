@@ -6,25 +6,26 @@ use App\Model\UserMembre;
 use App\Table\Exception\NotFoundException;
 use App\Table\UserTableMembre;
 
-$userMembre = new UserMembre();
+$user_member = new UserMembre();
 $errors = [];
+$link = $router->url('login_index');
 
-if (isset($_POST ['user_membre'])) {
-    $userMembre->setUserMembre($_POST['user_membre']);
+if (isset($_POST ['username_member'])) {
+    $userMembre->setUserMembre($_POST['username_member']);
     $errors['password'] = 'identifiant ou mot de passe incorrect';
 }
-if (!empty($_POST['user_membre']) && !empty($_POST['password'])) {
+if (!empty($_POST['username_member']) && !empty($_POST['password'])) {
     $table = new UserTableMembre(Connection::getPDO());
 
     try {
-        $um = $table->findByUserMembre($_POST['user_member']);
+        $um = $table->findByUserMembre($_POST['username_member']);
         if (password_verify($_POST['password'], $um->getPassword()) === true) {
             session_start();
             $_SESSION['auth'] = $um->getId();
-            header('Location: ' . $router->url('home'));
+            header('Location: ' . $router->url('blog'));
             exit();
         }
     } catch (NotFoundException $e) {
     }
 }
-require_once('../views/auth/index.php');
+require_once('../views/auth/login_index.php');

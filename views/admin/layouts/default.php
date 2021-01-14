@@ -95,7 +95,7 @@
   <!-- Custom scripts for this template -->
 
   <script src="/js/tinymce.js"></script>
- 
+
 </body>
 
 </html>

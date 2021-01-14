@@ -11,7 +11,7 @@
         <title><?= isset($title) ? e($title) : 'mon Blog' ?></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/clean-blog.css">
@@ -86,13 +86,12 @@
         </footer>
 
 
-
+      
 
         <!-- Custom scripts for this template -->
-
         <script src="/js/tinymce.js"></script>
         <script src="/js/defilment.js"></script>
-
+        <script src="/js/login.js"></script>
       </body>
 
       </html>
