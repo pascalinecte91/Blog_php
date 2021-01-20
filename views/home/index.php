@@ -38,7 +38,7 @@
       <br>
 
       <div id="success"></div>
-      <input type="submit" class="btn btn-secondary" id="sendMessageButton" value="Envoyer">
+      <input type="submit" class="btn btn-secondary mb-5" id="sendMessageButton" value="Envoyer">
       </form>
       </form>
     </div>
@@ -49,5 +49,3 @@
 
 
 </body>
-<footer>
-</footer>

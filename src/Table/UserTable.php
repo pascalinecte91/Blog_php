@@ -5,6 +5,7 @@ namespace App\Table;
 use App\Model\User;
 use App\Table\Exception\NotFoundException;
 
+
 final class UserTable extends Table
 {
     protected $table = "user";
@@ -16,10 +17,22 @@ final class UserTable extends Table
         $query->execute(['username' => $username]);
         $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
-        
+
         if ($result === false) {
             throw new NotFoundException($this->table, $username);
         }
         return $result;
+
     }
+    public function createUser(User $user)
+    {
+        $id = $this->create([
+      'username' => $user->getUsername(),
+      'password' => $user->getPassword(),
+      'is_admin' => 0,
+    ]);
+        $user->setId($id);
+    }
+
 }
+

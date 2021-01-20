@@ -37,7 +37,8 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/login_register', 'auth/login_register', 'login_register')
     ->match('/login_index', 'auth/login_index', 'login_index')
     ->post('/logout', 'auth/logout', 'logout')
-   
+    ->post('/logout_member', 'auth/logout_member', 'logout_members')
+    ->post('/logout_register', 'auth/logout_register', 'logout_registers')
 
     //FORMULAIRE
     ->post('/contact', 'home/contact', 'send_mail')

@@ -39,5 +39,7 @@ foreach ($posts as $post) {
 $password = password_hash('admin', PASSWORD_BCRYPT);
 $pdo->exec("INSERT INTO user SET username='admin', password='$password'");
 
-$password = password_hash('?', PASSWORD_BCRYPT);
-$pdo->exec("INSERT INTO user_member SET username_member= '?', password='$password'");
+$password_m = password_hash($_POST['password_m'], PASSWORD_BCRYPT);
+$pdo->exec("INSERT INTO user_member SET username_member='?', password='password_m'");
+
+

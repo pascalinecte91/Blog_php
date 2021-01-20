@@ -1,11 +1,11 @@
 <?php
 
+
 use App\Connection;
 use App\Table\CommentTable;
 use App\Table\PostTable;
 use App\Validators\CommentValidator;
 use App\ObjectHelper;
-use App\HTML\Form;
 use App\Auth;
 
 Auth::check();
@@ -18,16 +18,17 @@ $link = $router->url('admin_comment_list');
 [$comments, $pagination] = (new CommentTable($pdo))->findPaginated();*/
 
 
-
 $postTable = new PostTable($pdo);
 $commentTable = new CommentTable($pdo);
 $comments = $commentTable->findByPostID($params['id'], false);
 $approve = 1;
 $post = $postTable->find($params['id']);
 
-$no_valid = false;
+
+
+$is_no_valid = false;
 if (!empty($_POST)) {
-    $v = new CommentValidator($_POST, $commentTable, $comment->getID(), );
+    $v = new CommentValidator($_POST, $commentTable, $comment->getID(),);
     ObjectHelper::hydrate($_POST, $comment, ['author', 'content', 'created_at']);
     if ($v->validate()) {
         $success = true;

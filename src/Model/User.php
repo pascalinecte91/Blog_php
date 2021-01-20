@@ -11,6 +11,8 @@ class User
 
     private $password;
 
+    private $is_admin;
+
 
 
     public function getUsername(): ?string
@@ -52,6 +54,19 @@ class User
     public function setId(int $id): self
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    public function getIsAdmin(): ?bool
+    {
+        return !! $this->is_admin;
+    }
+
+
+    public function setIsAdmin(bool $is_admin)
+    {
+        $this->is_admin = $is_admin;
 
         return $this;
     }

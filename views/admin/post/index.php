@@ -1,7 +1,7 @@
 <?php if (isset($_GET['delete'])) : ?>
     <div class="container-fluid">
 
-        <div class=" alerte alert-succes">L'enregistrement a bien été supprimé!!
+        <div class=" alerte alert-succes">L'article a bien été supprimé!!
         </div>
     <?php endif ?>
     <div class= "text-center">

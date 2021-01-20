@@ -12,13 +12,12 @@
             <?php endif; ?>-->
             <div class= "post-preview border border-secondary  mb-3">
 
-                
 
                 <div class="col-lg-12">
                 <div class="text-center">
-                <h3 class="post-title  ">
+                <h3 class="post-title mt-3  ">
                     <a href="<?= $router->url('post', ['id' => $post->getID(), 'slug' => $post->getSlug()]) ?>">
-                    <?php echo e(mb_strtoupper($post->getName())); ?>     
+                    <?php echo e(mb_strtoupper($post->getName())); ?>
                     </a>
                     </div>
                 </h3>
@@ -27,9 +26,10 @@
                             <?= e($post->getChapo()) ?></a>
                         </p>
                     </div>
+                    <div class id="image">
                     <div class="row ml-2">
                         <?php if ($post->getImage()) : ?>
-                            <img src="<?= $post->getImageURL('small') ?>" alt="image divers" style="width: 200px;">
+                            <img src="<?= $post->getImageURL('small') ?>" alt="image divers" class="img-thumbnail" style="width: 300px;">
                         <?php endif ?>
 
 
@@ -40,6 +40,7 @@
                             - Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
                     </div>
                     </p>
+                    </div>
 
                 </div>
             </div>

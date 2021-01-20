@@ -1,33 +1,41 @@
 <?php
 
-use App\HTML\Form;
 use App\Connection;
-use App\Model\UserMembre;
+use App\Model\User;
 use App\Table\Exception\NotFoundException;
-use App\Table\UserTableMembre;
+use App\Table\UserTable;
 
-$user_member = new UserMembre();
-$errors = [];
-if (!empty($_POST)) {
-  
-    $user_member->setUserMembre($_POST['username_member']);
-    $errors['password'] = 'identifiant ou mot de passe incorrect';
-}
-if (!empty($_POST['username_member']) && !empty($_POST['password'])) {
-    $table = new UserTableMembre(Connection::getPDO());
 
-    try {
-        $um = $table->findByUserMembre($_POST['username_member']);
-        if (password_verify($_POST['password'], $um->getPassword()) === true) {
-            session_start();
-            $_SESSION['auth'] = $um->getId();
-          
-            header('Location: ' . $router->url('home'));
-            exit();
-        }
-    } catch (NotFoundException $e) {
+$user = new User();
+$pdo = Connection::getPDO();
+$errors = array();
+
+
+
+    if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
+        $errors['username']= "Votre pseudo ne correspond pas aux caractères valides";
     }
-}
+
+    if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']) {
+        $errors['password']= "Votre mot de passe ne correspond pas";
+     
+    }
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        $table = new UserTable(Connection::getPDO());
+
+        try {
+            $user = $table->createUser($_POST(['username', 'password']));
+            if (password_verify($_POST['password'], $u->getPassword()) === true) {
+                session_start();
+                $_SESSION['auth'] = $u->getId();
+                header('Location: ' . $router->url('blog'));
+                exit();
+            }
+        } catch (NotFoundException $e) {
+        }
+    }
+
+
 
 
 require_once('../views/auth/login_register.php');

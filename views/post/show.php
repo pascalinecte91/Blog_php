@@ -3,12 +3,9 @@
 <h2><?php echo e(mb_strtoupper($post->getName())); ?></h2>
 <p class="text-muted">Le <?= $post->getCreatedAt()->format('d F Y H:i') ?></p>
 <?php
-if (isset($errors)) {
-    ?>
+if (isset($errors)) { ?>
   <div class="alert alert-danger">
-    <ul>
-      <?php
-
+    <ul><?php
 
       foreach ($errors as $field => $error) {
           echo "<li> le champ: "   .  $field . " est obligatoire.</li>";
@@ -40,8 +37,6 @@ if (isset($errors)) {
 Auteur(e) du post : <?= e($post->getAuthor()) ?><br>
 Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
 <hr>
-
-
 
 
 <div class="box">
@@ -86,8 +81,7 @@ Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?>
       <textarea id="msg" name="content" required></textarea>
     </div>
     <div class="d-flex justify-content-center mt-2 ">
- 
-     
+
       <button type="submit"> Envoyer LE MESSAGE</button><br>
       </form>
 

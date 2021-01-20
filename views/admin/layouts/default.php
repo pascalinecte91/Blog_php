@@ -26,7 +26,6 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/clean-blog.css">
   <link rel="stylesheet" href="/style.css">
- 
 
 </head>
 
@@ -44,9 +43,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
           </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/login_register" style="color: white">INSCRIPTION</a>
-          </li>
+        
 
         </ul>
       </div>
@@ -74,7 +71,7 @@
     <?= $content ?>
   </div>
 
-  <footer class="bg-dark text-white py-4 footer mt-auto">
+  <footer class="bg-dark text-white py-4 mt-auto">
     <div class="d-flex justify-content-around">
       <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
       <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
@@ -89,10 +86,6 @@
 
     </div>
   </footer>
-
-
-
-  <!-- Custom scripts for this template -->
 
   <script src="/js/tinymce.js"></script>
 

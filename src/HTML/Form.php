@@ -24,7 +24,7 @@ class Form
             <label for="field{$key}">{$label}</label>
             <input type="{$type}" id="field{$key}" class="{$this->getInputClass($key)}" name="{$key}"  value="{$value}" required>
             {$this->getErrorFeedback($key)}
-        </div>          
+        </div>
 HTML;
     }
     public function file(string $key, string $label): string
@@ -34,7 +34,7 @@ HTML;
             <label for="field{$key}">{$label}</label>
             <input type="file" id="field{$key}" class="{$this->getInputClass($key)}" name="{$key}">
             {$this->getErrorFeedback($key)}
-        </div>          
+        </div>
 HTML;
     }
 
