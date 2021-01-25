@@ -12,15 +12,11 @@ Auth::check();
 
 $pdo = Connection::getPDO();
 $postTable = new PostTable($pdo);
-
-
 $post = $postTable->find($params['id']);
-
 $success = false;
 $errors = [];
 $chapo = [];
 $comment = [];
-
 
 if (!empty($_POST)) {
     $data = array_merge($_POST, $_FILES);
@@ -29,10 +25,7 @@ if (!empty($_POST)) {
     if ($v->validate()) {
         PostAttachment::upload($post);
         $postTable->updatePost($post);
-        
-
         $success = true;
-    
     } else {
         $errors = $v->errors();
     }

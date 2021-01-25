@@ -1,9 +1,10 @@
 <?php
 
-use App\Connection;
-use App\Model\User;
-use App\Table\Exception\NotFoundException;
 use App\Table\UserTable;
+use App\Table\Exception\NotFoundException;
+use App\ObjectHelper;
+use App\Model\User;
+use App\Connection;
 
 
 $user = new User();
@@ -18,19 +19,19 @@ $errors = array();
 
     if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']) {
         $errors['password']= "Votre mot de passe ne correspond pas";
-     
+
     }
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
         $table = new UserTable(Connection::getPDO());
 
         try {
-            $user = $table->createUser($_POST(['username', 'password']));
-            if (password_verify($_POST['password'], $u->getPassword()) === true) {
+             ObjectHelper::hydrate($user, $_POST, ['username', 'password']);
+            $user = $table->createUser($user);
                 session_start();
-                $_SESSION['auth'] = $u->getId();
+                $_SESSION['auth'] = $user->getId();
                 header('Location: ' . $router->url('blog'));
                 exit();
-            }
+            
         } catch (NotFoundException $e) {
         }
     }

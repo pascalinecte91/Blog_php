@@ -59,8 +59,8 @@ final class CommentTable extends Table
             /* $commentsByID[$comment->getID()] = $comment;  */
         }
         $comments = $this->pdo
-      ->query('SELECT content, post_id 
-                FROM comment 
+      ->query('SELECT content, post_id
+                FROM comment
                 WHERE post_id = ' . $comment->getPostId())
       ->fetchAll(PDO::FETCH_CLASS, $this->class);
     }
@@ -94,7 +94,7 @@ final class CommentTable extends Table
       'is_valid' => 1], $comment->getID());
     }
 
- 
+
 
 
     public function findByID($comment_id)

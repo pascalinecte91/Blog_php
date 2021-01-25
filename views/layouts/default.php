@@ -90,7 +90,8 @@
         <!-- Custom scripts for this template -->
         <script src="/js/tinymce.js"></script>
         <script src="/js/defilment.js"></script>
-        
+        <script src="/js/alert.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
       </body>
-      
       </html>

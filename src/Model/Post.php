@@ -28,7 +28,6 @@ class Post
     private $oldImage;
 
     private $pendingUpload = false;
-  
 
 
 
@@ -157,7 +156,7 @@ class Post
         return $this;
     }
 
-    
+
 
     public function getImage(): ?string
     {

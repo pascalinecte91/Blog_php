@@ -1,95 +1,96 @@
 body  {
-    background-color: #f6f9fa;
+  background-color: #f6f9fa;
 
 
 }
 body#admin  {
-    background-color: #f6f9fa;
+  background-color: #f6f9fa;
 
 
 }
 
 .blockquote {
-    text-align: justify;
-    color:blue ;
-    font-size: 25px;
+  text-align: justify;
+  color:blue ;
+  font-size: 25px;
 }
+
 .blockquote_comments {
-    font-size: 20px;
-    color: black;
+  font-size: 20px;
+  color: black;
 }
 
 .post-subtitle {
-    font-size: 20px;
+  font-size: 20px;
 }
 .card {
 
-    text-align: justify;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 5px;
+  text-align: justify;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
 }
 
 #table_admin {
-    width: 1400px;
+  width: 1400px;
 }
 #form_comment {
-    background-color: rgb(207, 221, 240);
-    text-transform: uppercase;
+  background-color: rgb(207, 221, 240);
+  text-transform: uppercase;
 
 }
 .card-body {
-
-    padding-right: 15px;
-
+  padding-right: 15px;
 }
+
 label {
-    display: inline-block;
-    width:  300px;
-
+  display: inline-block;
+  width:  300px;
 }
+
 .post-preview {
-background-color:#c3d1ce;
+  background-color:#c3d1ce;
 }
 
 input, textarea {
-    font: 1em sans-serif;
-    width: 200px;
-    box-sizing: border-box;
-    border-color: #000;
+  font: 1em sans-serif;
+  width: 200px;
+  box-sizing: border-box;
+  border-color: #000;
 }
+
 #isValid {
-    width: 20px;
+  width: 20px;
 }
+
 textarea {
-    vertical-align: top;
-    height: 10em;
+  vertical-align: top;
+  height: 10em;
 }
 #msg  {
-    width:  600px;
-}
-#author  {
-    width:  600px;
+  width:  600px;
 }
 
-  .box {
-    padding: 10px;
-  }
+#author  {
+  width:  600px;
+}
+
+.box {
+  padding: 10px;
+}
 
 .login {
-
-    box-shadow: 7px 7px 1px rgb(150, 130, 130);
-    margin-left: 15%;
-    width: 900px; 
-    height: 400px;
-    text-align: left;
-    background-color :#5f8b70;
-
+  box-shadow: 7px 7px 1px rgb(150, 130, 130);
+  margin-left: 15%;
+  width: 900px;
+  height: 400px;
+  text-align: left;
+  background-color :#5f8b70;
   }
-  #image {
-     text-align: center;
-     margin-left: 350px;
 
+#image {
+  text-align: center;
+  margin-left: 350px;
   }
 

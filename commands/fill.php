@@ -12,7 +12,6 @@ $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
 $pdo->exec('TRUNCATE TABLE post');
 $pdo->exec('TRUNCATE TABLE comment');
 $pdo->exec('TRUNCATE TABLE user');
-$pdo->exec('TRUNCATE TABLE user_member');
 $pdo->exec('SET FOREIGN_KEY_CHECKS = 1');
 
 $posts = [];
@@ -39,7 +38,6 @@ foreach ($posts as $post) {
 $password = password_hash('admin', PASSWORD_BCRYPT);
 $pdo->exec("INSERT INTO user SET username='admin', password='$password'");
 
-$password_m = password_hash($_POST['password_m'], PASSWORD_BCRYPT);
-$pdo->exec("INSERT INTO user_member SET username_member='?', password='password_m'");
+
 
 

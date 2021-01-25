@@ -88,6 +88,7 @@
   </footer>
 
   <script src="/js/tinymce.js"></script>
+  <script src="/js/alert.js"></script>
 
 </body>
 

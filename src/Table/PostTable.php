@@ -44,13 +44,13 @@ final class PostTable extends Table
     {
         foreach ($posts as $post) {
             $post->setPost([]);
-            /*  $postsByID[$post->getID()] = $post;  */
         }
-        $posts = $this->pdo
+        /*$posts = $this->pdo
       ->query('SELECT *
                   FROM post
                   WHERE id IN (' . implode(array_keys($posts)) . ')')
       ->fetchAll(PDO::FETCH_CLASS, $this->class);
+    }*/
     }
 
 
@@ -82,5 +82,5 @@ final class PostTable extends Table
         return $result;
     }
 
- 
+
 }

@@ -1,15 +1,18 @@
 
 <?php if(!empty($errors)): ?>
-    <div class="alert alert-danger">
+ <div class="alert alert-dark alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
         <p> les champs ne sont pas conforment</p>
         <ul>
-<?php foreach ($errors as $error): ?>
-    <li><?= $error; ?> </li>
+            <?php foreach ($errors as $error): ?>
+            <li><?= $error; ?> </li>
 
     <?php endforeach; ?>
-        </ul>
-    </div>
-    <?php  endif;?>
+</ul>
+</div>
+
+<?php  endif;?>
 
 
 <div class="text-center">
@@ -23,17 +26,14 @@
     <form action="<?= $router->url('login') ?>" method="POST">
     <div class="row ">
     <label><b>Entrez votre PSEUDO</b></label>
-        <input type="text" placeholder="votre pseudo" name="username" required>
+        <input type="text" placeholder="votre pseudo" name="username">
         </div>
         <div class="row mt-2">
     <label><b>Mot de passe</b></label>
-        <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+        <input type="password" placeholder="Entrer le mot de passe" name="password">
         </div>
-        <div class="row mt-2">
-    <label><b>Confirmez votre MP</b></label>
-        <input type="password"  placeholder="confirmez votre mot de passe" name="password_confirm"/>
-        </div>
-</div>
+   
+
         <br>
         <div class="d-flex justify-content-center">
         <button class="btn btn-secondary mt-3" type="submit" value="envoyer">LOGIN ->

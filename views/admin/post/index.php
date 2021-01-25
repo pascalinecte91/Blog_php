@@ -21,14 +21,12 @@
 
                 <td><?= $post->getID() ?></td>
                 <td>
-                    <a href="<?= $router->url('admin_post', ['id' => $post->getID()]) ?>">
+                    <a href="<?= $router->url('admin_post', ['id' => $post->getID()]) ?>"></a>
                         <?= e($post->getName()) ?>
-                    </a>
                 </td>
                 <td>
                     <a href="<?= $router->url('admin_post', ['id' => $post->getID()]) ?>" class="btn btn-secondary">
-                        MODIFIER
-                    </a>
+                        MODIFIER</a>
                 </td>
 
 
@@ -43,7 +41,6 @@
 
                         Action commentaires
                     </a> <br>
-                    
 
 
                 </td>

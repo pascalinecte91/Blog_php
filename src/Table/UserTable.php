@@ -32,6 +32,7 @@ final class UserTable extends Table
       'is_admin' => 0,
     ]);
         $user->setId($id);
+        return $user;
     }
 
 }
