@@ -23,6 +23,26 @@ $errors = array();
     }
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
         $table = new UserTable(Connection::getPDO());
+    }
+    if (empty($errors)){
+
+        $query =$pdo->prepare("INSERT INTO user SET username = ?, password = ?");
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $query->execute([$_POST['username'], $password]);
+        die('Compte enregistré');
+
+    } else {
+        $query = $pdo->prepare("SELECT id FROM user WHERE username = ?");
+        
+        $query->execute($_POST['username']);
+        $user = $query->fetch();
+
+    }
+    if ($user) {
+        $errors['username']= "Merci de choisir un autre pseudo, celui-ci existe déjà !";
+    }
+
+
 
         try {
              ObjectHelper::hydrate($user, $_POST, ['username', 'password']);
@@ -31,10 +51,10 @@ $errors = array();
                 $_SESSION['auth'] = $user->getId();
                 header('Location: ' . $router->url('blog'));
                 exit();
-            
+
         } catch (NotFoundException $e) {
         }
-    }
+    
 
 
 
