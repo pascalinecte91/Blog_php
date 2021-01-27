@@ -18,6 +18,7 @@ Développé avec : PHP         Version  7.4.9
                  PHP MySQL   Version  5.7.31
                  Composer
                  Html 5 & CSS3
+                 Java Script
                  Bootstrap
 
  Il faudra télecharger  le dossier projet :
@@ -27,18 +28,37 @@ Développé avec : PHP         Version  7.4.9
 
 CONNEXION UTILISATEURS : ' fonctionnement':
 Le membre pourra se connecter via : l'onglet de navigation situé en haut à droite de chaque page.
-L'administrateur quant à lui se connectera soit avec le lien (selon consigne projet) dans le "footer", ou par l'onglet de la nav : membres.
+L'administrateur quant à lui se connectera  avec le lien (selon consigne projet) dans le "footer".
 Le futur membre pourra s'inscrire via l'onglet : INSCRIPTION.
+Il devra rentrer un PSEUDO et un mot de passe.
 
 CONNEXION ADMINISTRATEUR :  Username : pascaline
                             Password: 9999
 
-PAGES PRINCIPALES : ' leurs roles'
+PAGES PRINCIPALES (4) : ' leurs roles'
 
 - ACCUEIL -> Cette page permet de remplir un formulaire selon le souhait du visiteur pour me contacter en indiquant son nom, email, n° tel,
  ainsi qu'un message. Un lien  pour ouvrir mon CV se trouve au centre du  "header" de chaque page.
 - BLOG -> liste de tous les "posts" comportant : titre, slug, auteur et date.
 - MEMBRES -> permet la connection en tant que "membres déjà inscrits".
 - INSCRIPTION  -> comme son nom l'indique, au choix du visiteur!
+
+Sur le BLOG les membres peuvent:
+- Poster un "article"
+- Ecrire un "commentaire"
+- Envoyer un email ( page accueil )
+- Consulter la liste des articles et ouvrir l'article de leurs choix afin de laisser ou non un commentaire (si validation).
+
+Sur le BLOG , le rôle ADMIN :
+"POSTS"
+- Creer un article
+- le Supprimer
+- le modifier
+
+"COMMENTS"
+- creer un commentaire
+- le supprimer
+- le modifier
+- le valider
 
 AUTEUR : Pascale CHRISTOPHE élève stagiaire chez OpenClassRooms " formation Développeur Application/ PHP / SYMFONY
