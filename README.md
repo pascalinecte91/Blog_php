@@ -14,10 +14,10 @@ Il utilise les librairies intégrées grâce à Composer et telechargeables sur 
 
 Pour les actions sur Gitbash, certains "alias" crées :
 alias : 
-agent ='eval ssh-agent && ssh-add ~/.ssh/id_rsa'
-galias ='git config --list ! findstr "alias"'
-mail='maildev --ip 127.0.0.1'
-www='cd C:/wamp6/www'
+- agent ='eval ssh-agent && ssh-add ~/.ssh/id_rsa'
+- galias ='git config --list ! findstr "alias"'
+- mail='maildev --ip 127.0.0.1'
+- www='cd C:/wamp6/www'
 
 
 INSTALLATIONS:
