@@ -13,8 +13,14 @@ Il utilise les librairies intégrées grâce à Composer et telechargeables sur 
 -"npm": "6.14.10" ( url: 127.0.0.1:1080 ) -> Ouverture MailDev
 
 Pour les actions sur Gitbash, certains "alias" crées :
+alias : 
+agent ='eval ssh-agent && ssh-add ~/.ssh/id_rsa'
+galias ='git config --list ! findstr "alias"'
+mail='maildev --ip 127.0.0.1'
+www='cd C:/wamp6/www'
 
-INSTALLATION:
+
+INSTALLATIONS:
 
 Développé avec : PHP         Version  7.4.9
                  PHP MyAdmin Version  5.0.2
