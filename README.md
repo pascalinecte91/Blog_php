@@ -10,6 +10,9 @@ Il utilise les librairies intégrées grâce à Composer et telechargeables sur 
 - "fzaninotto/faker" version "1.9" qui est uploadée par le terminal en rentrant : php commands/fill.php,
 - "whoops" version "2.7.3"
 - autoload :  lassmap" : Altorouter.php "version "v1.2.0"
+-"npm": "6.14.10" ( url: 127.0.0.1:1080 ) -> Ouverture MailDev
+
+Pour les actions sur Gitbash, certains "alias" crées :
 
 INSTALLATION:
 
@@ -42,6 +45,7 @@ PAGES PRINCIPALES (4) : ' leurs roles'
 - BLOG -> liste de tous les "posts" comportant : titre, slug, auteur et date.
 - MEMBRES -> permet la connection en tant que "membres déjà inscrits".
 - INSCRIPTION  -> comme son nom l'indique, au choix du visiteur!
+
 
 Sur le BLOG les membres peuvent:
 - Poster un "article"
