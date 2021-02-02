@@ -1,4 +1,3 @@
-
 <?php if (!empty($errors)): ?>
  <div class="alert alert-dark alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -19,17 +18,17 @@
 <h2>SE CONNECTER</h2><br><br><br>
 </div>
 <div class="login my-5 text-center "><br>
-<h2>ADMINISTRATEUR - MEMBRES</h2><br><br><br>
+<h2>MEMBRES</h2><br><br><br>
 <div class="d-flex justify-content-around">
 
 
     <form action="<?= $router->url('login') ?>" method="POST" name="login">
     <div class="row ">
     <label><b>Entrez votre PSEUDO</b></label>
-        <input type="text" name="username" class="form-control " placeholder="votre pseudo" ></div>
+        <input type="text" name="username" class="form-control " required ></div>
         <div class="row mt-2">
     <label><b>Mot de passe</b></label>
-        <input type="password" name="password" class="form-control " placeholder="Entrer le mot de passe" ></div><br>
+        <input type="password" name="password" class="form-control " required></div><br>
         <div class="d-flex justify-content-center">
     <button class="btn btn-secondary mt-3" type="submit" value="envoyer">LOGIN ->
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">

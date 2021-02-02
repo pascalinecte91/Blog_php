@@ -1,23 +1,33 @@
-<?php require ("../views/alert.php"); ?>
+<?php if(!empty($errors)): ?>
+ <div class="alert alert-dark alert-dismissible" style="width: 550px;" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
+        <p> Merci de corriger les champs ! </p>
+        <ul>
+            <?php foreach ($errors as $error): ?>
+            <li><?= $error; ?> </li>
 
+    <?php endforeach; ?>
+</ul>
+</div>
+
+<?php  endif;?>
+<div class="d-flex justify-content-center">
+<div id="form_insc">
 <div class="col-12 text-center">
-    <div style="padding-left: 15px; padding-top: 20px;padding-bottom: 20px; margin-bottom: 30px; margin-top:30px; border: 4px solid #A0A0A0; text-align:left;">
-
-    <form class="box text" action ="<?= $router->url('login_register') ?>" method="POST" name="login_register">
-
+    <form class="box text" action ="<?= $router->url('login_register') ?>" method="POST" name="login_register" required>
     <h3 class="box-title text-center"> INSCRIVEZ-VOUS ICI</h3><br>
+    <label for="username">Votre PSEUDO</label>
+    <input type="text" id="username" name="username" class="form-control " required />
+    <label for="password">Mot de Passe</label>
+    <input type="password" id="password"  name="password" class="form-control" required/>
+    <label for="password">Confirmez votre MP</label>
+    <input type="password" id="password" name="password_confirm" class="form-control"  required /><br>
 
-
-
-    <input type="text" name="username" class="form-control " placeholder="Choisissez un PSEUDO" />
-    <p class="help-block"></p>
-    <input type="password"  name="password" class="form-control"placeholder="choisissez un mot de passe" />
-    <p class="help-block"></p>
-    <input type="password"  name="password_confirm" class="form-control" placeholder="confirmez votre mot de passe"  />
-    <p class="help-block"></p>
-    <p class="help-block">
     <button type="submit" class="btn btn-danger ">Transmettre</button>
     </p>
     </form>
     </div>
 </div>
+</div>
+

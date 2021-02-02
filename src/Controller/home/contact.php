@@ -1,31 +1,16 @@
 <?php
 
-
-if (
-    empty($_POST['name'])      ||
-    empty($_POST['email'])     ||
-    empty($_POST['phone'])     ||
-    empty($_POST['message'])  ||
-    !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
-) {
-    echo "Toutes les cases ne sont pas remplies";
-    return false;
-}
-
-
-
-
-
-
-$to = 'christophepascale@yahoo.fr';
-$email_subject = "blog php projet 5:" . $_POST['name'];
-$email_body = "vous avez recu un noveau message de "; // : .\n\n"." details:\n\nName: $userName\n\nEmail: $email_address\n\nPhone: $phoneNumber\n\nMessage:\n$accueilMsg";
-$headers = "From: christophepascale@yahoo.fr\n";
+ini_set('sendmail_from','monmailtest@yahoo.fr');
+$to = 'testonsMail@yahoo.fr';
+$email_subject = "blog php projet 5 - envoi d'un mail de la page d'accueil";
+$email_body = "vous avez recu un nouveau message de :" . $_POST['name'] ;
+$message = "\n\r adresse mail: " . $_POST['email'] . "\r\n numero tel: " . $_POST['phone'] . " \r\n Message:   " . $_POST['message'];
+$headers = "From: monAdresseTest@yahoo.fr\n";
 $headers .= "Reply-To:" .  $_POST['email'];
-/*mail($to,$email_subject,$email_body,$headers);*/
 
-$title = 'Contact';
-$link = $router->url('send_mail');
+mail($to, $email_subject, $message, $headers, $email_body);
+
+   header('Location: ' . $router->url('home'));
+            exit();
 require_once '../views/home/index.php';
 
-echo 'terminer';

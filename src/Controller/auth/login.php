@@ -14,7 +14,7 @@ if (!empty($_POST)) {
     if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
         $errors['username']= "Votre pseudo ne correspond pas aux caractères valides";
     }
-    
+
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
         $table = new UserTable(Connection::getPDO());
     }
@@ -48,5 +48,6 @@ if (!empty($_POST)) {
     } catch (NotFoundException $e) {
     }
 }
+
 
 require_once('../views/auth/login.php');

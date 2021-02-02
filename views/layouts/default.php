@@ -4,7 +4,7 @@
       <head>
         <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="  bjr ceci est blog ">
@@ -23,9 +23,6 @@
       <body>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
           <div class="container">
-            <a class="navbar-brand" href="">Mon blog Projet 5</a>
-
-
             <div class="collapse navbar-collapse " id="navbarResponsive">
               <ul class="navbar-nav ml-auto justify-content-between ">
                 <li class="nav-item">
@@ -39,9 +36,7 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" data-toggle="tooltip" href="/login_register">INSCRIPTION</a></span>
-
                 </li>
-
               </ul>
             </div>
           </div>
@@ -81,7 +76,7 @@
 
           </div>
           <div class="col-12 text-center">
-            <a href="/login" style="color: white">CONNEXION ADMINISTRATION </a>
+            <a href="/login_admin" style="color: white">CONNEXION ADMINISTRATION </a>
             <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
             </div>
 
@@ -91,7 +86,7 @@
         <script src="/js/tinymce.js"></script>
         <script src="/js/defilment.js"></script>
         <script src="/js/alert.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      
 
       </body>
       </html>

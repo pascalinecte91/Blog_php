@@ -41,6 +41,10 @@ class User
         return $this;
     }
 
+   public function getCreateUser(): string
+    {
+        return $this->create_user;
+    }
 
 
     public function getId(): ?int

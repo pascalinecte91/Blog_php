@@ -3,13 +3,9 @@
 </div>
 <div class="row align-self-center">
     <div class="col-lg-12 col-md-10 mx-auto">
-        <?php $firstLine = true; ?>
+        
 
         <?php foreach ($posts as $post) : ?>
-            <!--<?php if (!$firstLine) : ?>
-                <hr>
-
-            <?php endif; ?>-->
             <div class= "post-preview border border-secondary  mb-3">
 
 
@@ -44,8 +40,8 @@
 
                 </div>
             </div>
-            <!--<?php $firstLine = false; ?>
-        <?php endforeach ?>-->
+            
+        <?php endforeach ?>
 
     </div>
 </div>
