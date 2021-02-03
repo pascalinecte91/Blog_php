@@ -32,7 +32,7 @@
                   <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
                 </li>
                 <li class="nav-item">
-                   <a class="nav-link" data-toggle="tooltip" href="/login">Membres</a></span>
+                   <a class="nav-link" data-toggle="tooltip" href="/login_member">Membres</a></span>
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" data-toggle="tooltip" href="/login_register">INSCRIPTION</a></span>

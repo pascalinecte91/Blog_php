@@ -43,6 +43,9 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="<?= $router->url('home') ?>">DECONNEXION</a>
+          </li>
         
 
         </ul>
@@ -57,7 +60,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h3>
-              <marquee scrollamount="4">Vous êtes connectés</marquee scrollamount="4">
+              <marquee scrollamount="4">Vous êtes bien connectés à l'administration ! </marquee scrollamount="4">
             </h3>
 
             <span class="subheading"></span>
@@ -81,7 +84,7 @@
 
     </div>
     <div class="col-12 text-center">
-      <a href="/login" style="color: white">CONNEXION ADMINISTRATION</a>
+      <a href="/login_admin" style="color: white">CONNEXION ADMINISTRATION</a>
       <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
 
     </div>

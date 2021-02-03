@@ -29,7 +29,7 @@ public function findByUsername(string $username)
         $id = $this->create([
       'username' => $user->getUsername(),
       'password' => $user->getPassword(),
-      'is_admin' => 0,
+      'is_admin' => 1,
     ]);
         $user->setId($id);
         return $user;
