@@ -12,6 +12,11 @@
 </div>
 
 <?php  endif;?>
+<?php
+if (isset($_POST['envoyer'])) {
+  // Traitement de ton formulaire
+}
+?>
 
 
 <div class="text-center">

@@ -30,5 +30,5 @@ class Validator extends ValitronValidator
         return str_replace('{field}', '', $message);
         return $message;
     }
-    /* field= nom du champ : image*   value  =  valeur du champ  fields = tous les champs*/
+    
 }

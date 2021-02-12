@@ -8,11 +8,9 @@ class User
 
     private $username;
 
-
     private $password;
 
     private $is_admin;
-
 
 
     public function getUsername(): ?string
@@ -34,18 +32,26 @@ class User
         return $this->password;
     }
 
-
     public function setPassword(string $password): self
     {
         $this->password = password_hash($password, PASSWORD_BCRYPT);
         return $this;
     }
 
-   public function getCreateUser(): string
+    public function getCreateUser(): ?string
     {
         return $this->create_user;
     }
 
+   public function setCreateUser($username): ?string
+    {
+        return $this->create_user;
+    }
+
+    public function getFindByUser(): string
+    {
+        return $this->find_by_user;
+    }
 
     public function getId(): ?int
     {
@@ -72,4 +78,5 @@ class User
 
         return $this;
     }
+
 }

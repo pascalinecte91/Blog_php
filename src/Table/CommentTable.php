@@ -28,8 +28,6 @@ final class CommentTable extends Table
       'content' => $comment->getContent(),
       'created_at' => $comment->getCreatedAt()->format('Y-m-d H:i:s'),
       'author' => $comment->getAuthor(),
-
-
     ], $comment->getID());
     }
 
@@ -37,7 +35,6 @@ final class CommentTable extends Table
     {
         $query = $this->pdo->prepare("INSERT INTO comment SET 'author', 'content', 'post_id' VALUES");
         $query->execute(['author', 'content', 'post_id']);
-
         $result = $query->fetchAll();
 
 
@@ -55,20 +52,17 @@ final class CommentTable extends Table
     {
         foreach ($comments as $comment) {
             $comment->setComment([]);
-
-            /* $commentsByID[$comment->getID()] = $comment;  */
         }
         $comments = $this->pdo
-      ->query('SELECT content, post_id
-                FROM comment
-                WHERE post_id = ' . $comment->getPostId())
+      ->query('SELECT content, post_id FROM comment WHERE post_id = ' . $comment->getPostId())
       ->fetchAll(PDO::FETCH_CLASS, $this->class);
     }
+
     public function findPaginated()
     {
         $paginatedQuery = new PaginatedQuery(
             "SELECT * FROM {$this->table} ORDER BY created_at DESC",
-            "SELECT COUNT(id) FROM {$this->table}",/* recupere tous les articles*/
+            "SELECT COUNT(id) FROM {$this->table}",
       $this->pdo
         );
         $comments = $paginatedQuery->getItems(Comment::class);
@@ -90,11 +84,8 @@ final class CommentTable extends Table
 
     public function approve(Comment $comment): void
     {
-        $this->update([
-      'is_valid' => 1], $comment->getID());
+        $this->update(['is_valid' => 1], $comment->getID());
     }
-
-
 
 
     public function findByID($comment_id)
@@ -103,7 +94,6 @@ final class CommentTable extends Table
         $query->execute(['id' => $comment_id]);
         $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
-
 
         return $result;
     }

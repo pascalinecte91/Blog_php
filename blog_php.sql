@@ -3,11 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 26 jan. 2021 à 19:02
+-- Généré le : ven. 12 fév. 2021 à 11:34
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `tutoblog`
+-- Base de données : `blog_php`
 --
 
 -- --------------------------------------------------------
@@ -38,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `is_valid` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `fk_post_comment` (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `comment`
@@ -62,7 +61,6 @@ INSERT INTO `comment` (`id`, `author`, `content`, `created_at`, `post_id`, `is_v
 (16, 'Fouquet', 'Est omnis inventore aut vel. Vel odio perferendis amet voluptatem sit vitae. Consectetur eligendi nesciunt autem occaecati illo. Unde quisquam quaerat ut non adipisci. Repudiandae ut omnis sunt minima sint molestiae. Nihil et omnis est optio doloribus.', '2000-02-19 23:34:38', 6, 0),
 (17, 'Delannoy', 'Sint consequuntur consequatur aspernatur delectus dolores est. Aut aspernatur error odit enim ipsum et. Illum laborum ad assumenda perspiciatis quia minus.', '2013-01-01 12:25:23', 6, 0),
 (18, 'Turpin', 'Aut et culpa rerum. Incidunt dolorum harum facilis eos nostrum. Quia quo labore alias quam. Voluptatibus qui quia illum et dolorem cumque et. Nostrum quasi cumque porro. Omnis quia consequatur ea.', '2007-10-27 02:04:36', 6, 0),
-(19, 'Chretien', 'Ad maxime doloremque accusamus repellendus eveniet repellendus ea totam. Quia numquam mollitia quo. Ipsa veritatis iste provident voluptates.', '1990-01-27 12:39:01', 7, 0),
 (20, 'Renault', 'Excepturi enim ipsum nesciunt quas voluptas. Minus cumque neque deleniti suscipit eos. Officia cumque error sunt possimus sit ex.', '1988-11-28 10:21:11', 7, 1),
 (21, 'Guillet', 'Odio repudiandae et et consequatur. Maxime ea cumque quas consequatur voluptatem. Minima nostrum molestias nemo et nulla delectus in.', '2019-09-19 10:44:40', 7, 1),
 (22, 'Verdier', 'Et ratione ut eos maxime modi omnis aut. Eum praesentium et sequi repellat nostrum blanditiis rerum id.', '1999-03-21 16:25:46', 8, 0),
@@ -106,7 +104,7 @@ INSERT INTO `comment` (`id`, `author`, `content`, `created_at`, `post_id`, `is_v
 (67, 'Gregoire', 'Quaerat repellendus deleniti nulla deleniti. Sit et facere ut blanditiis porro dolor. Et ea quo tempora quae doloribus et debitis. Aspernatur dolorem deleniti facere a suscipit. Excepturi ipsum hic commodi ex ratione possimus consectetur harum. Eius adipisci eius aliquam totam neque ut provident. Ab eaque odio unde illo labore.', '2005-02-27 16:32:42', 23, 0),
 (68, 'Gerard', 'Voluptatem libero dolorem rerum nisi quia. Non atque quo voluptatem voluptatibus.', '2020-07-20 14:19:56', 23, 0),
 (69, 'Gonzalez', 'At ut accusantium numquam reiciendis vitae minima aut. Rerum aliquid non debitis iure. Veritatis omnis officia ad enim a. Omnis exercitationem perferendis ut iste expedita est.', '2010-01-16 16:12:32', 23, 0),
-(70, 'Collin', 'Reiciendis veritatis sequi iste architecto. Aut unde suscipit odit est. Libero suscipit enim sapiente nihil aut vel.', '2009-01-14 00:42:00', 24, 0),
+(70, 'Collin', 'Reiciendis veritatis sequi iste architecto. Aut unde suscipit odit est. Libero suscipit enim sapiente nihil aut vel.', '2009-01-14 00:42:00', 24, 1),
 (71, 'Pinto', 'Tenetur ut aut nihil est beatae ab itaque distinctio. Adipisci sit officiis esse animi. Molestiae adipisci nisi et maxime. Nulla labore eum quis voluptatem et velit.', '2015-06-03 17:51:58', 24, 1),
 (72, 'Adam', 'Dolore asperiores esse ea accusantium omnis. Molestias qui amet voluptatibus tempora.', '2000-08-11 20:28:11', 24, 1),
 (73, 'Le Roux', 'Adipisci ut pariatur ratione a quos enim autem. Fugit error accusamus sapiente blanditiis. Dignissimos dolorem nemo voluptatibus illum cum. Nisi sed fugiat quia rem autem qui a necessitatibus.', '1981-06-22 09:17:15', 25, 0),
@@ -190,7 +188,9 @@ INSERT INTO `comment` (`id`, `author`, `content`, `created_at`, `post_id`, `is_v
 (160, 'Pires', 'Dolores voluptatum temporibus aliquam blanditiis nulla. Quis distinctio aut in et voluptas laboriosam sequi. Iure ex provident est velit soluta rerum. Sed quisquam quia perferendis ipsa amet nemo quo.', '1997-04-07 17:57:51', 54, 0),
 (161, 'Pineau', 'Est velit libero expedita sapiente incidunt tempora eius. Libero delectus doloribus quas laboriosam adipisci et. Alias sequi quis suscipit a ipsum incidunt qui culpa. Mollitia explicabo modi ratione iste. Et neque eum deleniti. Magnam ut maiores non dolores. Sint unde ut maiores sit.', '2002-11-09 13:38:01', 54, 0),
 (162, 'Torres', 'Quasi similique optio commodi accusantium. Voluptas aperiam maiores officia nulla adipisci quia id. Tempora dignissimos sit autem et.', '1988-12-13 01:44:53', 54, 0),
-(169, 'pascalinette', 'oremque hic. Et vitae earum commodi nesciunt nemo quam ut est. Id autem et ut officiis voluptatum. Et deleniti suscipit quasi autem. Laborum dicta et deserunt animi sed consectetur ab. Vel labore neque repellat blanditiis corrupti eum. Odit id assumenda ex laboriosam. V', '2021-01-20 19:02:01', 7, 0);
+(169, 'pascalinette', 'oremque hic. Et vitae earum commodi nesciunt nemo quam ut est. Id autem et ut officiis voluptatum. Et deleniti suscipit quasi autem. Laborum dicta et deserunt animi sed consectetur ab. Vel labore neque repellat blanditiis corrupti eum. Odit id assumenda ex laboriosam. V', '2021-01-20 19:02:01', 7, 0),
+(170, 'pascalinette', 'cum proximis clandestinis conloquiis et nocturnis qua vi, quibusve commentis id fieret, antequam effundendis rebus pertinacius incumberet confidentia, acciri mollioribus scriptis per simulationem tractatus publici nimis urgentis eundem placuerat Gallum, ut auxilio destitutus sine ullo interiret obstaculo.', '2021-01-27 13:19:28', 65, 0),
+(171, 'Laurence', 'corrupti eum libero aut ea eum aperiam molestiae. Provident vel tempore non sit odio est. Est nisi dicta et qui quia velit eveniet nesciunt. Enim est maiores consectetur maiores. Qui quia consequatur atque voluptatem atque dolor.', '2021-01-27 19:12:26', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -288,23 +288,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) NOT NULL,
   `is_admin` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `is_admin`) VALUES
-(1, 'pascale', '$2y$10$9ldNAE1KYWh5o8KYJbzZ2OTtsTHs30gI7omxZDI.bvVEUTgVb5zl.', 1),
-(2, 'Beebeepc', '$2y$10$z0QKwZFWLkM2lfr2Lc36euJiUWSi3YIeyNl2VUSgat3X56A7NCRBe', 0),
-(3, 'david', '$2y$10$..NtR1mDvmbo/3sUfPC5/Osw4PZzILbYcSstXHDevUBnd4W7oY8ty', 0),
-(15, 'RUDOLF', '$2y$10$PbAUSs38smU5WXpqBEULfuHnsHpUUpwuX9bYA/EBy1wQtMbprvBNi', 0),
-(16, 'RENARD', '$2y$10$cfWPSFDLqjMXvt8J1FC6yejRdNV6M2uD/Xo.fXvikdQaH6f5xGXJu', 0),
-(17, 'pascale', '$2y$10$9ldNAE1KYWh5o8KYJbzZ2OTtsTHs30gI7omxZDI.bvVEUTgVb5zl.', 0),
-(18, 'dimitrywriting', '$2y$10$Tdu.uraJdu7MhI8uG7abK.jyMaUEZ3r2Bvbo5fHXDBKgxqjnBLB06', 0),
-(19, 'PARIS', '$2y$10$Oph9BSn5h9PNzMmft9yXW.oLv3u8Px3rKwyenEsyugiKmkQq0NxM.', 0),
-(20, 'LARDY', '$2y$10$ggbxkKxKCHEinGYWiTtsSe6FzprJ37YHq5RfcrD873T9wsne4Mn4e', 0),
-(21, 'toto1', '$2y$10$kEM/t4UWpfv1LalRpepEYeysLpbRXhZkdznMZW.gSC.uS4Peb82RG', 0);
+(2, 'david', '$2y$10$..NtR1mDvmbo/3sUfPC5/Osw4PZzILbYcSstXHDevUBnd4W7oY8ty', 0),
+(3, 'RUDOLF', '$2y$10$PbAUSs38smU5WXpqBEULfuHnsHpUUpwuX9bYA/EBy1wQtMbprvBNi', 0),
+(4, 'lolo', '$2y$10$Gjk9Cj.DVtKfLkPff/nbvuVaQ/daD85xl0LkYmXvzBSY/I5owF7du', 0),
+(5, 'guepard', '$2y$10$pSX63gNxQLvozN5bUJuBNepjidUlU.DF6NEJGGWRF0fQN6S2VaC0C', 0),
+(6, 'merlin', '$2y$10$E0PbbdwCeDaRCJg0.e23gOCf0M9BAhySx/LG35b0KogBSW.pNWpnO', 0),
+(7, 'pascale', '$2y$10$Z1QFLVpi98GLT82Ais0oqulXSlrBWEwlF727GQLw07x8OXM9in07W', 1),
+(8, 'gaston', '$2y$10$fBExWcsnQf5z/6oJEQDw5.J.jvn61WD95M25mEd959EkmCDrmpF8S', 0);
 
 --
 -- Contraintes pour les tables déchargées
@@ -315,7 +312,6 @@ INSERT INTO `user` (`id`, `username`, `password`, `is_admin`) VALUES
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `fk_post_comment` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

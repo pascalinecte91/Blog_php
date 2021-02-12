@@ -2,7 +2,6 @@
 
 use App\Connection;
 use App\Table\PostTable;
-use App\Table\CommentTable;
 use App\Auth;
 
 Auth::check();

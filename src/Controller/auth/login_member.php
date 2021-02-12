@@ -5,21 +5,30 @@ use App\Connection;
 use App\Table\UserTable;
 use App\Table\Exception\NotFoundException;
 
-$user = new User();
 $table = new UserTable(Connection::getPDO());
-$pdo = Connection::getPDO();
+$user = new User();
+$pdo = Connection:: getPDO();
+$errors = array();
 
-    if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) {
-        $query = $pdo->prepare("SELECT * FROM user WHERE username = :username");
-        $query->execute(['username' =>$_POST['username']]);
-        $u = $query->fetch();
+    if (empty($_POST['password'])) {
+        $errors['password']= "Votre mot de passe ne correspond pas ou n'est pas rempli correctement!";
+    }
+  
+    if (empty($_POST['username'])) {
+        $errors['username']= " votre pseudo n'est pas correct ";
+    }
 
-        if (password_verify($_POST['password'], $u->password)) {
-            $_SESSION['auth'] = $u;
-            header('Location: ' . $router->url('blog'));
-            exit();
-        }
-}
+    if (!isset($_POST['envoyer'])) {
+        echo ' votre formualire  n\est pas envoyé';
+    }
+
+    try {
+        $_SESSION['auth'] = $user->getId();
+        header('Location: ' . $router->url('blog'));
+        exit();
+        
+    } catch (NotFoundException $e) {
+    }
 
 
 require_once('../views/auth/login_member.php');

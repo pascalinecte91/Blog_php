@@ -70,6 +70,7 @@ abstract class Table
 
     public function create(array $data): int
     {
+     
         $sqlFields = [];
         foreach ($data as $key => $value) {
             $sqlFields[] = "$key = :$key";

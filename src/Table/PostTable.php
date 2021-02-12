@@ -21,13 +21,11 @@ final class PostTable extends Table
       'image' => $post->getImage(),
       'created_at' => $post->getCreatedAt()->format('Y-m-d H:i:s'),
       'author' => $post->getAuthor(),
-
-
     ], $post->getID());
     }
 
     public function createPost(Post $post): void
-    {
+    { 
         $id = $this->create([
       'name' => $post->getName(),
       'slug' => $post->getSlug(),
@@ -53,8 +51,6 @@ final class PostTable extends Table
     }*/
     }
 
-
-
     public function findPaginated()
     {
         $paginatedQuery = new PaginatedQuery(
@@ -68,9 +64,6 @@ final class PostTable extends Table
         return [$posts, $paginatedQuery];
     }
 
-
-
-
     public function findByPostID($post_id)
     {
         $query = $this->pdo->prepare('SELECT * FROM ' . $this->table  .  ' WHERE post_id= :post_id');
@@ -78,9 +71,6 @@ final class PostTable extends Table
         $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
 
-
         return $result;
     }
-
-
 }

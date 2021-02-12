@@ -30,7 +30,7 @@
             <label for="">Mot de passe</label>
             <input type="password" name="password" class="form-control " required></div><br>
                 <div class="d-flex justify-content-center">
-            <button class="btn btn-secondary mt-3" type="submit" value="envoyer">LOGIN ->
+            <button type="submit" name="envoyer"class="btn btn-danger">LOGIN ->
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1

@@ -42,7 +42,7 @@ L'administrateur quant à lui se connectera  avec le lien (selon consigne projet
 Le futur membre pourra s'inscrire via l'onglet : INSCRIPTION.
 Il devra rentrer un PSEUDO et un mot de passe.
 
-CONNEXION ADMINISTRATEUR :  Username : pascaline
+CONNEXION ADMINISTRATEUR :  Username : admin
                             Password: 9999
 
 PAGES PRINCIPALES (4) : ' leurs roles'

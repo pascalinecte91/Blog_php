@@ -3,11 +3,14 @@
 
         <div class=" alerte alert-succes">Le commentaire a bien été supprimé!!
         </div>
-    <?php endif ?>>
+    <?php endif ?>
 
     <?php if (count($comments)<0) : ?>
-        <div class=" alert alert-danger" style="max-width: 400px;"> BONJOUR ! Aucun commentaire à traiter !
-        </div>
+       <div class="alert alert-dark alert-dismissible" style="width: 700px;" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
+        <p> aucun commentaire à valider</p>
+        <ul>
     <?php endif ?>
 
     <div class id="table_admin">

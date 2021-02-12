@@ -33,7 +33,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->get('/blog', 'comment/index', 'comment')
     ->get('/blog/[*:slug]-[i:id]', 'post/show', 'post')
     ->post('/blog/[*:slug]-[i:id]/comments', 'comment/new', 'comment_new')
-    ->match('/login', 'auth/login_member', 'login_member')
+    ->match('/login_member', 'auth/login_member', 'login_member')
     ->match('/login_register', 'auth/login_register', 'login_register')
     ->match('/login_admin', 'auth/login_admin', 'login')
     ->post('/logout', 'auth/logout', 'logout')

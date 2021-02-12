@@ -23,12 +23,10 @@ $commentTable = new CommentTable($pdo);
 $comments = $commentTable->findByPostID($params['id'], false);
 $approve = 1;
 $post = $postTable->find($params['id']);
-
-
-
 $is_no_valid = false;
+
 if (!empty($_POST)) {
-    $v = new CommentValidator($_POST, $commentTable, $comment->getID(),);
+    $v = new CommentValidator($_POST, $commentTable, $comment->getID(), );
     ObjectHelper::hydrate($_POST, $comment, ['author', 'content', 'created_at']);
     if ($v->validate()) {
         $success = true;
