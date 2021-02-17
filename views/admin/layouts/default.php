@@ -4,7 +4,6 @@
 <head>
   <script src="https://cdn.tiny.cloud/1/vulic088otkcbtpjur7cqapj7bi254hb6tyeq1jl3e8upz16/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
   <script>
     tinymce.init({
       selector: 'textarea',
@@ -15,26 +14,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="  bonjour ceci est mon blog  158 carac">
+  <meta name="description" content="blog  ">
   <title><?= isset($title) ? e($title) : 'mon Blog' ?></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/clean-blog.css">
   <link rel="stylesheet" href="/style.css">
-
 </head>
 
-<body id="admin">
+<body>
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="">Mon blog Projet 5</a>
-
-
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto justify-content-between ">
           <li class="nav-item">
@@ -46,7 +39,6 @@
            <li class="nav-item">
             <a class="nav-link" href="<?= $router->url('home') ?>">DECONNEXION</a>
           </li>
-        
 
         </ul>
       </div>
@@ -74,25 +66,26 @@
     <?= $content ?>
   </div>
 
-  <footer class="bg-dark text-white py-4 mt-auto">
-    <div class="d-flex justify-content-around">
-      <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
-      <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
-      <a href="/cv_projet4.pdf" style="color: white">Telecharger mon CV</a>
-      <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
-      <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
 
-    </div>
-    <div class="col-12 text-center">
-      <a href="/login_admin" style="color: white">CONNEXION ADMINISTRATION</a>
-      <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
+        <footer class="bg-dark text-white py-4  mt-auto">
+          <div class="d-flex justify-content-around">
+            <a href="https://fr.facebook.com" style="color: #02b5fc"><i class="fa fa-facebook fa-2x"></i> Facebook</a>
+            <a href="https://twitter.com/explore" style="color: red"><i class="fa fa-twitter fa-2x"></i> Twitter </a>
+            <a href="/cvProjet5.pdf" style="color: white">Telecharger mon CV</a>
+            <a href="https://github.com" style="color: #02b5fc"><i class="fa fa-github fa-2x"></i> Github</a>
+            <a href="https://fr.linkedin.com/" style="color: #f7f10a"><i class="fa fa-linkedin fa-2x"></i> Linkedin</a>
 
-    </div>
-  </footer>
+          </div>
+          <div class="col-12 text-center">
+            <a href="/login_admin" style="color: white">CONNEXION ADMINISTRATION </a>
+            <p class="copyright text-muted">Copyright &copy; Pascaline 2020</p>
+            </div>
+        </footer>
 
-  <script src="/js/tinymce.js"></script>
-  <script src="/js/alert.js"></script>
+        <!-- Custom scripts for this template -->
+        <script src="/js/tinymce.js"></script>
+        <script src="/js/defilment.js"></script>
+        <script src="/js/alert.js"></script>
 
-</body>
-
+  </body>
 </html>

@@ -1,12 +1,12 @@
 <?php
 
 use App\Connection;
-use App\Table\PostTable;
+use App\Model\PostManager;
 
 $title = 'Mon blog';
 $pdo = Connection::getPDO();
 
-$table = new PostTable($pdo);
+$table = new PostManager($pdo);
 [$posts, $pagination] = $table->findPaginated();
 $post = [];
 

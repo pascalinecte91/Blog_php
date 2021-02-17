@@ -18,7 +18,6 @@ class Comment
 
     private $is_valid;
 
-    private $is_no_valid;
 
 
     public function getID(): ?int
@@ -91,6 +90,7 @@ class Comment
 
         return $this;
     }
+    
     public function findByPostID(): int
     {
         return $this->post_id;
@@ -115,9 +115,5 @@ class Comment
     {
         return $this->is_valid;
     }
-
-    public function getIsNoValid()
-    {
-        return $this->is_no_valid;
-    }
+   
 }

@@ -1,13 +1,13 @@
 <?php
 
 use App\Connection;
-use App\Table\CommentTable;
+use App\Table\CommentManager;
 use App\Auth;
 
 Auth::check();
 
 $pdo = Connection::getPDO();
-$table = new CommentTable($pdo);
+$table = new CommentManager($pdo);
 $comment = $table->findById($params['id']);
 $table->approve($comment);
 header('Location:' . $router->url('admin_posts') . '?approve=1');

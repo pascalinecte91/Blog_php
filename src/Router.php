@@ -69,7 +69,7 @@ class Router
             $content = ob_get_clean();
             require $this->viewsPath  . DIRECTORY_SEPARATOR . $layout  . '.php';
         } catch (ForbiddenException $e) {
-            header('Location: ' . $this->url('login_member') . '?forbidden=1');
+            header('Location: ' . $this->url('login') . '?forbidden=1');
             exit();
         }
         return $this;

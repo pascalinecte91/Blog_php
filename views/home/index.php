@@ -1,10 +1,22 @@
+<?php if (empty($errors)) : ?>
+ <div class="alert alert-dark alert-dismissible"style="width: 700px;" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span></button>
+        <p> Votre mail a bien été envoyé !  Je vous répondrai dès que possible ! Merci </p>
+<?php endif ?>
+
+ </div>
+
+
+
+
 <div class="container">
   <div class="row">
     <div class="col-lg-12 col-md-10 mx-auto text-center">
       <h4> laissez-moi un message <br><br> Je vous répondrai dès que possible</h4>
 
       <div style="padding-left: 15px; margin-top:30px; border: 4px solid #A0A0A0; text-align:left;background-color:white">
-        <form action="<?= $router->url('send_mail', []); ?>" method="post">
+        <form action="<?= $router->url('send', []); ?>" method="post">
 
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">

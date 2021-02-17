@@ -1,12 +1,5 @@
 body  {
   background-color: #f6f9fa;
-
-
-}
-body#admin  {
-  background-color: #f6f9fa;
-
-
 }
 
 .blockquote {
@@ -32,7 +25,7 @@ body#admin  {
 
 }
 
-#table_admin {
+.table_admin {
   width: 1400px;
 }
 #form_comment {
@@ -110,4 +103,5 @@ textarea {
   text-align: center;
   margin-left: 350px;
   }
+
 

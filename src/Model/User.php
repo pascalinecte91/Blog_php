@@ -18,7 +18,6 @@ class User
         return $this->username;
     }
 
-
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -38,26 +37,15 @@ class User
         return $this;
     }
 
-    public function getCreateUser(): ?string
+    public function getFindByUsername(): ?string
     {
-        return $this->create_user;
-    }
-
-   public function setCreateUser($username): ?string
-    {
-        return $this->create_user;
-    }
-
-    public function getFindByUser(): string
-    {
-        return $this->find_by_user;
+        return $this->username;
     }
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
 
     public function setId(int $id): self
     {
@@ -71,12 +59,10 @@ class User
         return !! $this->is_admin;
     }
 
-
     public function setIsAdmin(bool $is_admin)
     {
         $this->is_admin = $is_admin;
 
         return $this;
     }
-
 }

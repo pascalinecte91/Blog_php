@@ -35,11 +35,11 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->post('/blog/[*:slug]-[i:id]/comments', 'comment/new', 'comment_new')
     ->match('/login_member', 'auth/login_member', 'login_member')
     ->match('/login_register', 'auth/login_register', 'login_register')
-    ->match('/login_admin', 'auth/login_admin', 'login')
+    ->match('/login_admin', 'auth/login_admin', 'login_admin')
     ->post('/logout', 'auth/logout', 'logout')
 
     //FORMULAIRE
-    ->post('/contact', 'home/contact', 'send_mail')
+    ->post('/contact', 'home/contact', 'send')
 
 
     //ADMIN

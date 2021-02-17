@@ -1,17 +1,17 @@
 <?php
 
 use App\Connection;
-use App\Table\CommentTable;
-use App\Table\PostTable;
+use App\Model\CommentManager;
+use App\Model\PostManager;
 
 $slug = $params['slug'];
 $id = (int)$params['id'];
 $comment = [];
 $pdo = Connection::getPDO();
-$table = new PostTable($pdo);
-$post = (new PostTable($pdo))->find($id);
+$table = new PostManager($pdo);
+$post = (new PostManager($pdo))->find($id);
 [$posts, $pagination] = $table->findPaginated();
-$comments = (new CommentTable($pdo))->findByPostID($id);
+$comments = (new CommentManager($pdo))->findByPostID($id);
 $is_valid = true;
 if ($post->getSlug() !== $slug) {
     $url = $router->url('post', ['slug' => $post->getSlug(), 'id' => $id]);

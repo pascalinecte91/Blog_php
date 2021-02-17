@@ -9,7 +9,7 @@ $headers .= "Reply-To:" . $_POST['email'];
 
 mail($to, $email_subject, $message, $headers, $email_body);
 
-   /*header('Location: ' . $router->url('home'));
-            /*exit();
+   header('Location: ' . $router->url('home'));
+            exit();
 require_once '../views/home/index.php';
-*/
+

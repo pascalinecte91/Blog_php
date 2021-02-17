@@ -5,7 +5,7 @@
         </div>
     <?php endif ?>
 
-    <?php if (count($comments)<0) : ?>
+    <?php if (count($comments)<1) : ?>
        <div class="alert alert-dark alert-dismissible" style="width: 700px;" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span></button>
@@ -13,7 +13,7 @@
         <ul>
     <?php endif ?>
 
-    <div class id="table_admin">
+    <div class= "table_admin">
    <div class="d-flex justify-content-center" style="font-size: 35px;">
        <h3>COMMENTAIRES A VALIDER</h3>
    </div><br>
