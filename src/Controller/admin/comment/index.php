@@ -1,7 +1,7 @@
 <?php
 
 use App\Connection;
-use App\Table\CommentManager;
+use App\Model\CommentManager;
 use App\Auth;
 
 Auth::check();
@@ -14,4 +14,3 @@ $link = $router->url('admin_comments');
 
 
 require_once('../views/admin/post/index.php');
-/*  sur la page principale admin

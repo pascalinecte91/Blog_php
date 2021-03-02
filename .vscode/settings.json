@@ -1,6 +1,8 @@
 {
-    "git.ignoreLimitWarning": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
+  "window.zoomLevel": 0,
+  "git.ignoreLimitWarning": true,
+  
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  
 }

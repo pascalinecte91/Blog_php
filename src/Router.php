@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\security\ForbiddenException;
+use App\Model\Security\ForbiddenException;
 
 class Router
 {

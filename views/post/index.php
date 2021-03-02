@@ -1,3 +1,22 @@
+<?php  if (empty($_SESSION['auth'])) :?> 
+<div class="alert alert-info alert-dismissible text-center" style="width:380px" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    <p> Bienvenue - Vous etes connectés  </p>  
+</div>
+
+<?php endif ?>
+
+<!--<?php if (empty($successR)) : ?>
+<div class="alert alert-info alert-dismissible text-center" style="width: 1380px" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    <p style="font-size:30px;"> <marquee scrollamount="7">BIENVENUE ! ****  Vous etes inscrits ****   FÉLICITATIONS </marquee
+                                scrollamount="7">  </p>  
+</div>
+<?php endif ?>-->
+
+
 <div class="text-center p-2 mb-2">
     <h2> BLOG POSTS </h2><br>
 </div>

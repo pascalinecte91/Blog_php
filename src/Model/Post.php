@@ -176,7 +176,7 @@ class Post
         if (is_array($image) && !empty($image['tmp_name'])) {
             if (!empty($this->image)) {
                 $this->oldImage = $this->image;
-                /* si il y a deja une image elle sera sauvegardé dans la propriete oldimage*/
+                
             }
             $this->pendingUpload = true;
             $this->image = $image['tmp_name'];

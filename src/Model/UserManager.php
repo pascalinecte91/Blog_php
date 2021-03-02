@@ -12,16 +12,29 @@ final class UserManager extends Manager
 
     public function findByUsername(string $username)
     {
-        $query = $this->pdo->prepare("SELECT id FROM user WHERE username = ?");
-        $query->execute([$_POST['username']]);
+        $query = $this->pdo->prepare("SELECT * FROM user WHERE username = ?");
+        $query->execute([$username]);
         $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
         $user = $query->fetch();
-        if ($user) {
-            $errors['username']= 'psuedo deja utilisé';
-        }
+        return $user;
+
     }
 
-
+    
+    public function findByUsernameAndPassword(string $username, string $password)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM user WHERE username = ?");
+        $query->execute([$username]);
+        $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
+        $user = $query->fetch();
+        if (!empty($user)) {
+            $bdPassword = $user->getPassword();
+            if (password_verify($password, $bdPassword)) {
+                return $user;
+            }
+        }
+        return null;
+    }        
 
     public function createUser(User $user)
     {
@@ -52,12 +65,9 @@ final class UserManager extends Manager
         $query->execute([$username,$password]);
         $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
         $result = $query->fetch();
-        if ($result === true) {
-            echo ' bon';
-        } else {
-            echo ' good ';
-        }
 
         return $result;
     }
+
+
 }

@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-3">
             <?php if ($post->getImage()) : ?>
-                <img src="<?= $post->getImageURL('small') ?>" alt="" style="width: 100%;">
+            <img src="<?= $post->getImageURL('small') ?>" alt="" style="width: 100%;">
             <?php endif ?>
         </div>
     </div>
@@ -17,16 +17,14 @@
     <?= $form->input('created_at', 'Modifié ou crée le'); ?>
 
 
-    <h5>Cliquez sur le bouton pour l'action</h5>
     <div class="d-flex justify-content-center">
         <button class="btn btn-secondary" type="submit">
             <?php if ($post->getID() !== null) : ?>
-                Modifier
+            Modifier
             <?php else : ?>
-                Créer
+            Créer
             <?php endif ?>
-            </button>
+        </button>
     </div>
     <br>
-    
 </form>

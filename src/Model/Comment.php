@@ -91,15 +91,6 @@ class Comment
         return $this;
     }
     
-    public function findByPostID(): int
-    {
-        return $this->post_id;
-    }
-
-    public function addComment(comment $comment): void
-    {
-        $this->comment[] = $comment;
-    }
 
     public function setPost(Post $post)
     {
@@ -115,5 +106,14 @@ class Comment
     {
         return $this->is_valid;
     }
-   
+
+    public function validate() 
+    {
+        $content= trim($this->getContent());
+        if (!empty($content)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

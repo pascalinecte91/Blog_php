@@ -1,6 +1,5 @@
 <?php
 
-
 require '../vendor/autoload.php';
 use App\Router;
 
@@ -60,3 +59,8 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/admin/comment/[i:id]', 'admin/comment/edit', 'admin_comment')
     ->match('/admin/comment/new', 'admin/comment/new', 'admin_comment_new')
     ->run();
+
+   /* rules:
+# ...
+  symfony.use_super_globals:
+    enabled: true*/

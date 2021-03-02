@@ -8,9 +8,9 @@ $slug = $params['slug'];
 $id = (int)$params['id'];
 $comment = [];
 $pdo = Connection::getPDO();
-$table = new PostManager($pdo);
+$manager = new PostManager($pdo);
 $post = (new PostManager($pdo))->find($id);
-[$posts, $pagination] = $table->findPaginated();
+[$posts, $pagination] = $manager->findPaginated();
 $comments = (new CommentManager($pdo))->findByPostID($id);
 $is_valid = true;
 if ($post->getSlug() !== $slug) {

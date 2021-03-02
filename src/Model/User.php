@@ -37,11 +37,6 @@ class User
         return $this;
     }
 
-    public function getFindByUsername(): ?string
-    {
-        return $this->username;
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -56,7 +51,7 @@ class User
 
     public function getIsAdmin(): ?bool
     {
-        return !! $this->is_admin;
+        return $this->is_admin;
     }
 
     public function setIsAdmin(bool $is_admin)

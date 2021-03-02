@@ -2,7 +2,8 @@
 
 namespace App;
 
-use App\Security\ForbiddenException;
+
+use App\Model\Security\ForbiddenException;
 
 class Auth
 {

@@ -1,7 +1,7 @@
 <?php
 
 use App\Connection;
-use App\Table\CommentManager;
+use App\Model\CommentManager;
 use App\HTML\Form;
 use App\Validators\CommentValidator;
 use App\ObjectHelper;
@@ -10,23 +10,25 @@ use App\Auth;
 Auth::check();
 
 $pdo = Connection:: getPDO();
-$CommentManager = new CommentManager($pdo);
-$comment = $CommentManager ->find($params['id']);
-$success = false;
+$commentManager = new CommentManager($pdo);
+$comment = $commentManager ->find($params['id']);
+$approve=1;
 $errors = [];
 $comments =[];
-
+$success= false;
 if (!empty($_POST)) {
     $data = array_merge($_POST, $_FILES);
-    $v = new CommentValidator($data, $CommentManager, $comment->getID(), );
+    //$v = new CommentValidator($data, $commentManager, $comment->getID(), );
     ObjectHelper::hydrate($comment, $data, ['author', 'content', 'created_at']);
-    if ($v->validate()) {
-        $CommentManager->updateComment($comment);
 
+    if ($comment->validate()) {
+        $commentManager->updateComment($comment);
         $success = true;
-    } else {
-        $errors = $v->errors();
     }
+    //if ($v->validate()) {
+    //} else {
+        //$errors = $v->errors();
+   // }
 }
 
 $form = new Form($comment, $errors);

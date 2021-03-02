@@ -1,15 +1,15 @@
+<?php if ($success) : ?> 
+    <div class="alert alert-warning" div style=" width:350px">
+    L'article été  enregistré!
+    </div>
+    <?php endif ?>
+
+
 <?php if (!empty($errors)) : ?>
-   <div class="alert alert-danger">
-      L'article n'a pas pu être enregistré, merci de corriger vos erreurs
-   </div>
-<?php endif ?>
-<?php if (isset($_GET['created'])) :
-?>
-   <div class="alert alert-success">
-      L'article a ete correctement crée
-   </div>
+    <div class="alert alert-danger" div style=" width:650px">
+        L'article n'a pas pu être enregistré, merci d'y apporter les modifications nécessaires !
+    </div>
 <?php endif ?>
 
 <h2>NOUVEAU POST </h2>
-
 <?php require('_form.php') ?>

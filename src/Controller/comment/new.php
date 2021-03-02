@@ -21,17 +21,15 @@ $comments = (new CommentManager($pdo))->findByPostID($id);
 $comment->setCreatedAt(date('Y-m-d H:i:s'));
 
 if (!empty($_POST)) {
-    $CommentManager = new CommentManager($pdo);
+    $commentManager = new CommentManager($pdo);
     $_POST['post_id'] = (int)$params['id'];
-    $v = new CommentValidator($_POST, $CommentManager, $comment->getID());
+    $v = new CommentValidator($_POST, $commentManager, $comment->getID());
 
 
     ObjectHelper::hydrate($comment, $_POST, ['author', 'content', 'post_id',]);
 
     if ($v->validate()) {
-        $commentId = $CommentManager->createComment($comment);
-
-        /* $CommentManager->addComment($comment);*/
+        $commentId = $commentManager->createComment($comment);
 
         $url = $router->url('post', ['slug' => $slug, 'id' => $id]);
         http_response_code(301);

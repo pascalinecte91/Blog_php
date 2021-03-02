@@ -78,6 +78,11 @@ Sur le BLOG , le rôle ADMIN :
 - le modifier
 - le valider
 
-
+Pour chaque action, un message d'alerte apparait en suivant le principe suivant:
+- Alert success = " modifications/ edit "
+- Alert danger = " suppressions/ delete "
+- Alert warning = " création/ create "
+- Alerte info = " information ".
+- onsubmit Alert = pour les alertes à caractère de validation ( commentaire à valider, mail à retourner)
 
 AUTEUR : Pascale CHRISTOPHE élève stagiaire chez OpenClassRooms " formation Développeur Application/ PHP / SYMFONY

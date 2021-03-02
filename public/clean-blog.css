@@ -37,6 +37,8 @@ blockquote.blockquote_post {
 
 }
 
+
+
 .section-heading {
   font-size: 36px;
   font-weight: 700;
@@ -87,6 +89,7 @@ img::-moz-selection {
   background-color: white;
   text-transform: uppercase;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
 }
 
 #mainNav .navbar-brand {
@@ -105,8 +108,9 @@ img::-moz-selection {
 #mainNav .navbar-nav > li.nav-item > a {
   font-size: 16px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  
 }
 
 @media only screen and (min-width: 992px) {
@@ -116,7 +120,7 @@ img::-moz-selection {
   }
   #mainNav .navbar-brand {
     padding: 10px 20px;
-    color: #fff;
+    color: rgb(247, 107, 205);
   }
   #mainNav .navbar-brand:focus,
   #mainNav .navbar-brand:hover {
@@ -128,7 +132,7 @@ img::-moz-selection {
   }
   #mainNav .navbar-nav > li.nav-item > a:focus,
   #mainNav .navbar-nav > li.nav-item > a:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(143, 14, 248, 0.918);
   }
 }
 
@@ -369,14 +373,6 @@ form .form-group:first-child .floating-label-form-group {
   border-top: 1px solid #dee2e6;
 }
 
-footer {
-  padding: 50px 0 65px;
-}
-
-footer .list-inline {
-  margin: 0;
-  padding: 0;
-}
 
 footer .copyright {
   font-size: 16px;

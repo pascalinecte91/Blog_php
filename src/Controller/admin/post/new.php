@@ -16,24 +16,27 @@ $pdo = Connection::getPDO();
 $post->setCreatedAt(date('Y-m-d H:i:s'));
 $chapo = [];
 $errors = [];
+$success = false;
+
 
 if (!empty($_POST)) {
-    $PostManager = new PostManager($pdo);
+    $postManager = new PostManager($pdo);
     $data = array_merge($_POST, $_FILES);
-    $v = new PostValidator($data, $PostManager, $post->getID(), );
+    $v = new PostValidator($data, $postManager, $post->getID(), );
     ObjectHelper::hydrate($post, $data, ['name', 'content', 'slug', 'chapo', 'author', 'created_at', 'image']);
 
     if ($v->validate()) {
         PostAttachment::upload($post);
-        $PostManager->createPost($post);
-        echo ' votre post a bien ete enregistré';
+        $postManager->createPost($post);
+    $success = true;
 
-        header('Location: ' . $router->url('admin_post', ['id' => $post->getID()]) . '?created=1');
-
-        exit();
-    } else {
+  } else {
         $errors = $v->errors();
-    }
+  }
+        /*header('Location: ' . $router->url('admin_post', ['id' => $post->getID()]) . '?created=1');
+
+        exit();*/
+   
 }
 $form = new Form($post, $errors);
 require_once('../views/admin/post/new.php');
