@@ -1,10 +1,10 @@
 <?php
-session_start();
+
 use App\Model\User;
-use App\Connection;
+use App\Connexion;
 use App\Model\UserManager;
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $user = new User();
 $userManager = new UserManager($pdo);
 $errors = array();

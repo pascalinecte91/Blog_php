@@ -1,12 +1,12 @@
 <?php
 
-use App\Connection;
+use App\Connexion;
 use App\Model\CommentManager;
 use App\Auth;
 
 Auth::check();
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $manager = new CommentManager($pdo);
 $comment = $manager->findById($params['id']);
 $manager->approve($comment);

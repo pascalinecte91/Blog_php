@@ -1,20 +1,22 @@
-<?php  if (empty($_SESSION['auth'])) :?> 
+<?php 
+if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
+ if ($_SESSION['message_section'] === 'connexion'):?> 
 <div class="alert alert-info alert-dismissible text-center" style="width:380px" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
     <p> Bienvenue - Vous etes connectés  </p>  
 </div>
 
-<?php endif ?>
-
-<!--<?php if (empty($successR)) : ?>
+<?php else: ?>
+ 
 <div class="alert alert-info alert-dismissible text-center" style="width: 1380px" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
-    <p style="font-size:30px;"> <marquee scrollamount="7">BIENVENUE ! ****  Vous etes inscrits ****   FÉLICITATIONS </marquee
-                                scrollamount="7">  </p>  
+    <p style="font-size:30px;">BIENVENUE ! ****  Vous etes inscrits ****   FÉLICITATIONS  </p>  
 </div>
-<?php endif ?>-->
+
+<?php endif; unset($_SESSION['message_section']);?> 
+<?php }?>
 
 
 <div class="text-center p-2 mb-2">

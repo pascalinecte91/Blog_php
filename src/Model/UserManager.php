@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+
 use App\Model\User;
 use \PDO;
 
@@ -17,7 +18,6 @@ final class UserManager extends Manager
         $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
         $user = $query->fetch();
         return $user;
-
     }
 
     
@@ -34,7 +34,7 @@ final class UserManager extends Manager
             }
         }
         return null;
-    }        
+    }
 
     public function createUser(User $user)
     {
@@ -68,6 +68,6 @@ final class UserManager extends Manager
 
         return $result;
     }
-
-
 }
+
+

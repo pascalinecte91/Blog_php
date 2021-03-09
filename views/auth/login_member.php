@@ -28,7 +28,7 @@
                     <label for="mot de passe">Mot de Passe</label>
                     <input type="password" name="password" class="form-control my-3" />
                         <div class="d-flex justify-content-center"><br>
-                        <button type="submit" name="envoyer" class="btn btn-danger mt-5 ">LOGIN ->
+                        <button type="submit" name="connexion" class="btn btn-danger mt-5 ">LOGIN ->
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-emoji-smile" viewBox="0 0 16 16">
                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />

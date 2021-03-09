@@ -1,12 +1,12 @@
 <?php
 
-use App\Connection;
+use App\Connexion;
 use App\Model\CommentManager;
 use App\Validators\CommentValidator;
 use App\HTML\Form;
 use App\ObjectHelper;
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $commentManager = new CommentManager($pdo);
 $comment = $commentManager->find($params['id']);
 $success = false;

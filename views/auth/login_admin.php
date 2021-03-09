@@ -26,7 +26,7 @@
                     <label for="mot de passe">Mot de Passe</label>
                     <input type="password" name="password" class="form-control my-3" />
                         <div class="d-flex justify-content-center"><br>
-                      <button type="submit" name="envoyer" class="btn btn-primary mb-2">CONNEXION</button>
+                      <button type="submit" name="admin" class="btn btn-primary mb-2">CONNEXION</button>
                  
                         </div>
                 </form>

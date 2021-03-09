@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require '../vendor/autoload.php';
 use App\Router;
@@ -35,7 +36,7 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/login_member', 'auth/login_member', 'login_member')
     ->match('/login_register', 'auth/login_register', 'login_register')
     ->match('/login_admin', 'auth/login_admin', 'login_admin')
-    ->post('/logout', 'auth/logout', 'logout')
+    ->get('/logout', 'auth/logout', 'logout')
 
     //FORMULAIRE
     ->post('/contact', 'home/contact', 'send')

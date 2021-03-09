@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Connection;
+use App\Connexion;
 use App\Model\CommentManager;
 use App\Model\PostManager;
 use App\Validators\CommentValidator;
@@ -12,7 +12,7 @@ Auth::check();
 /*$post = $PostManager ->find($params['id']);*/
 $router->layout = "admin/layouts/default";
 $title = "Administration";
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $link = $router->url('admin_comment_list');
 [$posts, $pagination] = (new PostManager($pdo))->findPaginated();
 [$comments, $pagination] = (new CommentManager($pdo))->findPaginated();

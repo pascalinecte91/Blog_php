@@ -55,7 +55,7 @@ PAGES PRINCIPALES (4) : ' leurs roles'
  Le fichier contact.php  dans le sous dossier home du fichier controller permet de recuperer plusieurs informations.
 
 - BLOG -> liste de tous les "posts" comportant : titre, slug, auteur et date.
-- MEMBRES -> permet la connection en tant que "membres déjà inscrits".
+- MEMBRES -> permet la Connexion en tant que "membres déjà inscrits".
 - INSCRIPTION  -> comme son nom l'indique, au choix du visiteur!
 
 

@@ -1,12 +1,12 @@
 <?php
 
-use App\Connection;
+use App\Connexion;
 
 require dirname(__DIR__) .  '/vendor/autoload.php';
 
 $faker = Faker\Factory::create('fr_FR');
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 
 $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
 $pdo->exec('TRUNCATE TABLE post');

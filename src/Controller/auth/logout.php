@@ -1,5 +1,5 @@
 <?php
-session_start();
 session_destroy();
-header('Location: ' . $router->url('login'));
+$_SESSION = null;
+header('Location: ' . $router->url('login_member'));
 exit();

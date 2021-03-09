@@ -6,11 +6,11 @@ use App\Model\CommentManager;
 use App\ObjectHelper;
 use App\Model\Comment;
 use App\HTML\Form;
-use App\Connection;
+use App\Connexion;
 
 
 $slug = $params['slug'];
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $id = (int)$params['id'];
 $post = (new PostManager($pdo))->find($id);
 

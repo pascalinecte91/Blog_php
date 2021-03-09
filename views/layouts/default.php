@@ -28,9 +28,11 @@
                           <li class="nav-item">
                               <a class="nav-link" href="<?= $router->url('home') ?>">ACCUEIL</a>
                           </li>
+                          
                           <li class="nav-item">
                               <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
                           </li>
+                          <?php if (!isset($_SESSION['auth'])) { ?>
                           <li class="nav-item">
                               <a class="nav-link" href="<?= $router->url('login_member') ?>">LOGIN 
                               Membres </a>
@@ -38,9 +40,12 @@
                            <li class="nav-item">
                               <a class="nav-link" href="<?= $router->url('login_register') ?>">S'INSCRIRE</a>
                           </li>
+                          <?php } ?>
+                          <?php if (isset($_SESSION['auth'])) { ?>
                            <li class="nav-item">
-                        <a class="nav-link" href="<?= $router->url('home') ?>">DECONNEXION</a>
+                        <a class="nav-link" href="<?= $router->url('logout') ?>">DECONNEXION</a>
                     </li>
+                    <?php } ?>
                       </ul>
                   </div>
               </div>

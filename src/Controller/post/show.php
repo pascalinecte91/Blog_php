@@ -1,13 +1,13 @@
 <?php
 
-use App\Connection;
+use App\Connexion;
 use App\Model\CommentManager;
 use App\Model\PostManager;
 
 $slug = $params['slug'];
 $id = (int)$params['id'];
 $comment = [];
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $manager = new PostManager($pdo);
 $post = (new PostManager($pdo))->find($id);
 [$posts, $pagination] = $manager->findPaginated();

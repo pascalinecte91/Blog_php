@@ -1,7 +1,7 @@
 <?php
 
 use App\Attachment\PostAttachment;
-use App\Connection;
+use App\Connexion;
 use App\Model\PostManager;
 use App\HTML\Form;
 use App\Validators\PostValidator;
@@ -10,7 +10,7 @@ use App\Auth;
 
 Auth::check();
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $postManager = new PostManager($pdo);
 $post = $postManager->find($params['id']);
 $success = false;

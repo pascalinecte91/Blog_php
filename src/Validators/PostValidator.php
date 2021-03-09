@@ -6,8 +6,10 @@ use App\Model\PostManager;
 
 class PostValidator extends AbstractValidator
 {
-    public function __construct(array $data, PostManager $manager, ?int $postID = null)
+    public function __construct(array $data, PostManager $manager, ?int $postID = null) 
+
     {
+       
         parent::__construct($data);
         $this->validator->rule('required', ['name', 'slug']);
         $this->validator->rule('lengthBetween', ['name', 'slug'], 3, 200);

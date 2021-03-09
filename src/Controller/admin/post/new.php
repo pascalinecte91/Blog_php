@@ -1,7 +1,7 @@
 <?php
 
 use App\Attachment\PostAttachment;
-use App\Connection;
+use App\Connexion;
 use App\Model\PostManager;
 use App\HTML\Form;
 use App\Validators\PostValidator;
@@ -12,7 +12,7 @@ use App\Auth;
 Auth::check();
 
 $post = new Post();
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $post->setCreatedAt(date('Y-m-d H:i:s'));
 $chapo = [];
 $errors = [];

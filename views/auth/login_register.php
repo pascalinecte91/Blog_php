@@ -26,7 +26,7 @@
                     <label for="">Confirmez votre MP</label>
                     <input type="password" name="password_confirm" class="form-control"  /><br>
                         <div class="d-flex justify-content-center">
-                        <button type="submit" name="envoyer" class="btn btn-danger mb-2">S'INSCRIRE</button>
+                        <button type="submit" name="register" class="btn btn-danger mb-2">S'INSCRIRE</button>
                         </div>
                 </form>
             </div>

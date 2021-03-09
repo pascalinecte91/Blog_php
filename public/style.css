@@ -79,7 +79,6 @@ textarea {
 #msg {
   width: 600px;
    margin-left: 60px;
-
 }
 
 #author {
@@ -96,7 +95,7 @@ textarea {
   width: 700px;
   height: 400px;
   text-align: left;
-  background-color: #5f8b70;
+  background-color:#5f8b70;
 }
 
 #login_a {
@@ -104,7 +103,7 @@ textarea {
   width: 700px;
   height: 400px;
   text-align: left;
-  background-color: #afd0e6;
+  background-color:#afd0e6;
 }
 
 #form_insc {

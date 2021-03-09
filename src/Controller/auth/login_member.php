@@ -1,11 +1,11 @@
 <?php
-session_start();
+
 
 use App\Model\User;
-use App\Connection;
+use App\Connexion;
 use App\Model\UserManager;
 
-$pdo = Connection:: getPDO();
+$pdo = Connexion:: getPDO();
 $user = new User();
 $userManager = new UserManager($pdo);
 $errors = array();
@@ -15,7 +15,11 @@ if (!empty($_POST)) {
     $user = $userManager->findByUsernameAndPassword($_POST['username'], $_POST['password'] );
     if (!empty($user)) {
       
+        
         $_SESSION['auth'] = $user;
+        $_SESSION['message_section'] = 'connexion';
+ 
+
         header('Location: ' . $router->url('blog'));
         exit();
 

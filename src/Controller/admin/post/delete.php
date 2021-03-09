@@ -1,12 +1,12 @@
 <?php
 
-use App\Connection;
+use App\Connexion;
 use App\Model\PostManager;
 use App\Auth;
 
 Auth::check();
 
-$pdo = Connection::getPDO();
+$pdo = Connexion::getPDO();
 $manager = new PostManager($pdo);
 $manager->delete($params['id']);
 header('Location:' . $router->url('admin_posts') . '?delete=1');

@@ -34,10 +34,7 @@ a:hover {
 
 blockquote.blockquote_post {
   font-size: 20px;
-
 }
-
-
 
 .section-heading {
   font-size: 36px;
@@ -89,7 +86,6 @@ img::-moz-selection {
   background-color: white;
   text-transform: uppercase;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
 }
 
 #mainNav .navbar-brand {
@@ -110,7 +106,6 @@ img::-moz-selection {
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  
 }
 
 @media only screen and (min-width: 992px) {
@@ -122,14 +117,17 @@ img::-moz-selection {
     padding: 10px 20px;
     color: rgb(247, 107, 205);
   }
+
   #mainNav .navbar-brand:focus,
   #mainNav .navbar-brand:hover {
     color: rgba(255, 255, 255, 0.8);
   }
+
   #mainNav .navbar-nav > li.nav-item > a {
     padding: 10px 20px;
     color: #fff;
   }
+
   #mainNav .navbar-nav > li.nav-item > a:focus,
   #mainNav .navbar-nav > li.nav-item > a:hover {
     color: rgba(143, 14, 248, 0.918);
@@ -143,6 +141,7 @@ img::-moz-selection {
     transform: translate3d(0, 0, 0);
     -webkit-backfacevisibility: hidden;
   }
+
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
@@ -151,16 +150,20 @@ img::-moz-selection {
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.9);
   }
+
   #mainNav.is-fixed .navbar-brand {
     color: #212529;
   }
+
   #mainNav.is-fixed .navbar-brand:focus,
   #mainNav.is-fixed .navbar-brand:hover {
     color: #0085a1;
   }
+
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
     color: #212529;
   }
+
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus,
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
     color: #0085a1;
@@ -373,13 +376,11 @@ form .form-group:first-child .floating-label-form-group {
   border-top: 1px solid #dee2e6;
 }
 
-
 footer .copyright {
   font-size: 16px;
   margin-bottom: 0;
   text-align: center;
 }
-
 
 .btn {
   font-size: 14px;

@@ -21,7 +21,7 @@ class PaginatedQuery
     ) {
         $this->query = $query;
         $this->queryCount = $queryCount;
-        $this->pdo = $pdo ?: Connection::getPDO();
+        $this->pdo = $pdo ?: Connexion::getPDO();
         $this->perPage = $perPage;
     }
 
