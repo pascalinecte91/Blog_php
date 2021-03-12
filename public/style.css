@@ -17,12 +17,16 @@ body {
   font-size: 20px;
   color: rgb(155, 79, 85);
 }
-
+/*
 blockquote.blockquote_post {
   color: #444243;
-  font-size: 20px;
+  font-size: 30px;
   
+}*/
+blockquote.blockquote {
+  font-size: 30px; 
 }
+
 #text {
   font-size: 15px;
 }

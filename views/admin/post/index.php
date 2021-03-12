@@ -1,10 +1,3 @@
-<!--<?php if ($success) : ?> 
-<div class="alert alert-danger" div style="width:400px">
-    L'article  a bien été supprimé !
-</div>
-<?php endif ?>-->
-
-
 <?php if (!empty($errors)) : ?>
 <div class="alert alert-danger">
     L'article n'a pas pu être modifié!

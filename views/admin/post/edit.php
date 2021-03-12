@@ -1,8 +1,9 @@
-<?php if ($success) : ?>
-<div class="alert alert-success" div style="width:400px">
-    L'article a ete correctement modifié !
-</div>
-<?php endif ?>
+
+<?php if($success) {
+header('Location: ' . $router->url('admin_posts'));
+exit();
+} ?>
+<h5 style="color:red ; text-align:center" >Attention ! vous allez effectuer une modification sur le Post <?= e($post->getID()) ?></h5><br>
 
 
 <?php if (!empty($errors)) : ?>

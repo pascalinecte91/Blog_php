@@ -60,10 +60,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
-                        <h3>
-                            <marquee scrollamount="4">Vous êtes bien connectés à l'administration ! </marquee
-                                scrollamount="4">
-                        </h3>
+                        <h3 style='color:lime'>Vous êtes bien connectés à l'administration </h3>
 
                         <span class="subheading"></span>
                     </div>

@@ -1,3 +1,10 @@
+<?php 
+$errors = null;
+if (!empty($_SESSION['errors'])){
+    $errors = unserialize($_SESSION['errors']);
+}
+
+?>
 <?php if (!empty($errors)):?>
 <div class="alert alert-info alert-dismissible" style="width: 700px;" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -10,7 +17,7 @@
         <?php endforeach; ?>
     </ul>
 </div>
-<?php  endif;?>
+<?php endif; unset($_SESSION['errors']);?> 
 
 
 <div class="container">

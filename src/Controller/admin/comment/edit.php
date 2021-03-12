@@ -15,7 +15,7 @@ $comment = $commentManager ->find($params['id']);
 $approve=1;
 $errors = [];
 $comments =[];
-$success= false;
+$successC= false;
 if (!empty($_POST)) {
     $data = array_merge($_POST, $_FILES);
     //$v = new CommentValidator($data, $commentManager, $comment->getID(), );
@@ -23,7 +23,7 @@ if (!empty($_POST)) {
 
     if ($comment->validate()) {
         $commentManager->updateComment($comment);
-        $success = true;
+        $successC = true;
     }
     //if ($v->validate()) {
     //} else {

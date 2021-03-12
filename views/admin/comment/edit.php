@@ -1,8 +1,10 @@
-<?php if ($success) : ?>
-    <div class="alert alert-success">
-        Le commentaire a ete correctement modifié!
-    </div>
-    <?php endif ?>
+ <?php if ($successC) {
+    header('Location: ' . $router->url('admin_posts'));
+    exit();
+} ?>
+
+<h5 style="color:red ; text-align:center" >Attention ! vous allez effectuer une modification sur le commentaire <?= e($comment->getID()) ?></h5><br>
+
  
     <?php if ($errors) : ?>
 

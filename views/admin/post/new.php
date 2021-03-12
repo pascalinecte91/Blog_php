@@ -1,6 +1,6 @@
 <?php if ($success) : ?> 
     <div class="alert alert-warning" div style=" width:350px">
-    L'article été  enregistré!
+    L'article a été  enregistré!
     </div>
     <?php endif ?>
 
