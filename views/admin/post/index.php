@@ -1,8 +1,13 @@
-<?php if (!empty($errors)) : ?>
-<div class="alert alert-danger">
-    L'article n'a pas pu être modifié!
-</div>
-<?php endif ?>
+<?php 
+if (isset($_SESSION['message_section'])) {
+    if ($_SESSION['message_section'] === 'comment_modif'): ?>
+        <div class="alert alert-info alert-dismissible text-center" style="width:380px" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+            <p>L'article a été modifié avec succès !</p>  
+        </div>
+    <?php endif; unset($_SESSION['message_section']); ?>
+<?php } ?>
 <table class="table" style="background-color:#cbb9cc">
     <thead>
         <tr>

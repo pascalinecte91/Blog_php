@@ -13,4 +13,5 @@ $link = $router->url('admin_comments');
 [$comments, $pagination] = (new CommentManager($pdo))->findPaginated();
 
 
+
 require_once('../views/admin/post/index.php');

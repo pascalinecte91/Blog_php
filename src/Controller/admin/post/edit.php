@@ -27,6 +27,8 @@ if (!empty($_POST)) {
         PostAttachment::upload($post);
         $postManager->updatePost($post);
         $success = true;
+        $_SESSION['message_section'] = 'comment_modif';
+
         
     } else {
         $errors = $v->errors();
