@@ -18,17 +18,16 @@ $comments =[];
 $successC= false;
 if (!empty($_POST)) {
     $data = array_merge($_POST, $_FILES);
-    //$v = new CommentValidator($data, $commentManager, $comment->getID(), );
     ObjectHelper::hydrate($comment, $data, ['author', 'content', 'created_at']);
 
     if ($comment->validate()) {
         $commentManager->updateComment($comment);
         $successC = true;
+        $_SESSION['message_section_c'] = 'comment_modif';
+
+    } else {
+        $errors = $v->errors();
     }
-    //if ($v->validate()) {
-    //} else {
-        //$errors = $v->errors();
-   // }
 }
 
 $form = new Form($comment, $errors);

@@ -18,7 +18,8 @@ if (!empty($_POST)) {
         
         $_SESSION['auth'] = $user;
         $_SESSION['message_section'] = 'connexion';
- 
+       
+
 
         header('Location: ' . $router->url('blog'));
         exit();

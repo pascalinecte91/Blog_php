@@ -31,7 +31,7 @@ final class CommentManager extends Manager
     ], $comment->getID());
     }
 
-    public function addComment(int $id, array $comments)
+    /*public function addComment(int $id, array $comments)
     {
         $query = $this->pdo->prepare("INSERT INTO comment SET 'author', 'content', 'post_id' VALUES");
         $query->execute(['author', 'content', 'post_id']);
@@ -45,7 +45,7 @@ final class CommentManager extends Manager
         }
 
         return $result;
-    }
+    }*/
 
 
     public function hydrateComments(array $comments)
@@ -97,4 +97,5 @@ final class CommentManager extends Manager
 
         return $result;
     }
+    
 }

@@ -27,11 +27,11 @@ if (!empty($_SESSION['errors'])){
                 <form  action ="<?= $router->url('login_register') ?>" method="POST" name="login_register">
                     <h3 class="box-title text-center"> INSCRIVEZ - VOUS</h3><br>
                     <label for=""> Pseudo</label>
-                    <input type="text"  name="username" class="form-control "  />
+                    <input type="text"  name="username" class="form-control " required pattern="^[A-Za-z '-]+$" maxlength="30" />
                     <label for="">Mot de Passe</label>
-                    <input type="password" name="password" class="form-control" />
+                    <input type="password" name="password" class="form-control" required />
                     <label for="">Confirmez votre MP</label>
-                    <input type="password" name="password_confirm" class="form-control"  /><br>
+                    <input type="password" name="password_confirm" class="form-control" required /><br>
                         <div class="d-flex justify-content-center">
                         <button type="submit" name="register" class="btn btn-danger mb-2">S'INSCRIRE</button>
                         </div>

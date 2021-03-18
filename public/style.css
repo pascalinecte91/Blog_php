@@ -4,7 +4,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
- 
 }
 
 .blockquote {
@@ -40,11 +39,12 @@ blockquote.blockquote {
   width: 1400px;
   padding-bottom: 25px;
 }
+
 #form_comment {
   background-color: rgb(207, 221, 240);
   text-transform: uppercase;
-  
 }
+
 .card-body {
   padding-right: 15px;
 }

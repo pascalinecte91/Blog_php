@@ -30,7 +30,6 @@ if (!empty($_POST)) {
 
     if ($v->validate()) {
         $commentId = $commentManager->createComment($comment);
-
         $url = $router->url('post', ['slug' => $slug, 'id' => $id]);
         http_response_code(301);
         header('Location: ' . $url);

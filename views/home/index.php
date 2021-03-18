@@ -1,11 +1,3 @@
-<!--<?php if (empty($errors)) : ?> <div class="alert alert-dark alert-dismissible" style="width: 700px;" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span></button>
-    <p> Votre mail a bien été envoyé ! Je vous répondrai dès que possible ! Merci </p>
-    <?php endif ?>
-
-    </div>-->
-
 <body>
     <div class="container">
         <div class="row">

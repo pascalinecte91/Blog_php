@@ -1,13 +1,14 @@
-<?php if (!empty($errors)): ?>{
-<div class="alert alert-info alert-dismissible" style="width: 700px;" role="alert">
+<?php if (!empty($errors)): ?>
+<div class="alert alert-info alert-dismissible" style="width: 650px;" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span></button>
-    <p> les champs ne sont pas conforment</p>
+    <p> Merci de verifier les champs pour acceder aux membres !</p>
+    
     <ul>
 
 
         <?php foreach ($errors as $error): ?>
-        <li><?= $error; ?> </li>
+        <!--<li><?= $error; ?> </li>-->
 
         <?php endforeach; ?>
     </ul>

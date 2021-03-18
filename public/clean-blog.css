@@ -1,10 +1,20 @@
-p {
-  line-height: 1.5;
-  margin: 20px 0;
+a {
+  color: #212529;
+  transition: all 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: #0085a1;
 }
 
 p a {
   text-decoration: underline;
+}
+
+p {
+  line-height: 1.5;
+  margin: 20px 0;
 }
 
 h1,
@@ -17,21 +27,9 @@ h6 {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #212529;
-  transition: all 0.2s;
-}
-
-a:focus,
-a:hover {
-  color: #0085a1;
-}
-
 .container {
   max-width: 1400px;
-
 }
-
 
 .section-heading {
   font-size: 36px;
@@ -134,13 +132,11 @@ img::-moz-selection {
 @media only screen and (min-width: 992px) {
   #mainNav {
     transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
     transform: translate3d(0, 0, 0);
     -webkit-backfacevisibility: hidden;
   }
 
   #mainNav.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -67px;
     transition: transform 0.2s;
@@ -166,7 +162,6 @@ img::-moz-selection {
     color: #0085a1;
   }
   #mainNav.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
     transform: translate3d(0, 100%, 0);
   }
 }

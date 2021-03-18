@@ -11,8 +11,8 @@ class Text
         if (mb_strlen($content) <= $limit) {
             return $content;
         }
-        $lastSpace = mb_strpos($content, ' ', $limit); // commencera à partir du caracter 60 et cherchera la coupure
+       // $lastSpace = mb_strpos($content, ' ', $limit); // commencera à partir du caracter 60 et cherchera la coupure
         //  pour eviter que le mot  soit coupé n'importe ou : on usite strpos
-        return \substr($content, 0, $limit)  . '...';
+       // return \substr($content, 0, $limit)  . '...';
     }
 }
