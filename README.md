@@ -33,6 +33,7 @@ Développé avec : PHP         Version  7.4.9
 
  Il faudra télecharger  le dossier projet :
  --git clone   https://github.com/pascalinecte91/projet_5_blog.git
+               
 
  VISUALISATION DU PROJET : Dans le terminal : C:\wamp64\www\projet5>  php -S localhost:8000 -t public
 
@@ -44,6 +45,9 @@ Il devra rentrer un PSEUDO et un mot de passe.
 
 CONNEXION ADMINISTRATEUR :  Username : admin
                             Password: 9999
+                            
+LOGIN Member :              Username projet
+                            Password : 1111
 
 PAGES PRINCIPALES (4) : ' leurs roles'
 
@@ -61,7 +65,6 @@ PAGES PRINCIPALES (4) : ' leurs roles'
 
 
 Sur le BLOG les membres peuvent:
-- Poster un "article"
 - Ecrire un "commentaire"
 - Envoyer un email ( page accueil )
 - Consulter la liste des articles et ouvrir l'article de leurs choix afin de laisser ou non un commentaire (si validation).
@@ -85,4 +88,4 @@ Pour chaque action, un message d'alerte apparait en suivant le principe suivant:
 - Alerte info = " information ".
 - onsubmit Alert = pour les alertes à caractère de validation ( commentaire à valider, mail à retourner)
 
-AUTEUR : Pascale CHRISTOPHE élève stagiaire chez OpenClassRooms " formation Développeur Application/ PHP / SYMFONY
+AUTEUR : Pascale CHRISTOPHE élève stagiaire chez OpenClassrooms " formation Développeur Application/ PHP / SYMFONY

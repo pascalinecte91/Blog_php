@@ -55,8 +55,7 @@ final class PostManager extends Manager
     {
         $paginatedQuery = new PaginatedQuery(
             "SELECT * FROM {$this->manager} ORDER BY created_at DESC",
-            "SELECT COUNT(id) FROM {$this->manager}",/* recupere tous les articles*/
-      $this->pdo
+            "SELECT COUNT(id) FROM {$this->manager}",
         );
 
         $posts = $paginatedQuery->getItems(Post::class);

@@ -31,23 +31,6 @@ final class CommentManager extends Manager
     ], $comment->getID());
     }
 
-    /*public function addComment(int $id, array $comments)
-    {
-        $query = $this->pdo->prepare("INSERT INTO comment SET 'author', 'content', 'post_id' VALUES");
-        $query->execute(['author', 'content', 'post_id']);
-        $result = $query->fetchAll();
-
-
-        if ($result === true) {
-            echo 'Vos données ont bien eté enregistrees';
-        } else {
-            echo 'merci de recommencer';
-        }
-
-        return $result;
-    }*/
-
-
     public function hydrateComments(array $comments)
     {
         foreach ($comments as $comment) {

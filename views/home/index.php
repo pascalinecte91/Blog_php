@@ -1,11 +1,10 @@
-<body>
-    <div class="container">
-        <div class="row">
+<body class="accueil">
+    <div class="container-fluid" >
+        <div class="row" id="phrase_contact">
             <div class="col-lg-12 col-md-10 mx-auto text-center">
                 <h4> laissez-moi un message <br><br> Je vous répondrai dès que possible</h4>
 
-                <div style="padding-left: 15px; margin-top:30px; border: 4px solid #A0A0A0;
-                    text-align:left;background-color:white">
+                <div class="email">
                     <form action="<?= $router->url('send', []); ?>"
                         onsubmit="alert('Votre message a bien été transmis, nous vous repondrons dès que possible Merci !')"
                         method="POST">
@@ -51,4 +50,5 @@
             </div>
         </div>
     </div>
+
 </body>

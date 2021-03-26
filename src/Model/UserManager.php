@@ -18,6 +18,7 @@ final class UserManager extends Manager
         $query->setFetchMode(\PDO::FETCH_CLASS, $this->class);
         $user = $query->fetch();
         return $user;
+        
     }
 
     
@@ -58,16 +59,7 @@ final class UserManager extends Manager
       ->fetchAll(PDO::FETCH_CLASS, $this->class);
     }
 
-    public function addUser($username, $password)
-    {
-        $query = $this->pdo->prepare("INSERT INTO user SET  username = ?, password = ?");
-        $password = password_hash($password, PASSWORD_BCRYPT);
-        $query->execute([$username,$password]);
-        $query->setFetchMode(PDO::FETCH_CLASS, $this->class);
-        $result = $query->fetch();
-
-        return $result;
-    }
+ 
 }
 
 

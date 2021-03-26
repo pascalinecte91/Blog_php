@@ -37,18 +37,17 @@ class Comment
         return $this->content;
     }
 
-
     public function setContent($content): self
     {
         $this->content = $content;
 
         return $this;
     }
+
     public function getComment(): ?string
     {
         return $this->comment;
     }
-
 
     public function setComment($comment): self
     {
@@ -56,8 +55,6 @@ class Comment
 
         return $this;
     }
-
-
 
     public function getCreatedAt(): DateTime
     {
@@ -76,7 +73,6 @@ class Comment
         return $this->author;
     }
 
-
     public function setAuthor(string $author): self
     {
         $this->author = $author;
@@ -90,7 +86,6 @@ class Comment
 
         return $this;
     }
-    
 
     public function setPost(Post $post)
     {
@@ -107,7 +102,7 @@ class Comment
         return $this->is_valid;
     }
 
-    public function validate() 
+    public function validate()
     {
         $content= trim($this->getContent());
         if (!empty($content)) {

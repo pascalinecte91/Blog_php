@@ -32,11 +32,6 @@ for ($i = 0; $i < 55; $i++) {
     }
 }
 
-foreach ($posts as $post) {
-}
-
-$password = password_hash('admin', PASSWORD_BCRYPT);
-$pdo->exec("INSERT INTO user SET username='admin', password='$password'");
 
 
 

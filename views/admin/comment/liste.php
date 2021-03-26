@@ -1,61 +1,43 @@
-<?php if (isset($_GET['delete'])) : ?>
-<div class="container-fluid">
-
-    <div class=" alerte alert-danger" role="alert">Le commentaire a bien été supprimé!!
-    </div>
-    <?php endif ?>
 
     <?php if (count($comments)<1) : ?>
-
-    <div class="alert alert-info " role="alert " style="width: 300px;">
-      Aucun Commentaire à Valider
-    </div>
+      <div class="alert alert-info " role="alert ">
+      Tous les commentaires sont  validés !
+      </div>
     <?php endif ?>
 
 
+    <div class="d-flex justify-content-center" >
+        <h3>LES COMMENTAIRES À VALIDER</h3>
+          </div><br>
 
-    <div class=" table_admin">
-
-        <div class="d-flex justify-content-center" style="font-size: 35px;">
-            <h3>LES COMMENTAIRES À VALIDER</h3>
-        </div><br>
-
-        <table class="table " style="background-color:#cbb9cc" text-align-center>
-            <thead>
-                <div class="col-12">
-                    <tr class="row" text-align-center>
-
-                        <th class="col-5 text-center">Commentaires</th>
-                        <th class="col-2 text-center">Auteurs</th>
-                        <th class="col-1 text-center">Dates</th>
-                        <th class="col-3 text-right">Approuver &ensp;Refuser &emsp;Modifier&emsp;</th>
-                    </tr>
-                </div>
-            </thead>
-
-            <tbody>
-
-                <?php foreach ($comments as $comment) : ?>
-                <tr class="d-flex">
-                    <td class="col-5 text-justify"><?= $comment->getContent();  ?></td>
-                    <td class="col-2 text-center"><?= e($comment->getAuthor()) ?><br></td>
-                    <td class="col-2"><?= $comment->getCreatedAt()->format('d M y h:m ') ?></td>
-                    <td class="col-3 text-center">
-                        <div class="row">
-
-                            <a href="<?= $router->url('admin_comment_approve', ['id' => $comment->getID()]) ?>"onclick="alert('VALIDATION du commentaire OK')"
-                                class="btn btn-success mr-2 mb-2 ">OK</a><br>
-                            <a href="<?= $router->url('admin_comment_delete', ['id' => $comment->getID()]) ?>"onclick="alert('SUPPRESSION du commentaire OK')"
-                                class="btn btn-danger mb-2 ">KO</a>
-                            <a href="<?= $router->url('admin_comment', ['id' => $comment->getID()]) ?>"
-                                class="btn btn-primary ml-2 mb-2 ">Edit</a>
-
-                    </td>
+          <div class="table-responsive-sm" id="table_comment">
+            <table class="table">
+              <thead class="center">
+                <tr>
+                    <th>Commentaires</th>
+                    <th>Auteurs</th>
+                    <th>Dates</th>
+                    <th>Approuver</th>
+                    <th>Refuser</th>
+                      <th>Edit</th>
                 </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <?php foreach ($comments as $comment) :?>
+                    <td><?= e($comment->getContent());?></td>
+                    <td><?= e($comment->getAuthor())?><br></td>
+                    <td><?= $comment->getCreatedAt()->format('d M y') ?></td>
+                    <td><a href="<?= $router->url('admin_comment_approve', ['id' => e($comment->getID())]) ?>"onclick="alert('VALIDATION du commentaire OK')"class="btn btn-success">OK</a><br></td>
+                    <td><a href="<?= $router->url('admin_comment_delete', ['id' => e($comment->getID())]) ?>"onclick="alert('SUPPRESSION du commentaire OK')"class="btn btn-danger">KO</a></td>
+                    <td><a href="<?= $router->url('admin_comment', ['id' => e($comment->getID())]) ?>"class="btn btn-primary ">Edit</a>  
+                  </td>
+                </tr>
+                <?php endforeach  ?> <br>    
+              </tbody>
+            </table>
+        </div>
 
-                <?php endforeach  ?> <br>
-    </div>
-    </tbody>
-</div>
-</table>
-</div>
+ 
+
+      

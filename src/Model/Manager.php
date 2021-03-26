@@ -36,10 +36,6 @@ abstract class Manager
         return $result;
     }
 
-    /** verifie valeur si existe bdd
-     * @params string $field champs à chercher
-     */
-
     public function exists(string $field, $value, ?int $except = null): bool
     {
         $sql = "SELECT COUNT(id) FROM {$this->manager} WHERE $field = ?";

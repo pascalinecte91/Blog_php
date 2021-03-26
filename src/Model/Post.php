@@ -48,7 +48,6 @@ class Post
         return $this->content;
     }
 
-
     public function setContent(string $content): self
     {
         $this->content = $content;
@@ -56,12 +55,10 @@ class Post
         return $this;
     }
 
-
     public function getComment(): ?string
     {
         return $this->comment;
     }
-
 
     public function setPost($post): self
     {
@@ -69,7 +66,6 @@ class Post
 
         return $this;
     }
-
 
     public function getFormattedContent(): ?string
     {
@@ -96,9 +92,6 @@ class Post
         return $this;
     }
 
-
-
-
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -123,8 +116,6 @@ class Post
         return $this;
     }
 
-
-
     public function getAuthor(): ?string
     {
         return $this->author;
@@ -137,6 +128,7 @@ class Post
 
         return $this;
     }
+
     public function getChapo(): ?string
     {
         return $this->chapo;
@@ -155,8 +147,6 @@ class Post
 
         return $this;
     }
-
-
 
     public function getImage(): ?string
     {

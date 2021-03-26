@@ -16,7 +16,6 @@ class Validator extends ValitronValidator
             if ($value['size'] === 0) {
                 return true;
 
-                /* la clé size c'est ce qui est sorti du dd de value */
             }
             $mimes = ['image/jpeg', 'image/png', 'image/jpg'];
             $finfo = new finfo();

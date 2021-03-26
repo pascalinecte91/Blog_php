@@ -12,8 +12,6 @@
         <?php endif ?>
     </button>
 </form>
-
-
 <?php foreach ($comments as $comment) { ?>
     <br>
     <hr>

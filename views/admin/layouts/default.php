@@ -18,41 +18,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="blog  ">
     <title><?= isset($title) ? e($title) : 'mon Blog' ?></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
-        type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/clean-blog.css">
     <link rel="stylesheet" href="/style.css">
+
 </head>
 
-
-
-
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="">Mon blog Projet 5</a>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto justify-content-between ">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $router->url('home') ?>">ACCUEIL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $router->url('home') ?>">DECONNEXION</a>
-                    </li>
+     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <a class="navbar-brand" href=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="responsive">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                  <a class="nav-link" href="<?= $router->url('home') ?>">ACCUEIL</a></li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="<?= $router->url('blog') ?>">BLOG</a></li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="<?= $router->url('login_member') ?>">LOGIN Membres </a></li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="<?= $router->url('login_register') ?>">S'INSCRIRE</a></li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="<?= $router->url('logout') ?>">DECONNEXION</a></li>
+                  
                 </ul>
             </div>
-        </div>
-    </nav>
+          </nav>
+   
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('/dev-image.jpg')">
         <div class="overlay"></div>
@@ -60,8 +58,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="page-heading">
-                        <h3 style='color:lime'>Vous êtes bien connectés à l'administration </h3>
-
+                        <h3>Vous êtes bien connectés à l'administration </h3>
                         <span class="subheading"></span>
                     </div>
                 </div>

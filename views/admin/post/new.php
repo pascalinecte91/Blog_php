@@ -1,14 +1,11 @@
 <?php if ($success) : ?> 
-    <div class="alert alert-warning" div style=" width:350px">
-    L'article a été  enregistré!
-    </div>
-    <?php endif ?>
-
+    <div class="alert alert-warning" div =" width:350px">L'article a été  enregistré!
+      </div>
+<?php endif ?>
 
 <?php if (!empty($errors)) : ?>
-    <div class="alert alert-danger" div style=" width:650px">
-        L'article n'a pas pu être enregistré, merci d'y apporter les modifications nécessaires !
-    </div>
+    <div class="alert alert-danger" div =" width:650px">L'article n'a pas pu être enregistré, merci d'y apporter les modifications nécessaires !
+      </div>
 <?php endif ?>
 
 <h2>NOUVEAU POST </h2>

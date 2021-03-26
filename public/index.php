@@ -10,7 +10,6 @@ $whoops = new \Whoops\Run ;
 $whoops -> pushHandler(new \Whoops\Handler\PrettyPageHandler);
 $whoops -> register();
 
-/* pour mieux definir le path des upload*/
 define('UPLOAD_PATH', __DIR__ . DIRECTORY_SEPARATOR . 'uploads');
 
 if (isset($_GET['page']) && $_GET['page'] ==='1') {
@@ -60,8 +59,3 @@ if (isset($_GET['page']) && $_GET['page'] ==='1') {
     ->match('/admin/comment/[i:id]', 'admin/comment/edit', 'admin_comment')
     ->match('/admin/comment/new', 'admin/comment/new', 'admin_comment_new')
     ->run();
-
-   /* rules:
-# ...
-  symfony.use_super_globals:
-    enabled: true*/
