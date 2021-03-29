@@ -2,7 +2,7 @@
 
 use App\Connexion;
 use App\Model\CommentManager;
-use App\Validators\CommentValidator;
+use App\Validators\;
 use App\HTML\Form;
 use App\ObjectHelper;
 

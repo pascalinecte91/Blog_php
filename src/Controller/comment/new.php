@@ -17,14 +17,19 @@ $errors = [];
 $comment = new Comment();
 $comments = (new CommentManager($pdo))->findByPostID($id);
 $comment->setCreatedAt(date('Y-m-d H:i:s'));
+$succes = false;
 
 if (!empty($_POST)) {
     $commentManager = new CommentManager($pdo);
     $_POST['post_id'] = (int)$params['id'];
-    $v = new CommentValidator($_POST, $commentManager, $comment->getID());
+   // $v = new CommentValidator($_POST, $commentManager, $comment->getID());
     ObjectHelper::hydrate($comment, $_POST, ['author', 'content', 'post_id',]);
 
-    if ($v->validate()) {
+    $commentId = $commentManager->createComment($comment);
+    $url = $router->url('post', ['slug' => $slug, 'id' => $id]);
+
+$succes = true;
+  /*  if ($v->validate()) {
         $commentId = $commentManager->createComment($comment);
         $url = $router->url('post', ['slug' => $slug, 'id' => $id]);
         http_response_code(301);
@@ -32,7 +37,7 @@ if (!empty($_POST)) {
         exit();
     } else {
         $errors = $v->errors();
-    }
+    }*/
 }
 $form = new Form($comment, $errors);
 require_once('../views/post/show.php');

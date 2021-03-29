@@ -12,7 +12,9 @@ Auth::check();
 
 $post = new Post();
 $pdo = Connexion::getPDO();
+
 $post->setCreatedAt(date('Y-m-d H:i:s'));
+$post->setDateLastModification(date('Y-m-d H:i:s'));
 $chapo = [];
 $errors = [];
 $success = false;

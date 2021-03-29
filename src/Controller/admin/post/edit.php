@@ -12,6 +12,7 @@ Auth::check();
 $pdo = Connexion::getPDO();
 $postManager = new PostManager($pdo);
 $post = $postManager->find($params['id']);
+$post->setDateLastModification(date('Y-m-d H:i:s'));
 $success = false;
 $errors = [];
 $chapo = [];

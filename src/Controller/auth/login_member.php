@@ -20,6 +20,7 @@ if (!empty($_POST)) {
     } else {
         $error ['password'] =  'Merci de rentrer un mot de passe correct!';
     }
+ 
 }
 require_once('../views/auth/login_member.php');
 

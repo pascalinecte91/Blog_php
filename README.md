@@ -33,6 +33,9 @@ Développé avec : PHP         Version  7.4.9
 
  Il faudra télecharger  le dossier projet :
  --git clone   https://github.com/pascalinecte91/projet_5_blog.git
+
+ Lien pour acceder à CODACY :
+ https://app.codacy.com/gh/pascalinecte91/projet_5_blog/dashboard
                
 
  VISUALISATION DU PROJET : Dans le terminal : C:\wamp64\www\projet5>  php -S localhost:8000 -t public

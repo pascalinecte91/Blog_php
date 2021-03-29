@@ -10,6 +10,9 @@ body {
   color: white;
   height: auto;
   font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+  
 }
 
 .page-heading h3 {
@@ -79,6 +82,7 @@ background-color:white ;
 
 .table td {
   width: auto;
+  vertical-align: middle!important;
 }
 
 #table_comment thead {
@@ -202,6 +206,10 @@ textarea {
 
 img, .d-block {
   padding-bottom: 15px;
+}
+
+#image_show {
+  width: 100%;
 }
 
 /* RESPONSIVE  */

@@ -7,20 +7,33 @@ use App\Model\UserManager;
 $pdo = Connexion::getPDO();
 $user = new User();
 $userManager = new UserManager($pdo);
-$errors = array();
+$errors =[];
 
 if (!empty($_POST)) {
+    $errors = array();
     $user = $userManager->findByUsernameAndPassword($_POST['username'], $_POST['password']);
-}
-    if ($user->getIsAdmin()) {
-        $_SESSION['auth'] = $user;
-        $_SESSION['message_section'] = 'administrator';
+    
+     if(empty($_POST['password'])) {
+       $errors['password'] = "rentrez votre mot de passe!";
+     }
 
-        header('Location: ' . $router->url('admin_posts'));
-        exit();
-    } else {
-        $errors ['username'] =  'Vous n\'êtes pas  Administrateur!';
-    }
- 
+     if ($user== null) {
+      $errors['password'] = "login  mot passe incorrect!";
+     }
+
+     if (empty($errors)) {
+         if ($user->getIsAdmin()) {
+             $_SESSION['auth'] = $user;
+             $_SESSION['message_section'] = 'administrator';
+    
+             header('Location: ' . $router->url('admin_posts'));
+             exit();
+         } else {
+             $errors ['username'] =  'Vous n\'êtes pas  Administrateur!';
+         }
+     }
+  
+  }
+  $_SESSION ['errors'] = serialize($errors);
 
 require_once('../views/auth/login_admin.php');

@@ -29,6 +29,8 @@ class Post
 
     private $pendingUpload = false;
 
+    private $date_last_modification;
+
 
 
     public function getName(): ?string
@@ -92,6 +94,22 @@ class Post
         return $this;
     }
 
+
+    public function getDateLastModification(): ?DateTime
+    { 
+      if ($this->date_last_modification != null) {
+       return new DateTime($this->date_last_modification);
+
+      }
+       return null;
+    }
+
+    public function setDateLastModification(string $date): self
+    {
+        $this->date_last_modification = $date;
+
+        return $this;
+    }
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -128,6 +146,7 @@ class Post
 
         return $this;
     }
+
 
     public function getChapo(): ?string
     {
@@ -166,7 +185,6 @@ class Post
         if (is_array($image) && !empty($image['tmp_name'])) {
             if (!empty($this->image)) {
                 $this->oldImage = $this->image;
-                
             }
             $this->pendingUpload = true;
             $this->image = $image['tmp_name'];

@@ -1,4 +1,4 @@
-<?php 
+<?php
 if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
     if ($_SESSION['message_section'] === 'connexion'):?> 
         <div class="dismiss_short">
@@ -18,8 +18,10 @@ if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
             </div>
         </div>
 
-<?php endif; unset($_SESSION['message_section']);?> 
-<?php }?>
+<?php endif;
+    unset($_SESSION['message_section']); ?> 
+<?php
+}?>
 
 <div class="text-center p-2 mb-2">
     <h2> BLOG POSTS </h2><br>
@@ -34,10 +36,11 @@ if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
                 <div class="text-center">
                 <h3 class="post-title mt-3  ">
                     <a href="<?= $router->url('post', ['id' => $post->getID(), 'slug' => $post->getSlug()]) ?>">
-                    <?php echo e(mb_strtoupper($post->getName())); ?></a></div></h3>
+                    <?php echo e(mb_strtoupper($post->getName())); ?></a>
+                </h3></div>
                       <div class="row ml-2">
                         <p class="post-subtitle">
-                            <?= e($post->getChapo()) ?></a></p>
+                            <?= e($post->getChapo()) ?></p>
                       </div>
                         <div class="col-lg-12" >
                           <div class="text-center">
@@ -46,7 +49,14 @@ if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
                             <?php endif ?></div>
                             <div class="col-lg-12">
                               <div class="tex-center">
-                               <p class="post-meta  ">Auteur(e): <br><?= e($post->getAuthor()) ?></a> - Le: <?= $post->getCreatedAt()->format('d F Y H:m') ?></p> </div>
+                               <p class="post-meta  ">Auteur(e): <br><?= e($post->getAuthor()) ?> - Le: <?= $post->getCreatedAt()->format('d F Y') ?></p>
+                               <?php
+                               if ($post->getDateLastModification()!=null) {
+                                   ?>
+                               <p class="post-meta  ">Modifié le: <?= $post->getDateLastModification()->format('d F Y') ?></p>
+                                <?php
+                               } ?>
+                               </div>
                       </div>
                 </div>
             </div>  

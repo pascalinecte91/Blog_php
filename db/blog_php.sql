@@ -7,6 +7,7 @@ CREATE TABLE post (
     image VARCHAR(27)  NULL,
     author VARCHAR(255) NOT NULL,
     created_at DATETIME NOT NULL,
+    date_last_modification DATE NULL,
     PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
 

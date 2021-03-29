@@ -20,6 +20,7 @@ final class PostManager extends Manager
       'content' => $post->getContent(),
       'image' => $post->getImage(),
       'created_at' => $post->getCreatedAt()->format('Y-m-d H:i:s'),
+      'date_last_modification' => $post->getDateLastModification()->format('Y-m-d H:i:s'),
       'author' => $post->getAuthor(),
     ], $post->getID());
     }
@@ -33,7 +34,9 @@ final class PostManager extends Manager
       'content' => $post->getContent(),
       'image' => $post->getImage(),
       'author' => $post->getAuthor(),
-      'created_at' => $post->getCreatedAt()->format('Y-m-d H:i:s')
+      'created_at' => $post->getCreatedAt()->format('Y-m-d H:i:s'),
+      'date_last_modification' => $post->getDateLastModification()->format('Y-m-d H:i:s'),
+
     ]);
         $post->setID($id);
     }

@@ -4,12 +4,11 @@
 use App\Connexion;
 use App\Model\CommentManager;
 use App\Model\PostManager;
-use App\Validators\CommentValidator;
 use App\ObjectHelper;
 use App\Auth;
 
 Auth::check();
-/*$post = $PostManager ->find($params['id']);*/
+
 $router->layout = "admin/layouts/default";
 $title = "Administration";
 $pdo = Connexion::getPDO();
@@ -26,14 +25,10 @@ $post = $postManager->find($params['id']);
 $is_no_valid = false;
 
 if (!empty($_POST)) {
-    //$v = new CommentValidator($_POST, $commentManager, $comment->getID(), );
     ObjectHelper::hydrate($_POST, $comment, ['author', 'content', 'created_at']);
     if ($comment->validate()) {
         $success = true;
     }
-
-    /*if ($v->validate()) {
-        $success = true;
-    }*/
 }
+   
 require_once('../views/admin/comment/liste.php');

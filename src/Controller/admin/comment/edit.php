@@ -3,7 +3,6 @@
 use App\Connexion;
 use App\Model\CommentManager;
 use App\HTML\Form;
-use App\Validators\CommentValidator;
 use App\ObjectHelper;
 use App\Auth;
 

@@ -1,4 +1,4 @@
-<?php
+<!--<?php
   if (isset($errors)) { ?>
     <div class="alert alert-danger">
       <ul><?php
@@ -7,7 +7,7 @@
       echo "<li> le champ: "   .  $field . " est obligatoire.</li>";
   } ?> </ul>
     </div><?php
-  } ?>
+  } ?>-->
 <div class="container">
   <div class id="show_post">
     <h3><?php echo e(mb_strtoupper($post->getName())); ?></h3>
@@ -26,7 +26,7 @@
       <blockquote class="blockquote">
   <?= e($post->getFormattedContent()) ?>
     </blockquote>Auteur(e) du post : <?= e($post->getAuthor()) ?>
-    Le <?= $post->getCreatedAt()->format('d F Y H:i') ?><br>
+    - M à J le <?= $post->getCreatedAt()->format('d F Y H:i') ?><br>
 
       <div class="box">
         <div class="d-flex justify-content-center">
