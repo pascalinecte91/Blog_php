@@ -21,24 +21,30 @@ alias :
 - www='cd C:/wamp6/www'
 
 
-INSTALLATIONS:
 
-Développé avec : PHP         Version  7.4.9
-                 PHP MyAdmin Version  5.0.2
-                 PHP MySQL   Version  5.7.31
-                 Composer
-                 Html 5 & CSS3
-                 Java Script
-                 Bootstrap
 
  Il faudra télecharger  le dossier projet :
- --git clone   https://github.com/pascalinecte91/projet_5_blog.git
 
- Lien pour acceder à CODACY :
- https://app.codacy.com/gh/pascalinecte91/projet_5_blog/dashboard
-               
+ INSTALLATIONS:
 
- VISUALISATION DU PROJET : Dans le terminal : C:\wamp64\www\projet5>  php -S localhost:8000 -t public
+ 1/--git clone   https://github.com/pascalinecte91/projet_5_blog.git
+
+ 2/ install composer
+  composer install
+
+ 3/ executer le fichier blog_php.sql
+
+  Développé avec : PHP         Version  7.4.9
+                   PHP MyAdmin Version  5.0.2
+                   PHP MySQL   Version  5.7.31
+                   Composer
+                   Html 5 & CSS3
+                   Java Script
+                   Bootstrap
+
+  4/ Visualisation du projet : Dans le terminal : C:\wamp64\www\projet5>  php -S localhost:8000 -t public
+
+  5/  Por les connexions:
 
 CONNEXION UTILISATEURS : ' fonctionnement':
 Le membre pourra se connecter via : l'onglet de navigation situé en haut à droite de chaque page.
@@ -65,7 +71,8 @@ PAGES PRINCIPALES (4) : ' leurs roles'
 - MEMBRES -> permet la Connexion en tant que "membres déjà inscrits".
 - INSCRIPTION  -> comme son nom l'indique, au choix du visiteur!
 
-
+Lien pour acceder à CODACY :
+ https://app.codacy.com/gh/pascalinecte91/projet_5_blog/dashboard
 
 Sur le BLOG les membres peuvent:
 - Ecrire un "commentaire"
