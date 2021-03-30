@@ -29,25 +29,21 @@ if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
 <div class="row align-self-center">
     <div class="col-lg-12 col-md-10 mx-auto">
         
-
         <?php foreach ($posts as $post) : ?>
-            <div class= "post-preview border border-secondary  mb-3">
-              <div class="col-lg-12">
-                <div class="text-center">
-                <h3 class="post-title mt-3  ">
+            <div class= "post-preview border border-secondary  mb-3 mx-3">
+                <h3 class="post-title">
                     <a href="<?= $router->url('post', ['id' => $post->getID(), 'slug' => $post->getSlug()]) ?>">
                     <?php echo e(mb_strtoupper($post->getName())); ?></a>
-                </h3></div>
+                </h3>
                       <div class="row ml-2">
                         <p class="post-subtitle">
                             <?= e($post->getChapo()) ?></p>
                       </div>
-                        <div class="col-lg-12" >
                           <div class="text-center">
                             <?php if ($post->getImage()) : ?>
-                            <img src="<?= $post->getImageURL('small') ?>" class="center-block" alt="image divers"></div>
-                            <?php endif ?></div>
-                            <div class="col-lg-12">
+                            <img src="<?= $post->getImageURL('small') ?>" class="center-block" alt="image divers">
+                            <?php endif ?>
+                          </div>
                               <div class="tex-center">
                                <p class="post-meta  ">Auteur(e): <br><?= e($post->getAuthor()) ?> - Le: <?= $post->getCreatedAt()->format('d F Y') ?></p>
                                <?php
@@ -56,12 +52,10 @@ if (!empty($_SESSION['auth']) &&  isset($_SESSION['message_section'])) {
                                <p class="post-meta  ">Modifié le: <?= $post->getDateLastModification()->format('d F Y') ?></p>
                                 <?php
                                } ?>
-                               </div>
-                      </div>
-                </div>
-            </div>  
+                            </div>
+                        </div>  
         <?php endforeach ?>
-</div>
+  </div>
 </div>
   <div class="d-flex justify-content-between my-4">
     <?= $pagination->previousLink($link) ?>

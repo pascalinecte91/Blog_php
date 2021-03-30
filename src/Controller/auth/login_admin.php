@@ -18,7 +18,7 @@ if (!empty($_POST)) {
      }
 
      if ($user== null) {
-      $errors['password'] = "login  mot passe incorrect!";
+      $errors['password'] = "login ou mot passe incorrect!";
      }
 
      if (empty($errors)) {

@@ -4,7 +4,10 @@ body {
   min-height:  100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
+
 
  .navbar-dark .navbar-nav .nav-link  {
   color: white;
@@ -37,6 +40,7 @@ blockquote.blockquote {
 
 .liste-post, h3 {
   text-align: center;
+  margin-top: 10px;
 }
 
 .email {
@@ -58,6 +62,11 @@ background-color:white ;
 
 .post-subtitle {
   font-size: 20px;
+}
+
+.post-subtitle, p {
+  padding-right: 22px;
+  text-align: center;
 }
 
  .page-heading h3 {
